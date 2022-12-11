@@ -1,5 +1,6 @@
 #include "udp.h"
 #include "ufs.h"
+#include "mfs.h"
 #include "message.h"
 #include <sys/mman.h>
 #include <stdio.h>
@@ -8,6 +9,13 @@
 int port, sd;
 struct sockaddr_in socketAddr;
 super_t *metaAddr;
+
+int lookup(int pinum, char* name); // Yingze
+int stat(int inum, MFS_Stat_t *m); // Yingze
+int write(int inum, char *buffer, int offset, int nbytes); // Yingze
+int read(int inum, char *buffer, int offset, int nbytes); // Yingze
+int create(int pinum, int type, char *name); // XinSu
+int unlink(int pinum, char *name); // XinSu
 
 void usage() {
     fprintf(stderr, "usage: server [portnum] [file-system-image]\n");
@@ -30,13 +38,16 @@ int main(int argc, char *argv[]) {
 
     while(1) {
         message_t *receivedMsg;
+        message_t *replyMsg;
         printf("server:: waiting...\n");
         int rc = UDP_Read(sd, &socketAddr, (char *)receivedMsg, sizeof(message_t));
         if(rc > 0) {
             switch (receivedMsg -> mtype)
             {
             case 1: // MFS_INIT
-                /* code */
+                printf("Server Init");
+                replyMsg->rc = 0;
+                UDP_Write(sd, &socketAddr, (char *)replyMsg, sizeof(message_t));
                 break;
             
             case 2: // MFS_LOOKUP
@@ -60,6 +71,7 @@ int main(int argc, char *argv[]) {
 
             case 8: // MFS_SHUTDOWN
                 break;
+
             default:
                 break;
             }
@@ -68,5 +80,9 @@ int main(int argc, char *argv[]) {
     }
 
 
+
+}
+
+int lookup(int pinum, char* name) {
 
 }
