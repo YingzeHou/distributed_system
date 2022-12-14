@@ -1,0 +1,204 @@
+('starting', 'build')
+
+**********************************************************************
+
+Test build
+build project using make
+
+**********************************************************************
+Trying to build project using make
+make
+make: 'server' is up to date.
+
+
+test build PASSED
+ (build project using make)
+
+('starting', 'shutdown')
+
+**********************************************************************
+
+Test shutdown
+init server and client then call shutdown
+
+**********************************************************************
+total blocks        36
+  inodes            32 [size of each: 128]
+  inodes address          3 
+  data blocks       32
+layout details
+  inode bitmap address/len 1 [1]
+  data bitmap address/len  2 [1]
+Starting server on port 9597
+/tmp/tmp_9yREN/p/server 9597 /home/yingze/CS537/p4/test.img
+server:: waiting...
+server:: read message [size:4148 mtype:1 name: inode:0]
+Server Init
+server:: waiting...
+server:: read message [size:4148 mtype:8 name: inode:0]
+Message: 1
+Message: 8
+
+
+test shutdown PASSED
+ (init server and client then call shutdown)
+
+('starting', 'creat')
+
+**********************************************************************
+
+Test creat
+creat a file and check with lookup
+
+**********************************************************************
+total blocks        36
+  inodes            32 [size of each: 128]
+  inodes address          3 
+  data blocks       32
+layout details
+  inode bitmap address/len 1 [1]
+  data bitmap address/len  2 [1]
+Starting server on port 8142
+/tmp/tmp_9yREN/p/server 8142 /home/yingze/CS537/p4/test.img
+server:: waiting...
+server:: read message [size:4148 mtype:1 name: inode:0]
+Server Init
+server:: waiting...
+server:: read message [size:4148 mtype:6 name:test inode:0]
+Server Create
+server:: waiting...
+server:: read message [size:4148 mtype:2 name:test inode:0]
+server:: waiting...
+server:: read message [size:4148 mtype:8 name:test inode:0]
+Message: 1
+Message: 6
+Message: 2
+Message: 8
+
+
+test creat PASSED
+ (creat a file and check with lookup)
+
+('starting', 'write')
+
+**********************************************************************
+
+Test write
+write then read one block
+
+**********************************************************************
+total blocks        36
+  inodes            32 [size of each: 128]
+  inodes address          3 
+  data blocks       32
+layout details
+  inode bitmap address/len 1 [1]
+  data bitmap address/len  2 [1]
+Starting server on port 5766
+/tmp/tmp_9yREN/p/server 5766 /home/yingze/CS537/p4/test.img
+
+
+test write FAILED
+ (write then read one block)
+ Timelimit (10.0s) exceeded
+
+('starting', 'stat')
+
+**********************************************************************
+
+Test stat
+stat a regular file
+
+**********************************************************************
+total blocks        36
+  inodes            32 [size of each: 128]
+  inodes address          3 
+  data blocks       32
+layout details
+  inode bitmap address/len 1 [1]
+  data bitmap address/len  2 [1]
+Starting server on port 5357
+/tmp/tmp_9yREN/p/server 5357 /home/yingze/CS537/p4/test.img
+Message: 1
+Message: 6
+Message: 2
+Message: 3
+Message: 3
+Failure: Stat gave wrong type
+
+
+test stat FAILED
+ (stat a regular file)
+ Stat gave wrong type
+
+('starting', 'overwrite')
+
+**********************************************************************
+
+Test overwrite
+overwrite a block
+
+**********************************************************************
+total blocks        36
+  inodes            32 [size of each: 128]
+  inodes address          3 
+  data blocks       32
+layout details
+  inode bitmap address/len 1 [1]
+  data bitmap address/len  2 [1]
+Starting server on port 8389
+/tmp/tmp_9yREN/p/server 8389 /home/yingze/CS537/p4/test.img
+
+
+test overwrite FAILED
+ (overwrite a block)
+ Timelimit (10.0s) exceeded
+
+('starting', 'maxfile')
+
+**********************************************************************
+
+Test maxfile
+write largest possible file
+
+**********************************************************************
+total blocks        36
+  inodes            32 [size of each: 128]
+  inodes address          3 
+  data blocks       32
+layout details
+  inode bitmap address/len 1 [1]
+  data bitmap address/len  2 [1]
+Starting server on port 7426
+/tmp/tmp_9yREN/p/server 7426 /home/yingze/CS537/p4/test.img
+
+
+test maxfile FAILED
+ (write largest possible file)
+ Timelimit (10.0s) exceeded
+
+('starting', 'maxfile2')
+
+**********************************************************************
+
+Test maxfile2
+write more blocks than possible
+
+**********************************************************************
+total blocks        36
+  inodes            32 [size of each: 128]
+  inodes address          3 
+  data blocks       32
+layout details
+  inode bitmap address/len 1 [1]
+  data bitmap address/len  2 [1]
+Starting server on port 7139
+/tmp/tmp_9yREN/p/server 7139 /home/yingze/CS537/p4/test.img
+
+
+test maxfile2 FAILED
+ (write more blocks than possible)
+ User interrupted test
+
+Skipped 11 tests.
+To keep testing after failing a test, use flag '-c' or '--continue'

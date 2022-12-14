@@ -1,0 +1,2 @@
+server.o: server.c udp.c
+	gcc -fPIC -g -c Wall server.c udp.c

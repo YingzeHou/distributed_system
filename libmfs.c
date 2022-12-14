@@ -14,6 +14,7 @@ message_t *respMsg;
 struct sockaddr_in sendAddr;
 
 int exchangeMessage(message_t *sendMsg, message_t *respMsg) {
+    // printf("Message: %d\n", sendMsg->mtype);
     struct sockaddr_in readAddr;
     fd_set readfds;
     struct timeval timeout;

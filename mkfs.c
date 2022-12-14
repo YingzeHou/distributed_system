@@ -102,6 +102,7 @@ int main(int argc, char *argv[]) {
 
     printf("total blocks        %d\n", total_blocks);
     printf("  inodes            %d [size of each: %lu]\n", num_inodes, sizeof(inode_t));
+    printf("  inodes address          %d \n", s.inode_region_addr);
     printf("  data blocks       %d\n", num_data);
     printf("layout details\n");
     printf("  inode bitmap address/len %d [%d]\n", s.inode_bitmap_addr, s.inode_bitmap_len);
