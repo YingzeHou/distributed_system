@@ -179,6 +179,54 @@ int perform_insert(const char *fromPath, char *toPath) {
     return 0;
 }
 
+int perform_unlink(char *path) {
+    int fnameSep = rfind(path, '/');
+    char *dirPath = strndup(path, fnameSep);
+    char *fileName = path + fnameSep + 1;
+
+    int dirInode = _traverseToDirectory(dirPath);
+
+    int fileInode = MFS_Unlink(dirInode, fileName);
+    if (fileInode == -1) {
+        sprintf(logBuffer, "Unable to lookup file %s in directory (inum=%d)", fileName, dirInode); ERR();
+    }
+
+    // sprintf(logBuffer, "Trying to determine filesize"); VERBOSE();
+
+    // MFS_Stat_t stat;
+    // int rc = MFS_Stat(fileInode, &stat);
+    // if (rc == -1) {
+    //     sprintf(logBuffer, "Unable to determine filesize. Stat failed for inum=%d", fileInode); ERR();
+    // }
+
+    // int sz = stat.size;
+    // char *output = (char *) malloc(sz * sizeof(char));
+    // memset(output, 0, sz);
+    
+    // sprintf(logBuffer, "Filesize=%d. Starting read", sz); INFO();
+
+    // int offset = 0;
+    // while (offset < sz) {
+    //     int count = sz - offset;
+    //     if (count > MFS_RW_BUFFER_SIZE) count = MFS_RW_BUFFER_SIZE;
+
+    //     sprintf(logBuffer, "Trying to read %d bytes from offset %d foi inum=%d", count, offset, fileInode); VERBOSE();
+    //     int rc = MFS_Read(fileInode, output + offset, offset, count);
+    //     if (rc == -1) {
+    //         sprintf(logBuffer, "MFS_Read failed for inum=%d offset=%d count=%d", fileInode, offset, count); ERR();
+    //     }
+
+    //     offset += count;
+    // }
+
+    // sprintf(logBuffer, "File contents (from next line): \n%s\n", output);
+    // INFO();
+
+    // free(output);
+    free(dirPath);
+    return 0;
+}
+
 int perform_cat(char *path) {
     int fnameSep = rfind(path, '/');
     char *dirPath = strndup(path, fnameSep);
@@ -337,6 +385,9 @@ int main(int argc, char *argv[]) {
     } else if (strcmp(cmd, "mkdir") == 0) {
         _assert_argc(argc, 2 + 3);
         perform_mkdir(argv[4]);
+    } else if (strcmp(cmd, "unlink") == 0) {
+        _assert_argc(argc, 2 + 3);
+        perform_unlink(argv[4]);
     } else {
         printf("Command not found! run ./mfscli for usage help\n");
         return -1;
