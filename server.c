@@ -54,6 +54,13 @@ void set_bit(unsigned int *bitmap, int position) {
    bitmap[index] |= 0x1 << offset;
 }
 
+// unset the bit in inode or data bitmap
+void unset_bit(unsigned int *bitmap, int position) {
+    int index = position / 32;
+    int offset = 31 - (position % 32);
+    bitmap[index] &= ~(0x1 << offset);
+}
+
 void usage() {
     fprintf(stderr, "usage: server [portnum] [file-system-image]\n");
     exit(1);
@@ -139,6 +146,7 @@ int main(int argc, char *argv[]) {
                 break;
 
             case 7: // MFS_UNLINK
+                replyMsg.rc = mfs_unlink(receivedMsg.inum, receivedMsg.name);
                 UDP_Write(sd, &socketAddr, (char *)&replyMsg, sizeof(message_t));
                 break;
 
@@ -264,9 +272,7 @@ int mfs_write(int inum, char *buffer, int offset, int nbytes) {
     lseek(fd, block_ptr*BLOCK_SIZE, SEEK_SET);
     write(fd, buffer, nbytes);
 
-    printf("BEFORE WRITE SIZE: %d\n", inode.size);
     inode.size += nbytes;
-    printf("AFTER WRITE SIZE: %d\n", inode.size);
     lseek(fd, inum*sizeof(inode_t)+metaAddr->inode_region_addr*BLOCK_SIZE, SEEK_SET);
     write(fd, &inode, sizeof(inode_t));
 
@@ -328,18 +334,18 @@ int mfs_create(int pinum, int type, char *name) {
     if(parent_inode.type != MFS_DIRECTORY) {
         return -1;
     }
-    printf("Parent Direct: %d\n", parent_inode.direct[0]);
+    // printf("Parent Direct: %d\n", parent_inode.direct[0]);
     lseek(fd, parent_inode.direct[0]*BLOCK_SIZE, SEEK_SET);
     // dir_ent_t *parent_entry = (dir_ent_t *)malloc(BLOCK_SIZE);
 
     read(fd, &dir_map.entries, BLOCK_SIZE);
     int freeinum = get_available_inum();
-    printf("Free inum: %d\n", freeinum);
+    // printf("Free inum: %d\n", freeinum);
     for(int i = 0; i< BLOCK_SIZE/sizeof(dir_ent_t); i++) {
-        printf("Inum: %d\n", dir_map.entries[i].inum);
+        // printf("Inum: %d\n", dir_map.entries[i].inum);
         if(dir_map.entries[i].inum == -1) {
             dir_map.entries[i].inum = freeinum;
-            printf("Index: %d, value: %d\n", i, freeinum);
+            // printf("Index: %d, value: %d\n", i, freeinum);
             strcpy(dir_map.entries[i].name, name);
             set_bit(get_addr(metaAddr->inode_bitmap_addr), freeinum);
             parent_inode.size += sizeof(dir_ent_t);
@@ -381,7 +387,6 @@ int mfs_create(int pinum, int type, char *name) {
     else {
         for(int i = 0; i<DIRECT_PTRS; i++) {
             inode_map.inodes[freeinum].direct[i] = get_available_datablock_addr();
-            // printf("new addr: %d\n", new_inode->direct[i]);
             set_bit(get_addr(metaAddr->data_bitmap_addr), inode_map.inodes[freeinum].direct[i]-metaAddr->data_region_addr);
         }
     }
@@ -394,9 +399,103 @@ int mfs_create(int pinum, int type, char *name) {
     lseek(fd, freeinum*sizeof(inode_t)+metaAddr->inode_region_addr*BLOCK_SIZE, SEEK_SET);
     write(fd, &inode_map.inodes[freeinum], sizeof(inode_t));
 
+    lseek(fd, pinum*sizeof(inode_t)+metaAddr->inode_region_addr*BLOCK_SIZE, SEEK_SET);
+    write(fd, &parent_inode, sizeof(inode_t));
+
     // free(parent_inode);
     // free(parent_entry);
     // free(new_inode);
     fsync(fd);
     return 0;
 }
+
+int mfs_unlink(int pinum, char *name){
+    inode_t parent_inode = get_inode(pinum);
+    //pinum does not exist
+    if(parent_inode.type == MFS_REGULAR_FILE){
+        return -1;
+    }
+    
+    lseek(fd, parent_inode.direct[0]*BLOCK_SIZE, SEEK_SET);
+
+    dir_block_t parent_entry;
+    // dir_ent_t *parent_entry = malloc(BLOCK_SIZE);
+    read(fd, &parent_entry.entries, BLOCK_SIZE);
+    int name_not_exist = 1;
+    for(int i = 0; i< BLOCK_SIZE/sizeof(dir_ent_t); i++) {
+        if(strcmp(parent_entry.entries[i].name, name) == 0){
+            name_not_exist = 0;
+            int unlink_inum = parent_entry.entries[i].inum;
+            inode_t unlink_inode = get_inode(unlink_inum);
+
+            if(unlink_inode.type == MFS_DIRECTORY) {
+                if(unlink_inode.size > 2*sizeof(dir_ent_t)) { // not empty
+                    return -1;
+                }
+                dir_block_t unlink_dir_entries;
+                lseek(fd, unlink_inode.direct[0]*BLOCK_SIZE, SEEK_SET);
+                read(fd, &unlink_dir_entries.entries, BLOCK_SIZE);
+
+                for(int i = 0; i<2; i++) {
+                    unset_bit(get_addr(metaAddr->inode_bitmap_addr), unlink_dir_entries.entries[i].inum);
+                    unlink_dir_entries.entries[i].inum = -1;
+                    strcpy(unlink_dir_entries.entries[i].name, "\0");
+                }
+                unset_bit(get_addr(metaAddr->data_bitmap_addr), unlink_inode.direct[0]-metaAddr->data_region_addr);
+                lseek(fd, unlink_inode.direct[0]*BLOCK_SIZE, SEEK_SET);
+                write(fd, &unlink_dir_entries.entries, BLOCK_SIZE);
+
+                unlink_inode.direct[0] = -1;
+            }
+            else {
+                for(int i = 0; i<DIRECT_PTRS; i++) {
+                    dir_block_t unlink_dir_entries;
+                    lseek(fd, unlink_inode.direct[i]*BLOCK_SIZE, SEEK_SET);
+                    read(fd, unlink_dir_entries.entries, BLOCK_SIZE);
+                    for(int j = 0; j<BLOCK_SIZE/sizeof(dir_ent_t); j++) {
+                        unset_bit(get_addr(metaAddr->inode_bitmap_addr), unlink_dir_entries.entries[i].inum);
+                        unlink_dir_entries.entries[i].inum = -1;
+                        strcpy(unlink_dir_entries.entries[i].name, "\0");
+                    }
+                    unset_bit(get_addr(metaAddr->data_bitmap_addr), unlink_inode.direct[i]-metaAddr->data_region_addr);
+                    lseek(fd, unlink_inode.direct[i]*BLOCK_SIZE, SEEK_SET);
+                    write(fd, &unlink_dir_entries.entries, BLOCK_SIZE);
+
+                    unlink_inode.direct[i] = -1;
+                }
+            }
+            unlink_inode.size = 0;
+            unlink_inode.type = 0;
+
+            lseek(fd, unlink_inum*sizeof(inode_t)+metaAddr->inode_region_addr*BLOCK_SIZE, SEEK_SET);
+            write(fd, &unlink_inode, sizeof(inode_t));
+
+            parent_entry.entries[i].inum = -1;
+            strcpy(parent_entry.entries[i].name, "\0");
+
+            lseek(fd, parent_inode.direct[0]*BLOCK_SIZE, SEEK_SET);
+            write(fd, &parent_entry.entries, BLOCK_SIZE);
+
+            // printf("BEFORE: parent inum: %d; size: %d\n", pinum, parent_inode.size);
+            parent_inode.size -= sizeof(dir_ent_t);
+            // printf("AFTER: parent inum: %d; size: %d\n", pinum, parent_inode.size);
+
+            lseek(fd, pinum*sizeof(inode_t)+metaAddr->inode_region_addr*BLOCK_SIZE, SEEK_SET);
+            write(fd, &parent_inode, sizeof(inode_t));
+
+            lseek(fd, metaAddr->inode_bitmap_addr*BLOCK_SIZE, SEEK_SET);
+            write(fd, get_addr(metaAddr->inode_bitmap_addr), BLOCK_SIZE);
+
+            lseek(fd, metaAddr->data_bitmap_addr*BLOCK_SIZE, SEEK_SET);
+            write(fd, get_addr(metaAddr->data_bitmap_addr), BLOCK_SIZE);
+
+            break;
+        }
+    }
+    // Name not exist in the data region, return directly without failure
+    if(name_not_exist){
+        return 0;
+    }
+    return 0;
+}
+

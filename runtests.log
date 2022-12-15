@@ -29,15 +29,15 @@ total blocks        36
 layout details
   inode bitmap address/len 1 [1]
   data bitmap address/len  2 [1]
-Starting server on port 5849
-/tmp/tmpn1HnRQ/p/server 5849 /home/yingze/CS537/p4/test.img
+Starting server on port 8151
+/tmp/tmpqbfQat/p/server 8151 /home/yingze/CS537/p4/test.img
 server:: waiting...
 server:: read message [size:4148 mtype:1 name: inode:0]
 Server Init
 server:: waiting...
 server:: read message [size:4148 mtype:8 name: inode:0]
-Message: type->1; inum->0; nbytes->0; offset->0
-Message: type->8; inum->0; nbytes->0; offset->0
+Message: type->1; inum->0; nbytes->0; offset->0; name->
+Message: type->8; inum->0; nbytes->0; offset->0; name->
 
 
 test shutdown PASSED
@@ -58,8 +58,8 @@ total blocks        36
 layout details
   inode bitmap address/len 1 [1]
   data bitmap address/len  2 [1]
-Starting server on port 5782
-/tmp/tmpn1HnRQ/p/server 5782 /home/yingze/CS537/p4/test.img
+Starting server on port 7312
+/tmp/tmpqbfQat/p/server 7312 /home/yingze/CS537/p4/test.img
 server:: waiting...
 server:: read message [size:4148 mtype:1 name: inode:0]
 Server Init
@@ -67,21 +67,15 @@ server:: waiting...
 server:: read message [size:4148 mtype:6 name:test inode:0]
 Server Create
 INODE inum: 0; size: 64; type: 0
-Parent Direct: 4
-Free inum: 1
-Inum: 0
-Inum: 0
-Inum: -1
-Index: 2, value: 1
 server:: waiting...
 server:: read message [size:4148 mtype:2 name:test inode:0]
-INODE inum: 0; size: 64; type: 0
+INODE inum: 0; size: 96; type: 0
 server:: waiting...
 server:: read message [size:4148 mtype:8 name:test inode:0]
-Message: type->1; inum->0; nbytes->0; offset->0
-Message: type->6; inum->0; nbytes->0; offset->0
-Message: type->2; inum->0; nbytes->0; offset->0
-Message: type->8; inum->0; nbytes->0; offset->0
+Message: type->1; inum->0; nbytes->0; offset->0; name->
+Message: type->6; inum->0; nbytes->0; offset->0; name->test
+Message: type->2; inum->0; nbytes->0; offset->0; name->test
+Message: type->8; inum->0; nbytes->0; offset->0; name->test
 
 
 test creat PASSED
@@ -102,8 +96,8 @@ total blocks        36
 layout details
   inode bitmap address/len 1 [1]
   data bitmap address/len  2 [1]
-Starting server on port 9774
-/tmp/tmpn1HnRQ/p/server 9774 /home/yingze/CS537/p4/test.img
+Starting server on port 9294
+/tmp/tmpqbfQat/p/server 9294 /home/yingze/CS537/p4/test.img
 server:: waiting...
 server:: read message [size:4148 mtype:1 name: inode:0]
 Server Init
@@ -111,21 +105,13 @@ server:: waiting...
 server:: read message [size:4148 mtype:6 name:test inode:0]
 Server Create
 INODE inum: 0; size: 64; type: 0
-Parent Direct: 4
-Free inum: 1
-Inum: 0
-Inum: 0
-Inum: -1
-Index: 2, value: 1
 server:: waiting...
 server:: read message [size:4148 mtype:2 name:test inode:0]
-INODE inum: 0; size: 64; type: 0
+INODE inum: 0; size: 96; type: 0
 server:: waiting...
 server:: read message [size:4148 mtype:4 name:test inode:1]
 Server Write
 INODE inum: 1; size: 0; type: 1
-BEFORE WRITE SIZE: 0
-AFTER WRITE SIZE: 4096
 server:: waiting...
 server:: read message [size:4148 mtype:5 name:test inode:1]
 Server Read
@@ -133,15 +119,14 @@ INODE inum: 1; size: 4096; type: 1
 BUFFER CONTENT: START BLOCK 1
 server:: waiting...
 server:: read message [size:4148 mtype:8 name:test inode:1]
-Message: type->1; inum->0; nbytes->0; offset->0
-Message: type->6; inum->0; nbytes->0; offset->0
-Message: type->2; inum->0; nbytes->0; offset->0
-PASSED BYTES: 4096
-Message: type->4; inum->1; nbytes->4096; offset->0
-Message: type->5; inum->1; nbytes->4096; offset->0
+Message: type->1; inum->0; nbytes->0; offset->0; name->
+Message: type->6; inum->0; nbytes->0; offset->0; name->test
+Message: type->2; inum->0; nbytes->0; offset->0; name->test
+Message: type->4; inum->1; nbytes->4096; offset->0; name->test
+Message: type->5; inum->1; nbytes->4096; offset->0; name->test
 ('START BLOCK 1\x00\x00\x00\x00\x00\x00\x00', '\x00\x00\x00\x00\x00\x00\x00\x00\x00END BLOCK 1')
 ('START BLOCK 1\x00\x00\x00\x00\x00\x00\x00', '\x00\x00\x00\x00\x00\x00\x00\x00\x00END BLOCK 1')
-Message: type->8; inum->1; nbytes->4096; offset->0
+Message: type->8; inum->1; nbytes->4096; offset->0; name->test
 
 
 test write PASSED
@@ -162,8 +147,8 @@ total blocks        36
 layout details
   inode bitmap address/len 1 [1]
   data bitmap address/len  2 [1]
-Starting server on port 9548
-/tmp/tmpn1HnRQ/p/server 9548 /home/yingze/CS537/p4/test.img
+Starting server on port 7550
+/tmp/tmpqbfQat/p/server 7550 /home/yingze/CS537/p4/test.img
 server:: waiting...
 server:: read message [size:4148 mtype:1 name: inode:0]
 Server Init
@@ -171,20 +156,14 @@ server:: waiting...
 server:: read message [size:4148 mtype:6 name:test inode:0]
 Server Create
 INODE inum: 0; size: 64; type: 0
-Parent Direct: 4
-Free inum: 1
-Inum: 0
-Inum: 0
-Inum: -1
-Index: 2, value: 1
 server:: waiting...
 server:: read message [size:4148 mtype:2 name:test inode:0]
-INODE inum: 0; size: 64; type: 0
+INODE inum: 0; size: 96; type: 0
 server:: waiting...
 server:: read message [size:4148 mtype:3 name:test inode:0]
 Server Stat
-INODE inum: 0; size: 64; type: 0
-SIZE: 64; TYPE: 0
+INODE inum: 0; size: 96; type: 0
+SIZE: 96; TYPE: 0
 server:: waiting...
 server:: read message [size:4148 mtype:3 name:test inode:1]
 Server Stat
@@ -194,8 +173,6 @@ server:: waiting...
 server:: read message [size:4148 mtype:4 name:test inode:1]
 Server Write
 INODE inum: 1; size: 0; type: 1
-BEFORE WRITE SIZE: 0
-AFTER WRITE SIZE: 4096
 server:: waiting...
 server:: read message [size:4148 mtype:3 name:test inode:1]
 Server Stat
@@ -203,15 +180,14 @@ INODE inum: 1; size: 4096; type: 1
 SIZE: 4096; TYPE: 1
 server:: waiting...
 server:: read message [size:4148 mtype:8 name:test inode:1]
-Message: type->1; inum->0; nbytes->0; offset->0
-Message: type->6; inum->0; nbytes->0; offset->0
-Message: type->2; inum->0; nbytes->0; offset->0
-Message: type->3; inum->0; nbytes->0; offset->0
-Message: type->3; inum->1; nbytes->0; offset->0
-PASSED BYTES: 4096
-Message: type->4; inum->1; nbytes->4096; offset->0
-Message: type->3; inum->1; nbytes->4096; offset->0
-Message: type->8; inum->1; nbytes->4096; offset->0
+Message: type->1; inum->0; nbytes->0; offset->0; name->
+Message: type->6; inum->0; nbytes->0; offset->0; name->test
+Message: type->2; inum->0; nbytes->0; offset->0; name->test
+Message: type->3; inum->0; nbytes->0; offset->0; name->test
+Message: type->3; inum->1; nbytes->0; offset->0; name->test
+Message: type->4; inum->1; nbytes->4096; offset->0; name->test
+Message: type->3; inum->1; nbytes->4096; offset->0; name->test
+Message: type->8; inum->1; nbytes->4096; offset->0; name->test
 
 
 test stat PASSED
@@ -232,8 +208,8 @@ total blocks        36
 layout details
   inode bitmap address/len 1 [1]
   data bitmap address/len  2 [1]
-Starting server on port 6937
-/tmp/tmpn1HnRQ/p/server 6937 /home/yingze/CS537/p4/test.img
+Starting server on port 8972
+/tmp/tmpqbfQat/p/server 8972 /home/yingze/CS537/p4/test.img
 server:: waiting...
 server:: read message [size:4148 mtype:1 name: inode:0]
 Server Init
@@ -241,21 +217,13 @@ server:: waiting...
 server:: read message [size:4148 mtype:6 name:test inode:0]
 Server Create
 INODE inum: 0; size: 64; type: 0
-Parent Direct: 4
-Free inum: 1
-Inum: 0
-Inum: 0
-Inum: -1
-Index: 2, value: 1
 server:: waiting...
 server:: read message [size:4148 mtype:2 name:test inode:0]
-INODE inum: 0; size: 64; type: 0
+INODE inum: 0; size: 96; type: 0
 server:: waiting...
 server:: read message [size:4148 mtype:4 name:test inode:1]
 Server Write
 INODE inum: 1; size: 0; type: 1
-BEFORE WRITE SIZE: 0
-AFTER WRITE SIZE: 4096
 server:: waiting...
 server:: read message [size:4148 mtype:5 name:test inode:1]
 Server Read
@@ -265,8 +233,6 @@ server:: waiting...
 server:: read message [size:4148 mtype:4 name:test inode:1]
 Server Write
 INODE inum: 1; size: 4096; type: 1
-BEFORE WRITE SIZE: 4096
-AFTER WRITE SIZE: 8192
 server:: waiting...
 server:: read message [size:4148 mtype:5 name:test inode:1]
 Server Read
@@ -274,16 +240,14 @@ INODE inum: 1; size: 8192; type: 1
 BUFFER CONTENT: START BLOCK 2
 server:: waiting...
 server:: read message [size:4148 mtype:8 name:test inode:1]
-Message: type->1; inum->0; nbytes->0; offset->0
-Message: type->6; inum->0; nbytes->0; offset->0
-Message: type->2; inum->0; nbytes->0; offset->0
-PASSED BYTES: 4096
-Message: type->4; inum->1; nbytes->4096; offset->0
-Message: type->5; inum->1; nbytes->4096; offset->0
-PASSED BYTES: 4096
-Message: type->4; inum->1; nbytes->4096; offset->0
-Message: type->5; inum->1; nbytes->4096; offset->0
-Message: type->8; inum->1; nbytes->4096; offset->0
+Message: type->1; inum->0; nbytes->0; offset->0; name->
+Message: type->6; inum->0; nbytes->0; offset->0; name->test
+Message: type->2; inum->0; nbytes->0; offset->0; name->test
+Message: type->4; inum->1; nbytes->4096; offset->0; name->test
+Message: type->5; inum->1; nbytes->4096; offset->0; name->test
+Message: type->4; inum->1; nbytes->4096; offset->0; name->test
+Message: type->5; inum->1; nbytes->4096; offset->0; name->test
+Message: type->8; inum->1; nbytes->4096; offset->0; name->test
 
 
 test overwrite PASSED
@@ -297,15 +261,15 @@ Test maxfile
 write largest possible file
 
 **********************************************************************
-total blocks        36
-  inodes            32 [size of each: 128]
+total blocks        39
+  inodes            128 [size of each: 128]
   inodes address          3 
   data blocks       32
 layout details
   inode bitmap address/len 1 [1]
   data bitmap address/len  2 [1]
-Starting server on port 7081
-/tmp/tmpn1HnRQ/p/server 7081 /home/yingze/CS537/p4/test.img
+Starting server on port 6316
+/tmp/tmpqbfQat/p/server 6316 /home/yingze/CS537/p4/test.img
 server:: waiting...
 server:: read message [size:4148 mtype:1 name: inode:0]
 Server Init
@@ -313,195 +277,129 @@ server:: waiting...
 server:: read message [size:4148 mtype:6 name:test inode:0]
 Server Create
 INODE inum: 0; size: 64; type: 0
-Parent Direct: 4
-Free inum: 1
-Inum: 0
-Inum: 0
-Inum: -1
-Index: 2, value: 1
 server:: waiting...
 server:: read message [size:4148 mtype:2 name:test inode:0]
-INODE inum: 0; size: 64; type: 0
+INODE inum: 0; size: 96; type: 0
 server:: waiting...
 server:: read message [size:4148 mtype:4 name:test inode:1]
 Server Write
 INODE inum: 1; size: 0; type: 1
-BEFORE WRITE SIZE: 0
-AFTER WRITE SIZE: 4096
 server:: waiting...
 server:: read message [size:4148 mtype:4 name:test inode:1]
 Server Write
 INODE inum: 1; size: 4096; type: 1
-BEFORE WRITE SIZE: 4096
-AFTER WRITE SIZE: 8192
 server:: waiting...
 server:: read message [size:4148 mtype:4 name:test inode:1]
 Server Write
 INODE inum: 1; size: 8192; type: 1
-BEFORE WRITE SIZE: 8192
-AFTER WRITE SIZE: 12288
 server:: waiting...
 server:: read message [size:4148 mtype:4 name:test inode:1]
 Server Write
 INODE inum: 1; size: 12288; type: 1
-BEFORE WRITE SIZE: 12288
-AFTER WRITE SIZE: 16384
 server:: waiting...
 server:: read message [size:4148 mtype:4 name:test inode:1]
 Server Write
 INODE inum: 1; size: 16384; type: 1
-BEFORE WRITE SIZE: 16384
-AFTER WRITE SIZE: 20480
 server:: waiting...
 server:: read message [size:4148 mtype:4 name:test inode:1]
 Server Write
 INODE inum: 1; size: 20480; type: 1
-BEFORE WRITE SIZE: 20480
-AFTER WRITE SIZE: 24576
 server:: waiting...
 server:: read message [size:4148 mtype:4 name:test inode:1]
 Server Write
 INODE inum: 1; size: 24576; type: 1
-BEFORE WRITE SIZE: 24576
-AFTER WRITE SIZE: 28672
 server:: waiting...
 server:: read message [size:4148 mtype:4 name:test inode:1]
 Server Write
 INODE inum: 1; size: 28672; type: 1
-BEFORE WRITE SIZE: 28672
-AFTER WRITE SIZE: 32768
 server:: waiting...
 server:: read message [size:4148 mtype:4 name:test inode:1]
 Server Write
 INODE inum: 1; size: 32768; type: 1
-BEFORE WRITE SIZE: 32768
-AFTER WRITE SIZE: 36864
 server:: waiting...
 server:: read message [size:4148 mtype:4 name:test inode:1]
 Server Write
 INODE inum: 1; size: 36864; type: 1
-BEFORE WRITE SIZE: 36864
-AFTER WRITE SIZE: 40960
 server:: waiting...
 server:: read message [size:4148 mtype:4 name:test inode:1]
 Server Write
 INODE inum: 1; size: 40960; type: 1
-BEFORE WRITE SIZE: 40960
-AFTER WRITE SIZE: 45056
 server:: waiting...
 server:: read message [size:4148 mtype:4 name:test inode:1]
 Server Write
 INODE inum: 1; size: 45056; type: 1
-BEFORE WRITE SIZE: 45056
-AFTER WRITE SIZE: 49152
 server:: waiting...
 server:: read message [size:4148 mtype:4 name:test inode:1]
 Server Write
 INODE inum: 1; size: 49152; type: 1
-BEFORE WRITE SIZE: 49152
-AFTER WRITE SIZE: 53248
 server:: waiting...
 server:: read message [size:4148 mtype:4 name:test inode:1]
 Server Write
 INODE inum: 1; size: 53248; type: 1
-BEFORE WRITE SIZE: 53248
-AFTER WRITE SIZE: 57344
 server:: waiting...
 server:: read message [size:4148 mtype:4 name:test inode:1]
 Server Write
 INODE inum: 1; size: 57344; type: 1
-BEFORE WRITE SIZE: 57344
-AFTER WRITE SIZE: 61440
 server:: waiting...
 server:: read message [size:4148 mtype:4 name:test inode:1]
 Server Write
 INODE inum: 1; size: 61440; type: 1
-BEFORE WRITE SIZE: 61440
-AFTER WRITE SIZE: 65536
 server:: waiting...
 server:: read message [size:4148 mtype:4 name:test inode:1]
 Server Write
 INODE inum: 1; size: 65536; type: 1
-BEFORE WRITE SIZE: 65536
-AFTER WRITE SIZE: 69632
 server:: waiting...
 server:: read message [size:4148 mtype:4 name:test inode:1]
 Server Write
 INODE inum: 1; size: 69632; type: 1
-BEFORE WRITE SIZE: 69632
-AFTER WRITE SIZE: 73728
 server:: waiting...
 server:: read message [size:4148 mtype:4 name:test inode:1]
 Server Write
 INODE inum: 1; size: 73728; type: 1
-BEFORE WRITE SIZE: 73728
-AFTER WRITE SIZE: 77824
 server:: waiting...
 server:: read message [size:4148 mtype:4 name:test inode:1]
 Server Write
 INODE inum: 1; size: 77824; type: 1
-BEFORE WRITE SIZE: 77824
-AFTER WRITE SIZE: 81920
 server:: waiting...
 server:: read message [size:4148 mtype:4 name:test inode:1]
 Server Write
 INODE inum: 1; size: 81920; type: 1
-BEFORE WRITE SIZE: 81920
-AFTER WRITE SIZE: 86016
 server:: waiting...
 server:: read message [size:4148 mtype:4 name:test inode:1]
 Server Write
 INODE inum: 1; size: 86016; type: 1
-BEFORE WRITE SIZE: 86016
-AFTER WRITE SIZE: 90112
 server:: waiting...
 server:: read message [size:4148 mtype:4 name:test inode:1]
 Server Write
 INODE inum: 1; size: 90112; type: 1
-BEFORE WRITE SIZE: 90112
-AFTER WRITE SIZE: 94208
 server:: waiting...
 server:: read message [size:4148 mtype:4 name:test inode:1]
 Server Write
 INODE inum: 1; size: 94208; type: 1
-BEFORE WRITE SIZE: 94208
-AFTER WRITE SIZE: 98304
 server:: waiting...
 server:: read message [size:4148 mtype:4 name:test inode:1]
 Server Write
 INODE inum: 1; size: 98304; type: 1
-BEFORE WRITE SIZE: 98304
-AFTER WRITE SIZE: 102400
 server:: waiting...
 server:: read message [size:4148 mtype:4 name:test inode:1]
 Server Write
 INODE inum: 1; size: 102400; type: 1
-BEFORE WRITE SIZE: 102400
-AFTER WRITE SIZE: 106496
 server:: waiting...
 server:: read message [size:4148 mtype:4 name:test inode:1]
 Server Write
 INODE inum: 1; size: 106496; type: 1
-BEFORE WRITE SIZE: 106496
-AFTER WRITE SIZE: 110592
 server:: waiting...
 server:: read message [size:4148 mtype:4 name:test inode:1]
 Server Write
 INODE inum: 1; size: 110592; type: 1
-BEFORE WRITE SIZE: 110592
-AFTER WRITE SIZE: 114688
 server:: waiting...
 server:: read message [size:4148 mtype:4 name:test inode:1]
 Server Write
 INODE inum: 1; size: 114688; type: 1
-BEFORE WRITE SIZE: 114688
-AFTER WRITE SIZE: 118784
 server:: waiting...
 server:: read message [size:4148 mtype:4 name:test inode:1]
 Server Write
 INODE inum: 1; size: 118784; type: 1
-BEFORE WRITE SIZE: 118784
-AFTER WRITE SIZE: 122880
 server:: waiting...
 server:: read message [size:4148 mtype:5 name:test inode:1]
 Server Read
@@ -627,7 +525,68 @@ server:: read message [size:4148 mtype:5 name:test inode:1]
 Server Read
 INODE inum: 1; size: 122880; type: 1
 BUFFER CONTENT: START BLOCK 24
-server:: waiting...
+serveMessage: type->1; inum->0; nbytes->0; offset->0; name->
+Message: type->6; inum->0; nbytes->0; offset->0; name->test
+Message: type->2; inum->0; nbytes->0; offset->0; name->test
+Message: type->4; inum->1; nbytes->4096; offset->0; name->test
+Message: type->4; inum->1; nbytes->4096; offset->4096; name->test
+Message: type->4; inum->1; nbytes->4096; offset->8192; name->test
+Message: type->4; inum->1; nbytes->4096; offset->12288; name->test
+Message: type->4; inum->1; nbytes->4096; offset->16384; name->test
+Message: type->4; inum->1; nbytes->4096; offset->20480; name->test
+Message: type->4; inum->1; nbytes->4096; offset->24576; name->test
+Message: type->4; inum->1; nbytes->4096; offset->28672; name->test
+Message: type->4; inum->1; nbytes->4096; offset->32768; name->test
+Message: type->4; inum->1; nbytes->4096; offset->36864; name->test
+Message: type->4; inum->1; nbytes->4096; offset->40960; name->test
+Message: type->4; inum->1; nbytes->4096; offset->45056; name->test
+Message: type->4; inum->1; nbytes->4096; offset->49152; name->test
+Message: type->4; inum->1; nbytes->4096; offset->53248; name->test
+Message: type->4; inum->1; nbytes->4096; offset->57344; name->test
+Message: type->4; inum->1; nbytes->4096; offset->61440; name->test
+Message: type->4; inum->1; nbytes->4096; offset->65536; name->test
+Message: type->4; inum->1; nbytes->4096; offset->69632; name->test
+Message: type->4; inum->1; nbytes->4096; offset->73728; name->test
+Message: type->4; inum->1; nbytes->4096; offset->77824; name->test
+Message: type->4; inum->1; nbytes->4096; offset->81920; name->test
+Message: type->4; inum->1; nbytes->4096; offset->86016; name->test
+Message: type->4; inum->1; nbytes->4096; offset->90112; name->test
+Message: type->4; inum->1; nbytes->4096; offset->94208; name->test
+Message: type->4; inum->1; nbytes->4096; offset->98304; name->test
+Message: type->4; inum->1; nbytes->4096; offset->102400; name->test
+Message: type->4; inum->1; nbytes->4096; offset->106496; name->test
+Message: type->4; inum->1; nbytes->4096; offset->110592; name->test
+Message: type->4; inum->1; nbytes->4096; offset->114688; name->test
+Message: type->4; inum->1; nbytes->4096; offset->118784; name->test
+Message: type->5; inum->1; nbytes->4096; offset->0; name->test
+Message: type->5; inum->1; nbytes->4096; offset->4096; name->test
+Message: type->5; inum->1; nbytes->4096; offset->8192; name->test
+Message: type->5; inum->1; nbytes->4096; offset->12288; name->test
+Message: type->5; inum->1; nbytes->4096; offset->16384; name->test
+Message: type->5; inum->1; nbytes->4096; offset->20480; name->test
+Message: type->5; inum->1; nbytes->4096; offset->24576; name->test
+Message: type->5; inum->1; nbytes->4096; offset->28672; name->test
+Message: type->5; inum->1; nbytes->4096; offset->32768; name->test
+Message: type->5; inum->1; nbytes->4096; offset->36864; name->test
+Message: type->5; inum->1; nbytes->4096; offset->40960; name->test
+Message: type->5; inum->1; nbytes->4096; offset->45056; name->test
+Message: type->5; inum->1; nbytes->4096; offset->49152; name->test
+Message: type->5; inum->1; nbytes->4096; offset->53248; name->test
+Message: type->5; inum->1; nbytes->4096; offset->57344; name->test
+Message: type->5; inum->1; nbytes->4096; offset->61440; name->test
+Message: type->5; inum->1; nbytes->4096; offset->65536; name->test
+Message: type->5; inum->1; nbytes->4096; offset->69632; name->test
+Message: type->5; inum->1; nbytes->4096; offset->73728; name->test
+Message: type->5; inum->1; nbytes->4096; offset->77824; name->test
+Message: type->5; inum->1; nbytes->4096; offset->81920; name->test
+Message: type->5; inum->1; nbytes->4096; offset->86016; name->test
+Message: type->5; inum->1; nbytes->4096; offset->90112; name->test
+Message: type->5; inum->1; nbytes->4096; offset->94208; name->test
+Message: type->5; inum->1; nbytes->4096; offset->98304; name->test
+Message: type->5; inum->1; nbytes->4096; offset->102400; name->test
+Message: type->5; inum->1; nbytes->4096; offset->106496; name->test
+Message: type->5; inum->1; nbytes->4096; offset->110592; name->test
+Message: type->5; inum->1; nbytes->409r:: waiting...
 server:: read message [size:4148 mtype:5 name:test inode:1]
 Server Read
 INODE inum: 1; size: 122880; type: 1
@@ -654,100 +613,9 @@ INODE inum: 1; size: 122880; type: 1
 BUFFER CONTENT: START BLOCK 29
 server:: waiting...
 server:: read message [size:4148 mtype:8 name:test inode:1]
-Message: type->1; inum->0; nbytes->0; offset->0
-Message: type->6; inum->0; nbytes->0; offset->0
-Message: type->2; inum->0; nbytes->0; offset->0
-PASSED BYTES: 4096
-Message: type->4; inum->1; nbytes->4096; offset->0
-PASSED BYTES: 4096
-Message: type->4; inum->1; nbytes->4096; offset->4096
-PASSED BYTES: 4096
-Message: type->4; inum->1; nbytes->4096; offset->8192
-PASSED BYTES: 4096
-Message: type->4; inum->1; nbytes->4096; offset->12288
-PASSED BYTES: 4096
-Message: type->4; inum->1; nbytes->4096; offset->16384
-PASSED BYTES: 4096
-Message: type->4; inum->1; nbytes->4096; offset->20480
-PASSED BYTES: 4096
-Message: type->4; inum->1; nbytes->4096; offset->24576
-PASSED BYTES: 4096
-Message: type->4; inum->1; nbytes->4096; offset->28672
-PASSED BYTES: 4096
-Message: type->4; inum->1; nbytes->4096; offset->32768
-PASSED BYTES: 4096
-Message: type->4; inum->1; nbytes->4096; offset->36864
-PASSED BYTES: 4096
-Message: type->4; inum->1; nbytes->4096; offset->40960
-PASSED BYTES: 4096
-Message: type->4; inum->1; nbytes->4096; offset->45056
-PASSED BYTES: 4096
-Message: type->4; inum->1; nbytes->4096; offset->49152
-PASSED BYTES: 4096
-Message: type->4; inum->1; nbytes->4096; offset->53248
-PASSED BYTES: 4096
-Message: type->4; inum->1; nbytes->4096; offset->57344
-PASSED BYTES: 4096
-Message: type->4; inum->1; nbytes->4096; offset->61440
-PASSED BYTES: 4096
-Message: type->4; inum->1; nbytes->4096; offset->65536
-PASSED BYTES: 4096
-Message: type->4; inum->1; nbytes->4096; offset->69632
-PASSED BYTES: 4096
-Message: type->4; inum->1; nbytes->4096; offset->73728
-PASSED BYTES: 4096
-Message: type->4; inum->1; nbytes->4096; offset->77824
-PASSED BYTES: 4096
-Message: type->4; inum->1; nbytes->4096; offset->81920
-PASSED BYTES: 4096
-Message: type->4; inum->1; nbytes->4096; offset->86016
-PASSED BYTES: 4096
-Message: type->4; inum->1; nbytes->4096; offset->90112
-PASSED BYTES: 4096
-Message: type->4; inum->1; nbytes->4096; offset->94208
-PASSED BYTES: 4096
-Message: type->4; inum->1; nbytes->4096; offset->98304
-PASSED BYTES: 4096
-Message: type->4; inum->1; nbytes->4096; offset->102400
-PASSED BYTES: 4096
-Message: type->4; inum->1; nbytes->4096; offset->106496
-PASSED BYTES: 4096
-Message: type->4; inum->1; nbytes->4096; offset->110592
-PASSED BYTES: 4096
-Message: type->4; inum->1; nbytes->4096; offset->114688
-PASSED BYTES: 4096
-Message: type->4; inum->1; nbytes->4096; offset->118784
-Message: type->5; inum->1; nbytes->4096; offset->0
-Message: type->5; inum->1; nbytes->4096; offset->4096
-Message: type->5; inum->1; nbytes->4096; offset->8192
-Message: type->5; inum->1; nbytes->4096; offset->12288
-Message: type->5; inum->1; nbytes->4096; offset->16384
-Message: type->5; inum->1; nbytes->4096; offset->20480
-Message: type->5; inum->1; nbytes->4096; offset->24576
-Message: type->5; inum->1; nbytes->4096; offset->28672
-Message: type->5; inum->1; nbytes->4096; offset->32768
-Message: type->5; inum->1; nbytes->4096; offset->36864
-Message: type->5; inum->1; nbytes->4096; offset->40960
-Message: type->5; inum->1; nbytes->4096; offset->45056
-Message: type->5; inum->1; nbytes->4096; offset->49152
-Message: type->5; inum->1; nbytes->4096; offset->53248
-Message: type->5; inum->1; nbytes->4096; offset->57344
-Message: type->5; inum->1; nbytes->4096; offset->61440
-Message: type->5; inum->1; nbytes->4096; offset->65536
-Message: type->5; inum->1; nbytes->4096; offset->69632
-Message: type->5; inum->1; nbytes->4096; offset->73728
-Message: type->5; inum->1; nbytes->4096; offset->77824
-Message: type->5; inum->1; nbytes->4096; offset->81920
-Message: type->5; inum->1; nbytes->4096; offset->86016
-Message: type->5; inum->1; nbytes->4096; offset->90112
-Message: type->5; inum->1; nbytes->4096; offset->94208
-Message: type->5; inum->1; nbytes->4096; offset->98304
-Message: type->5; inum->1; nbytes->4096; offset->102400
-Message: type->5; inum->1; nbytes->4096; offset->106496
-Message: type->5; inum->1; nbytes->4096; offset->110592
-Message: type->5; inum->1; nbytes->4096; offset->114688
-Message: type->5; inum->1; nbytes->4096; offset->118784
-Message: type->8; inum->1; nbytes->4096; offset->118784
+6; offset->114688; name->test
+Message: type->5; inum->1; nbytes->4096; offset->118784; name->test
+Message: type->8; inum->1; nbytes->4096; offset->118784; name->test
 
 
 test maxfile PASSED
@@ -768,8 +636,8 @@ total blocks        36
 layout details
   inode bitmap address/len 1 [1]
   data bitmap address/len  2 [1]
-Starting server on port 7583
-/tmp/tmpn1HnRQ/p/server 7583 /home/yingze/CS537/p4/test.img
+Starting server on port 8823
+/tmp/tmpqbfQat/p/server 8823 /home/yingze/CS537/p4/test.img
 server:: waiting...
 server:: read message [size:4148 mtype:1 name: inode:0]
 Server Init
@@ -777,198 +645,129 @@ server:: waiting...
 server:: read message [size:4148 mtype:6 name:test inode:0]
 Server Create
 INODE inum: 0; size: 64; type: 0
-Parent Direct: 4
-Free inum: 1
-Inum: 0
-Inum: 0
-Inum: -1
-Index: 2, value: 1
 server:: waiting...
 server:: read message [size:4148 mtype:2 name:test inode:0]
-INODE inum: 0; size: 64; type: 0
+INODE inum: 0; size: 96; type: 0
 server:: waiting...
 server:: read message [size:4148 mtype:4 name:test inode:1]
 Server Write
 INODE inum: 1; size: 0; type: 1
-BEFORE WRITE SIZE: 0
-AFTER WRITE SIZE: 4096
 server:: waiting...
 server:: read message [size:4148 mtype:4 name:test inode:1]
 Server Write
 INODE inum: 1; size: 4096; type: 1
-BEFORE WRITE SIZE: 4096
-AFTER WRITE SIZE: 8192
 server:: waiting...
 server:: read message [size:4148 mtype:4 name:test inode:1]
 Server Write
 INODE inum: 1; size: 8192; type: 1
-BEFORE WRITE SIZE: 8192
-AFTER WRITE SIZE: 12288
 server:: waiting...
 server:: read message [size:4148 mtype:4 name:test inode:1]
 Server Write
 INODE inum: 1; size: 12288; type: 1
-BEFORE WRITE SIZE: 12288
-AFTER WRITE SIZE: 16384
 server:: waiting...
 server:: read message [size:4148 mtype:4 name:test inode:1]
 Server Write
 INODE inum: 1; size: 16384; type: 1
-BEFORE WRITE SIZE: 16384
-AFTER WRITE SIZE: 20480
 server:: waiting...
 server:: read message [size:4148 mtype:4 name:test inode:1]
 Server Write
 INODE inum: 1; size: 20480; type: 1
-BEFORE WRITE SIZE: 20480
-AFTER WRITE SIZE: 24576
 server:: waiting...
 server:: read message [size:4148 mtype:4 name:test inode:1]
 Server Write
 INODE inum: 1; size: 24576; type: 1
-BEFORE WRITE SIZE: 24576
-AFTER WRITE SIZE: 28672
 server:: waiting...
 server:: read message [size:4148 mtype:4 name:test inode:1]
 Server Write
 INODE inum: 1; size: 28672; type: 1
-BEFORE WRITE SIZE: 28672
-AFTER WRITE SIZE: 32768
 server:: waiting...
 server:: read message [size:4148 mtype:4 name:test inode:1]
 Server Write
 INODE inum: 1; size: 32768; type: 1
-BEFORE WRITE SIZE: 32768
-AFTER WRITE SIZE: 36864
 server:: waiting...
 server:: read message [size:4148 mtype:4 name:test inode:1]
 Server Write
 INODE inum: 1; size: 36864; type: 1
-BEFORE WRITE SIZE: 36864
-AFTER WRITE SIZE: 40960
 server:: waiting...
 server:: read message [size:4148 mtype:4 name:test inode:1]
 Server Write
 INODE inum: 1; size: 40960; type: 1
-BEFORE WRITE SIZE: 40960
-AFTER WRITE SIZE: 45056
 server:: waiting...
 server:: read message [size:4148 mtype:4 name:test inode:1]
 Server Write
 INODE inum: 1; size: 45056; type: 1
-BEFORE WRITE SIZE: 45056
-AFTER WRITE SIZE: 49152
 server:: waiting...
 server:: read message [size:4148 mtype:4 name:test inode:1]
 Server Write
 INODE inum: 1; size: 49152; type: 1
-BEFORE WRITE SIZE: 49152
-AFTER WRITE SIZE: 53248
 server:: waiting...
 server:: read message [size:4148 mtype:4 name:test inode:1]
 Server Write
 INODE inum: 1; size: 53248; type: 1
-BEFORE WRITE SIZE: 53248
-AFTER WRITE SIZE: 57344
 server:: waiting...
 server:: read message [size:4148 mtype:4 name:test inode:1]
 Server Write
 INODE inum: 1; size: 57344; type: 1
-BEFORE WRITE SIZE: 57344
-AFTER WRITE SIZE: 61440
 server:: waiting...
 server:: read message [size:4148 mtype:4 name:test inode:1]
 Server Write
 INODE inum: 1; size: 61440; type: 1
-BEFORE WRITE SIZE: 61440
-AFTER WRITE SIZE: 65536
 server:: waiting...
 server:: read message [size:4148 mtype:4 name:test inode:1]
 Server Write
 INODE inum: 1; size: 65536; type: 1
-BEFORE WRITE SIZE: 65536
-AFTER WRITE SIZE: 69632
 server:: waiting...
 server:: read message [size:4148 mtype:4 name:test inode:1]
 Server Write
 INODE inum: 1; size: 69632; type: 1
-BEFORE WRITE SIZE: 69632
-AFTER WRITE SIZE: 73728
 server:: waiting...
 server:: read message [size:4148 mtype:4 name:test inode:1]
 Server Write
 INODE inum: 1; size: 73728; type: 1
-BEFORE WRITE SIZE: 73728
-AFTER WRITE SIZE: 77824
 server:: waiting...
 server:: read message [size:4148 mtype:4 name:test inode:1]
 Server Write
 INODE inum: 1; size: 77824; type: 1
-BEFORE WRITE SIZE: 77824
-AFTER WRITE SIZE: 81920
 server:: waiting...
 server:: read message [size:4148 mtype:4 name:test inode:1]
 Server Write
 INODE inum: 1; size: 81920; type: 1
-BEFORE WRITE SIZE: 81920
-AFTER WRITE SIZE: 86016
 server:: waiting...
 server:: read message [size:4148 mtype:4 name:test inode:1]
 Server Write
 INODE inum: 1; size: 86016; type: 1
-BEFORE WRITE SIZE: 86016
-AFTER WRITE SIZE: 90112
 server:: waiting...
 server:: read message [size:4148 mtype:4 name:test inode:1]
 Server Write
 INODE inum: 1; size: 90112; type: 1
-BEFORE WRITE SIZE: 90112
-AFTER WRITE SIZE: 94208
 server:: waiting...
 server:: read message [size:4148 mtype:4 name:test inode:1]
 Server Write
 INODE inum: 1; size: 94208; type: 1
-BEFORE WRITE SIZE: 94208
-AFTER WRITE SIZE: 98304
 server:: waiting...
 server:: read message [size:4148 mtype:4 name:test inode:1]
 Server Write
 INODE inum: 1; size: 98304; type: 1
-BEFORE WRITE SIZE: 98304
-AFTER WRITE SIZE: 102400
 server:: waiting...
 server:: read message [size:4148 mtype:4 name:test inode:1]
 Server Write
 INODE inum: 1; size: 102400; type: 1
-BEFORE WRITE SIZE: 102400
-AFTER WRITE SIZE: 106496
 server:: waiting...
 server:: read message [size:4148 mtype:4 name:test inode:1]
 Server Write
 INODE inum: 1; size: 106496; type: 1
-BEFORE WRITE SIZE: 106496
-AFTER WRITE SIZE: 110592
 server:: waiting...
 server:: read message [size:4148 mtype:4 name:test inode:1]
 Server Write
 INODE inum: 1; size: 110592; type: 1
-BEFORE WRITE SIZE: 110592
-AFTER WRITE SIZE: 114688
 server:: waiting...
 server:: read message [size:4148 mtype:4 name:test inode:1]
 Server Write
 INODE inum: 1; size: 114688; type: 1
-BEFORE WRITE SIZE: 114688
-AFTER WRITE SIZE: 118784
 server:: waiting...
 server:: read message [size:4148 mtype:4 name:test inode:1]
 Server Write
 INODE inum: 1; size: 118784; type: 1
-BEFORE WRITE SIZE: 118784
-AFTER WRITE SIZE: 122880
-server:: waiting...
-server:: read message [size:4148 mtype:4 name:test inode:1]
-Server Write
 server:: waiting...
 server:: read message [size:4148 mtype:5 name:test inode:1]
 Server Read
@@ -1042,103 +841,7 @@ BUFFER CONTENT: START BLOCK 13
 server:: waiting...
 server:: read message [size:4148 mtype:5 name:test inode:1]
 Server Read
-INODE inum: 1; size: 122880; typeMessage: type->1; inum->0; nbytes->0; offset->0
-Message: type->6; inum->0; nbytes->0; offset->0
-Message: type->2; inum->0; nbytes->0; offset->0
-31
-PASSED BYTES: 4096
-Message: type->4; inum->1; nbytes->4096; offset->0
-PASSED BYTES: 4096
-Message: type->4; inum->1; nbytes->4096; offset->4096
-PASSED BYTES: 4096
-Message: type->4; inum->1; nbytes->4096; offset->8192
-PASSED BYTES: 4096
-Message: type->4; inum->1; nbytes->4096; offset->12288
-PASSED BYTES: 4096
-Message: type->4; inum->1; nbytes->4096; offset->16384
-PASSED BYTES: 4096
-Message: type->4; inum->1; nbytes->4096; offset->20480
-PASSED BYTES: 4096
-Message: type->4; inum->1; nbytes->4096; offset->24576
-PASSED BYTES: 4096
-Message: type->4; inum->1; nbytes->4096; offset->28672
-PASSED BYTES: 4096
-Message: type->4; inum->1; nbytes->4096; offset->32768
-PASSED BYTES: 4096
-Message: type->4; inum->1; nbytes->4096; offset->36864
-PASSED BYTES: 4096
-Message: type->4; inum->1; nbytes->4096; offset->40960
-PASSED BYTES: 4096
-Message: type->4; inum->1; nbytes->4096; offset->45056
-PASSED BYTES: 4096
-Message: type->4; inum->1; nbytes->4096; offset->49152
-PASSED BYTES: 4096
-Message: type->4; inum->1; nbytes->4096; offset->53248
-PASSED BYTES: 4096
-Message: type->4; inum->1; nbytes->4096; offset->57344
-PASSED BYTES: 4096
-Message: type->4; inum->1; nbytes->4096; offset->61440
-PASSED BYTES: 4096
-Message: type->4; inum->1; nbytes->4096; offset->65536
-PASSED BYTES: 4096
-Message: type->4; inum->1; nbytes->4096; offset->69632
-PASSED BYTES: 4096
-Message: type->4; inum->1; nbytes->4096; offset->73728
-PASSED BYTES: 4096
-Message: type->4; inum->1; nbytes->4096; offset->77824
-PASSED BYTES: 4096
-Message: type->4; inum->1; nbytes->4096; offset->81920
-PASSED BYTES: 4096
-Message: type->4; inum->1; nbytes->4096; offset->86016
-PASSED BYTES: 4096
-Message: type->4; inum->1; nbytes->4096; offset->90112
-PASSED BYTES: 4096
-Message: type->4; inum->1; nbytes->4096; offset->94208
-PASSED BYTES: 4096
-Message: type->4; inum->1; nbytes->4096; offset->98304
-PASSED BYTES: 4096
-Message: type->4; inum->1; nbytes->4096; offset->102400
-PASSED BYTES: 4096
-Message: type->4; inum->1; nbytes->4096; offset->106496
-PASSED BYTES: 4096
-Message: type->4; inum->1; nbytes->4096; offset->110592
-PASSED BYTES: 4096
-Message: type->4; inum->1; nbytes->4096; offset->114688
-PASSED BYTES: 4096
-Message: type->4; inum->1; nbytes->4096; offset->118784
-PASSED BYTES: 4096
-Message: type->4; inum->1; nbytes->4096; offset->122880
-Message: type->5; inum->1; nbytes->4096; offset->0
-Message: type->5; inum->1; nbytes->4096; offset->4096
-Message: type->5; inum->1; nbytes->4096; offset->8192
-Message: type->5; inum->1; nbytes->4096; offset->12288
-Message: type->5; inum->1; nbytes->4096; offset->16384
-Message: type->5; inum->1; nbytes->4096; offset->20480
-Message: type->5; inum->1; nbytes->4096; offset->24576
-Message: type->5; inum->1; nbytes->4096; offset->28672
-Message: type->5; inum->1; nbytes->4096; offset->32768
-Message: type->5; inum->1; nbytes->4096; offset->36864
-Message: type->5; inum->1; nbytes->4096; offset->40960
-Message: type->5; inum->1; nbytes->4096; offset->45056
-Message: type->5; inum->1; nbytes->4096; offset->49152
-Message: type->5; inum->1; nbytes->4096; offset->53248
-Message: type->5; inum->1; nbytes->4096; offset->57344
-Message: type->5; inum->1; nbytes->4096; offset->61440
-Message: type->5; inum->1; nbytes->4096; offset->65536
-Message: type->5; inum->1; nbytes->4096; offset->69632
-Message: type->5; inum->1; nbytes->4096; offset->73728
-Message: type->5; inum->1; nbytes->4096; offset->77824
-Message: type->5; inum->1; nbytes->4096; offset->81920
-Message: type->5; inum->1; nbytes->4096; offset->86016
-Message: type->5; inum->1; nbytes->4096; offset->90112
-Message: type->5; inum->1; nbytes->4096; offset->94208
-Message: type->5; inum->1; nbytes->4096; offset->98304
-Message: type->5; inum->1; nbytes->4096; offset->102400
-Message: type->5; inum->1; nbytes->4096; offset->106496
-Message: type->5; inum->1; nbytes->4096; offset->110592
-Message: type->5; inum->1; nbytes->4096; offset->114688
-Message: type->5; inum->1; nbytes->4096; offset->118784
-Messag: 1
+INODE inum: 1; size: 122880; type: 1
 BUFFER CONTENT: START BLOCK 14
 server:: waiting...
 server:: read message [size:4148 mtype:5 name:test inode:1]
@@ -1190,7 +893,70 @@ server:: read message [size:4148 mtype:5 name:test inode:1]
 Server Read
 INODE inum: 1; size: 122880; type: 1
 BUFFER CONTENT: START BLOCK 24
-server:: waiting...
+serveMessage: type->1; inum->0; nbytes->0; offset->0; name->
+Message: type->6; inum->0; nbytes->0; offset->0; name->test
+Message: type->2; inum->0; nbytes->0; offset->0; name->test
+31
+Message: type->4; inum->1; nbytes->4096; offset->0; name->test
+Message: type->4; inum->1; nbytes->4096; offset->4096; name->test
+Message: type->4; inum->1; nbytes->4096; offset->8192; name->test
+Message: type->4; inum->1; nbytes->4096; offset->12288; name->test
+Message: type->4; inum->1; nbytes->4096; offset->16384; name->test
+Message: type->4; inum->1; nbytes->4096; offset->20480; name->test
+Message: type->4; inum->1; nbytes->4096; offset->24576; name->test
+Message: type->4; inum->1; nbytes->4096; offset->28672; name->test
+Message: type->4; inum->1; nbytes->4096; offset->32768; name->test
+Message: type->4; inum->1; nbytes->4096; offset->36864; name->test
+Message: type->4; inum->1; nbytes->4096; offset->40960; name->test
+Message: type->4; inum->1; nbytes->4096; offset->45056; name->test
+Message: type->4; inum->1; nbytes->4096; offset->49152; name->test
+Message: type->4; inum->1; nbytes->4096; offset->53248; name->test
+Message: type->4; inum->1; nbytes->4096; offset->57344; name->test
+Message: type->4; inum->1; nbytes->4096; offset->61440; name->test
+Message: type->4; inum->1; nbytes->4096; offset->65536; name->test
+Message: type->4; inum->1; nbytes->4096; offset->69632; name->test
+Message: type->4; inum->1; nbytes->4096; offset->73728; name->test
+Message: type->4; inum->1; nbytes->4096; offset->77824; name->test
+Message: type->4; inum->1; nbytes->4096; offset->81920; name->test
+Message: type->4; inum->1; nbytes->4096; offset->86016; name->test
+Message: type->4; inum->1; nbytes->4096; offset->90112; name->test
+Message: type->4; inum->1; nbytes->4096; offset->94208; name->test
+Message: type->4; inum->1; nbytes->4096; offset->98304; name->test
+Message: type->4; inum->1; nbytes->4096; offset->102400; name->test
+Message: type->4; inum->1; nbytes->4096; offset->106496; name->test
+Message: type->4; inum->1; nbytes->4096; offset->110592; name->test
+Message: type->4; inum->1; nbytes->4096; offset->114688; name->test
+Message: type->4; inum->1; nbytes->4096; offset->118784; name->test
+write more than need
+Message: type->5; inum->1; nbytes->4096; offset->0; name->test
+Message: type->5; inum->1; nbytes->4096; offset->4096; name->test
+Message: type->5; inum->1; nbytes->4096; offset->8192; name->test
+Message: type->5; inum->1; nbytes->4096; offset->12288; name->test
+Message: type->5; inum->1; nbytes->4096; offset->16384; name->test
+Message: type->5; inum->1; nbytes->4096; offset->20480; name->test
+Message: type->5; inum->1; nbytes->4096; offset->24576; name->test
+Message: type->5; inum->1; nbytes->4096; offset->28672; name->test
+Message: type->5; inum->1; nbytes->4096; offset->32768; name->test
+Message: type->5; inum->1; nbytes->4096; offset->36864; name->test
+Message: type->5; inum->1; nbytes->4096; offset->40960; name->test
+Message: type->5; inum->1; nbytes->4096; offset->45056; name->test
+Message: type->5; inum->1; nbytes->4096; offset->49152; name->test
+Message: type->5; inum->1; nbytes->4096; offset->53248; name->test
+Message: type->5; inum->1; nbytes->4096; offset->57344; name->test
+Message: type->5; inum->1; nbytes->4096; offset->61440; name->test
+Message: type->5; inum->1; nbytes->4096; offset->65536; name->test
+Message: type->5; inum->1; nbytes->4096; offset->69632; name->test
+Message: type->5; inum->1; nbytes->4096; offset->73728; name->test
+Message: type->5; inum->1; nbytes->4096; offset->77824; name->test
+Message: type->5; inum->1; nbytes->4096; offset->81920; name->test
+Message: type->5; inum->1; nbytes->4096; offset->86016; name->test
+Message: type->5; inum->1; nbytes->4096; offset->90112; name->test
+Message: type->5; inum->1; nbytes->4096; offset->94208; name->test
+Message: type->5; inum->1; nbytes->4096; offset->98304; name->test
+Message: type->5; inum->1; nbytes->4096; offset->102400; name->test
+Message: type->5; inum->1; nbytes->4096; offset->106496; name->test
+Message: type->5; inum->1; nbytes->4096; offset->110592; name->test
+Message: type-r:: waiting...
 server:: read message [size:4148 mtype:5 name:test inode:1]
 Server Read
 INODE inum: 1; size: 122880; type: 1
@@ -1220,8 +986,10 @@ server:: read message [size:4148 mtype:5 name:test inode:1]
 Server Read
 server:: waiting...
 server:: read message [size:4148 mtype:8 name:test inode:1]
-e: type->5; inum->1; nbytes->4096; offset->122880
-Message: type->8; inum->1; nbytes->4096; offset->122880
+>5; inum->1; nbytes->4096; offset->114688; name->test
+Message: type->5; inum->1; nbytes->4096; offset->118784; name->test
+Message: type->5; inum->1; nbytes->4096; offset->122880; name->test
+Message: type->8; inum->1; nbytes->4096; offset->122880; name->test
 
 
 test maxfile2 PASSED
@@ -1242,8 +1010,8 @@ total blocks        36
 layout details
   inode bitmap address/len 1 [1]
   data bitmap address/len  2 [1]
-Starting server on port 9108
-/tmp/tmpn1HnRQ/p/server 9108 /home/yingze/CS537/p4/test.img
+Starting server on port 5807
+/tmp/tmpqbfQat/p/server 5807 /home/yingze/CS537/p4/test.img
 server:: waiting...
 server:: read message [size:4148 mtype:1 name: inode:0]
 Server Init
@@ -1255,10 +1023,10 @@ server:: read message [size:4148 mtype:2 name:.. inode:0]
 INODE inum: 0; size: 64; type: 0
 server:: waiting...
 server:: read message [size:4148 mtype:8 name:.. inode:0]
-Message: type->1; inum->0; nbytes->0; offset->0
-Message: type->2; inum->0; nbytes->0; offset->0
-Message: type->2; inum->0; nbytes->0; offset->0
-Message: type->8; inum->0; nbytes->0; offset->0
+Message: type->1; inum->0; nbytes->0; offset->0; name->
+Message: type->2; inum->0; nbytes->0; offset->0; name->.
+Message: type->2; inum->0; nbytes->0; offset->0; name->..
+Message: type->8; inum->0; nbytes->0; offset->0; name->..
 
 
 test dir1 PASSED
@@ -1279,8 +1047,8 @@ total blocks        36
 layout details
   inode bitmap address/len 1 [1]
   data bitmap address/len  2 [1]
-Starting server on port 5698
-/tmp/tmpn1HnRQ/p/server 5698 /home/yingze/CS537/p4/test.img
+Starting server on port 6689
+/tmp/tmpqbfQat/p/server 6689 /home/yingze/CS537/p4/test.img
 server:: waiting...
 server:: read message [size:4148 mtype:1 name: inode:0]
 Server Init
@@ -1288,15 +1056,9 @@ server:: waiting...
 server:: read message [size:4148 mtype:6 name:testdir inode:0]
 Server Create
 INODE inum: 0; size: 64; type: 0
-Parent Direct: 4
-Free inum: 1
-Inum: 0
-Inum: 0
-Inum: -1
-Index: 2, value: 1
 server:: waiting...
 server:: read message [size:4148 mtype:2 name:testdir inode:0]
-INODE inum: 0; size: 64; type: 0
+INODE inum: 0; size: 96; type: 0
 server:: waiting...
 server:: read message [size:4148 mtype:2 name:. inode:1]
 INODE inum: 1; size: 64; type: 0
@@ -1305,12 +1067,12 @@ server:: read message [size:4148 mtype:2 name:.. inode:1]
 INODE inum: 1; size: 64; type: 0
 server:: waiting...
 server:: read message [size:4148 mtype:8 name:.. inode:1]
-Message: type->1; inum->0; nbytes->0; offset->0
-Message: type->6; inum->0; nbytes->0; offset->0
-Message: type->2; inum->0; nbytes->0; offset->0
-Message: type->2; inum->1; nbytes->0; offset->0
-Message: type->2; inum->1; nbytes->0; offset->0
-Message: type->8; inum->1; nbytes->0; offset->0
+Message: type->1; inum->0; nbytes->0; offset->0; name->
+Message: type->6; inum->0; nbytes->0; offset->0; name->testdir
+Message: type->2; inum->0; nbytes->0; offset->0; name->testdir
+Message: type->2; inum->1; nbytes->0; offset->0; name->.
+Message: type->2; inum->1; nbytes->0; offset->0; name->..
+Message: type->8; inum->1; nbytes->0; offset->0; name->..
 
 
 test dir2 PASSED
@@ -1331,8 +1093,8 @@ total blocks        36
 layout details
   inode bitmap address/len 1 [1]
   data bitmap address/len  2 [1]
-Starting server on port 7754
-/tmp/tmpn1HnRQ/p/server 7754 /home/yingze/CS537/p4/test.img
+Starting server on port 9202
+/tmp/tmpqbfQat/p/server 9202 /home/yingze/CS537/p4/test.img
 server:: waiting...
 server:: read message [size:4148 mtype:1 name: inode:0]
 Server Init
@@ -1340,26 +1102,20 @@ server:: waiting...
 server:: read message [size:4148 mtype:6 name:testdir inode:0]
 Server Create
 INODE inum: 0; size: 64; type: 0
-Parent Direct: 4
-Free inum: 1
-Inum: 0
-Inum: 0
-Inum: -1
-Index: 2, value: 1
 server:: waiting...
 server:: read message [size:4148 mtype:2 name:testdir inode:0]
-INODE inum: 0; size: 64; type: 0
+INODE inum: 0; size: 96; type: 0
 server:: waiting...
 server:: read message [size:4148 mtype:6 name:testfile inode:1]
 Server Create
 INODE inum: 1; size: 0; type: 1
 server:: waiting...
 server:: read message [size:4148 mtype:8 name:testfile inode:1]
-Message: type->1; inum->0; nbytes->0; offset->0
-Message: type->6; inum->0; nbytes->0; offset->0
-Message: type->2; inum->0; nbytes->0; offset->0
-Message: type->6; inum->1; nbytes->0; offset->0
-Message: type->8; inum->1; nbytes->0; offset->0
+Message: type->1; inum->0; nbytes->0; offset->0; name->
+Message: type->6; inum->0; nbytes->0; offset->0; name->testdir
+Message: type->2; inum->0; nbytes->0; offset->0; name->testdir
+Message: type->6; inum->1; nbytes->0; offset->0; name->testfile
+Message: type->8; inum->1; nbytes->0; offset->0; name->testfile
 
 
 test baddir PASSED
@@ -1380,8 +1136,8 @@ total blocks        36
 layout details
   inode bitmap address/len 1 [1]
   data bitmap address/len  2 [1]
-Starting server on port 6798
-/tmp/tmpn1HnRQ/p/server 6798 /home/yingze/CS537/p4/test.img
+Starting server on port 9243
+/tmp/tmpqbfQat/p/server 9243 /home/yingze/CS537/p4/test.img
 server:: waiting...
 server:: read message [size:4148 mtype:1 name: inode:0]
 Server Init
@@ -1389,25 +1145,19 @@ server:: waiting...
 server:: read message [size:4148 mtype:6 name:testdir inode:0]
 Server Create
 INODE inum: 0; size: 64; type: 0
-Parent Direct: 4
-Free inum: 1
-Inum: 0
-Inum: 0
-Inum: -1
-Index: 2, value: 1
 server:: waiting...
 server:: read message [size:4148 mtype:2 name:testdir inode:0]
-INODE inum: 0; size: 64; type: 0
+INODE inum: 0; size: 96; type: 0
 server:: waiting...
 server:: read message [size:4148 mtype:2 name:testfile inode:1]
 INODE inum: 1; size: 0; type: 1
 server:: waiting...
 server:: read message [size:4148 mtype:8 name:testfile inode:1]
-Message: type->1; inum->0; nbytes->0; offset->0
-Message: type->6; inum->0; nbytes->0; offset->0
-Message: type->2; inum->0; nbytes->0; offset->0
-Message: type->2; inum->1; nbytes->0; offset->0
-Message: type->8; inum->1; nbytes->0; offset->0
+Message: type->1; inum->0; nbytes->0; offset->0; name->
+Message: type->6; inum->0; nbytes->0; offset->0; name->testdir
+Message: type->2; inum->0; nbytes->0; offset->0; name->testdir
+Message: type->2; inum->1; nbytes->0; offset->0; name->testfile
+Message: type->8; inum->1; nbytes->0; offset->0; name->testfile
 
 
 test baddir2 PASSED
@@ -1428,18 +1178,36 @@ total blocks        36
 layout details
   inode bitmap address/len 1 [1]
   data bitmap address/len  2 [1]
-Starting server on port 5909
-/tmp/tmpn1HnRQ/p/server 5909 /home/yingze/CS537/p4/test.img
-Message: type->1; inum->0; nbytes->0; offset->0
-Message: type->6; inum->0; nbytes->0; offset->0
-Message: type->2; inum->0; nbytes->0; offset->0
-Message: type->7; inum->0; nbytes->0; offset->0
-Failure: MFS_Unlink returned failure pinum=0 name='test'
+Starting server on port 6380
+/tmp/tmpqbfQat/p/server 6380 /home/yingze/CS537/p4/test.img
+server:: waiting...
+server:: read message [size:4148 mtype:1 name: inode:0]
+Server Init
+server:: waiting...
+server:: read message [size:4148 mtype:6 name:test inode:0]
+Server Create
+INODE inum: 0; size: 64; type: 0
+server:: waiting...
+server:: read message [size:4148 mtype:2 name:test inode:0]
+INODE inum: 0; size: 96; type: 0
+server:: waiting...
+server:: read message [size:4148 mtype:7 name:test inode:0]
+INODE inum: 0; size: 96; type: 0
+INODE inum: 1; size: 0; type: 1
+server:: waiting...
+server:: read message [size:4148 mtype:2 name:test inode:0]
+server:: waiting...
+server:: read message [size:4148 mtype:8 name:test inode:0]
+Message: type->1; inum->0; nbytes->0; offset->0; name->
+Message: type->6; inum->0; nbytes->0; offset->0; name->test
+Message: type->2; inum->0; nbytes->0; offset->0; name->test
+Message: type->7; inum->0; nbytes->0; offset->0; name->test
+Message: type->2; inum->0; nbytes->0; offset->0; name->test
+Message: type->8; inum->0; nbytes->0; offset->0; name->test
 
 
-test unlink FAILED
+test unlink PASSED
  (unlink a file)
- MFS_Unlink returned failure pinum=0 name='test'
 
 ('starting', 'unlink2')
 
@@ -1456,18 +1224,36 @@ total blocks        36
 layout details
   inode bitmap address/len 1 [1]
   data bitmap address/len  2 [1]
-Starting server on port 7731
-/tmp/tmpn1HnRQ/p/server 7731 /home/yingze/CS537/p4/test.img
-Message: type->1; inum->0; nbytes->0; offset->0
-Message: type->6; inum->0; nbytes->0; offset->0
-Message: type->2; inum->0; nbytes->0; offset->0
-Message: type->7; inum->0; nbytes->0; offset->0
-Failure: MFS_Unlink returned failure pinum=0 name='test'
+Starting server on port 8530
+/tmp/tmpqbfQat/p/server 8530 /home/yingze/CS537/p4/test.img
+server:: waiting...
+server:: read message [size:4148 mtype:1 name: inode:0]
+Server Init
+server:: waiting...
+server:: read message [size:4148 mtype:6 name:test inode:0]
+Server Create
+INODE inum: 0; size: 64; type: 0
+server:: waiting...
+server:: read message [size:4148 mtype:2 name:test inode:0]
+INODE inum: 0; size: 96; type: 0
+server:: waiting...
+server:: read message [size:4148 mtype:7 name:test inode:0]
+INODE inum: 0; size: 96; type: 0
+INODE inum: 1; size: 64; type: 0
+server:: waiting...
+server:: read message [size:4148 mtype:2 name:test inode:0]
+server:: waiting...
+server:: read message [size:4148 mtype:8 name:test inode:0]
+Message: type->1; inum->0; nbytes->0; offset->0; name->
+Message: type->6; inum->0; nbytes->0; offset->0; name->test
+Message: type->2; inum->0; nbytes->0; offset->0; name->test
+Message: type->7; inum->0; nbytes->0; offset->0; name->test
+Message: type->2; inum->0; nbytes->0; offset->0; name->test
+Message: type->8; inum->0; nbytes->0; offset->0; name->test
 
 
-test unlink2 FAILED
+test unlink2 PASSED
  (unlink a directory)
- MFS_Unlink returned failure pinum=0 name='test'
 
 ('starting', 'empty')
 
@@ -1484,20 +1270,50 @@ total blocks        36
 layout details
   inode bitmap address/len 1 [1]
   data bitmap address/len  2 [1]
-Starting server on port 7168
-/tmp/tmpn1HnRQ/p/server 7168 /home/yingze/CS537/p4/test.img
-Message: type->1; inum->0; nbytes->0; offset->0
-Message: type->6; inum->0; nbytes->0; offset->0
-Message: type->2; inum->0; nbytes->0; offset->0
-Message: type->6; inum->1; nbytes->0; offset->0
-Message: type->2; inum->1; nbytes->0; offset->0
-Message: type->7; inum->0; nbytes->0; offset->0
-Failure: MFS_Unlink should fail on non-empty dir
+Starting server on port 7760
+/tmp/tmpqbfQat/p/server 7760 /home/yingze/CS537/p4/test.img
+server:: waiting...
+server:: read message [size:4148 mtype:1 name: inode:0]
+Server Init
+server:: waiting...
+server:: read message [size:4148 mtype:6 name:testdir inode:0]
+Server Create
+INODE inum: 0; size: 64; type: 0
+server:: waiting...
+server:: read message [size:4148 mtype:2 name:testdir inode:0]
+INODE inum: 0; size: 96; type: 0
+server:: waiting...
+server:: read message [size:4148 mtype:6 name:testfile inode:1]
+Server Create
+INODE inum: 1; size: 64; type: 0
+server:: waiting...
+server:: read message [size:4148 mtype:2 name:testfile inode:1]
+INODE inum: 1; size: 96; type: 0
+server:: waiting...
+server:: read message [size:4148 mtype:7 name:testdir inode:0]
+INODE inum: 0; size: 96; type: 0
+INODE inum: 1; size: 96; type: 0
+server:: waiting...
+server:: read message [size:4148 mtype:7 name:testfile inode:1]
+INODE inum: 1; size: 96; type: 0
+INODE inum: 2; size: 0; type: 1
+server:: waiting...
+server:: read message [size:4148 mtype:7 name:testdir inode:0]
+server:: waiting...
+server:: read message [size:4148 mtype:8 name:testdir inode:0]
+Message: type->1; inum->0; nbytes->0; offset->0; name->
+Message: type->6; inum->0; nbytes->0; offset->0; name->testdir
+Message: type->2; inum->0; nbytes->0; offset->0; name->testdir
+Message: type->6; inum->1; nbytes->0; offset->0; name->testfile
+Message: type->2; inum->1; nbytes->0; offset->0; name->testfile
+Message: type->7; inum->0; nbytes->0; offset->0; name->testdir
+Message: type->7; inum->1; nbytes->0; offset->0; name->testfile
+Message: type->7; inum->0; nbytes->0; offset->0; name->testdir
+Message: type->8; inum->0; nbytes->0; offset->0; name->testdir
 
 
-test empty FAILED
+test empty PASSED
  (unlink a non-empty directory)
- MFS_Unlink should fail on non-empty dir
 
 ('starting', 'name')
 
@@ -1514,8 +1330,8 @@ total blocks        36
 layout details
   inode bitmap address/len 1 [1]
   data bitmap address/len  2 [1]
-Starting server on port 7288
-/tmp/tmpn1HnRQ/p/server 7288 /home/yingze/CS537/p4/test.img
+Starting server on port 5515
+/tmp/tmpqbfQat/p/server 5515 /home/yingze/CS537/p4/test.img
 server:: waiting...
 server:: read message [size:4148 mtype:1 name: inode:0]
 Server Init
@@ -1524,9 +1340,9 @@ server:: read message [size:4148 mtype:6 name:AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 Server Create
 server:: waiting...
 server:: read message [size:4148 mtype:8 name:AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA inode:0]
-Message: type->1; inum->0; nbytes->0; offset->0
-Message: type->6; inum->0; nbytes->0; offset->0
-Message: type->8; inum->0; nbytes->0; offset->0
+Message: type->1; inum->0; nbytes->0; offset->0; name->
+Message: type->6; inum->0; nbytes->0; offset->0; name->AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+Message: type->8; inum->0; nbytes->0; offset->0; name->AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 
 
 test name PASSED
@@ -1547,8 +1363,8 @@ total blocks        36
 layout details
   inode bitmap address/len 1 [1]
   data bitmap address/len  2 [1]
-Starting server on port 5727
-/tmp/tmpn1HnRQ/p/server 5727 /home/yingze/CS537/p4/test.img
+Starting server on port 7243
+/tmp/tmpqbfQat/p/server 7243 /home/yingze/CS537/p4/test.img
 server:: waiting...
 server:: read message [size:4148 mtype:1 name: inode:0]
 Server Init
@@ -1556,24 +1372,16 @@ server:: waiting...
 server:: read message [size:4148 mtype:6 name:test inode:0]
 Server Create
 INODE inum: 0; size: 64; type: 0
-Parent Direct: 4
-Free inum: 1
-Inum: 0
-Inum: 0
-Inum: -1
-Index: 2, value: 1
 server:: waiting...
 server:: read message [size:4148 mtype:2 name:test inode:0]
-INODE inum: 0; size: 64; type: 0
+INODE inum: 0; size: 96; type: 0
 server:: waiting...
 server:: read message [size:4148 mtype:4 name:test inode:1]
 Server Write
 INODE inum: 1; size: 0; type: 1
-BEFORE WRITE SIZE: 0
-AFTER WRITE SIZE: 4096
 server:: waiting...
 server:: read message [size:4148 mtype:2 name:test inode:0]
-INODE inum: 0; size: 64; type: 0
+INODE inum: 0; size: 96; type: 0
 server:: waiting...
 server:: read message [size:4148 mtype:5 name:test inode:1]
 Server Read
@@ -1581,33 +1389,11 @@ INODE inum: 1; size: 4096; type: 1
 BUFFER CONTENT: START BLOCK 1
 server:: waiting...
 server:: read message [size:4148 mtype:8 name:test inode:1]
-Message: type->1; inum->0; nbytes->0; offset->0
-Message: type->6; inum->0; nbytes->0; offset->0
-Message: type->2; inum->0; nbytes->0; offset->0
-PASSED BYTES: 4096
-Message: type->4; inum->1; nbytes->4096; offset->0
-Message: type->2; inum->0; nbytes->4096; offset->0
-Message: type->5; inum->1; nbytes->4096; offset->0
-Message: type->8; inum->1; nbytes->4096; offset->0
-Starting server on port 5727
-/tmp/tmpn1HnRQ/p/server 5727 /home/yingze/CS537/p4/test.img
-server:: waiting...
-server:: read message [size:4148 mtype:2 name:test inode:0]
-INODE inum: 0; size: 64; type: 0
-server:: waiting...
-server:: read message [size:4148 mtype:5 name:test inode:1]
-Server Read
-INODE inum: 1; size: 4096; type: 1
-BUFFER CONTENT: START BLOCK 1
-server:: waiting...
-server:: read message [size:4148 mtype:8 name:test inode:1]
-Message: type->2; inum->0; nbytes->4096; offset->0
-Message: type->5; inum->1; nbytes->4096; offset->0
-Message: type->8; inum->1; nbytes->4096; offset->0
 
 
-test persist PASSED
+test persist FAILED
  (restart server after creating a file)
+ Timelimit (30.0s) exceeded
 
 ('starting', 'bigdir')
 
@@ -1617,15 +1403,15 @@ Test bigdir
 create a directory with 126 files
 
 **********************************************************************
-total blocks        36
-  inodes            32 [size of each: 128]
+total blocks        39
+  inodes            128 [size of each: 128]
   inodes address          3 
   data blocks       32
 layout details
   inode bitmap address/len 1 [1]
   data bitmap address/len  2 [1]
-Starting server on port 6660
-/tmp/tmpn1HnRQ/p/server 6660 /home/yingze/CS537/p4/test.img
+Starting server on port 6554
+/tmp/tmpqbfQat/p/server 6554 /home/yingze/CS537/p4/test.img
 server:: waiting...
 server:: read message [size:4148 mtype:1 name: inode:0]
 Server Init
@@ -1633,4827 +1419,333 @@ server:: waiting...
 server:: read message [size:4148 mtype:6 name:testdir inode:0]
 Server Create
 INODE inum: 0; size: 64; type: 0
-Parent Direct: 4
-Free inum: 1
-Inum: 0
-Inum: 0
-Inum: -1
-Index: 2, value: 1
 server:: waiting...
 server:: read message [size:4148 mtype:2 name:testdir inode:0]
-INODE inum: 0; size: 64; type: 0
+INODE inum: 0; size: 96; type: 0
 server:: waiting...
 server:: read message [size:4148 mtype:6 name:0 inode:1]
 Server Create
 INODE inum: 1; size: 64; type: 0
-Parent Direct: 5
-Free inum: 2
-Inum: 1
-Inum: 0
-Inum: -1
-Index: 2, value: 2
 server:: waiting...
 server:: read message [size:4148 mtype:6 name:1 inode:1]
 Server Create
-INODE inum: 1; size: 64; type: 0
-Parent Direct: 5
-Free inum: 3
-Inum: 1
-Inum: 0
-Inum: 2
-Inum: -1
-Index: 3, value: 3
+INODE inum: 1; size: 96; type: 0
 server:: waiting...
 server:: read message [size:4148 mtype:6 name:2 inode:1]
 Server Create
-INODE inum: 1; size: 64; type: 0
-Parent Direct: 5
-Free inum: 4
-Inum: 1
-Inum: 0
-Inum: 2
-Inum: 3
-Inum: -1
-Index: 4, value: 4
+INODE inum: 1; size: 128; type: 0
 server:: waiting...
 server:: read message [size:4148 mtype:6 name:3 inode:1]
 Server Create
-INODE inum: 1; size: 64; type: 0
-Parent Direct: 5
-Free inum: 5
-Inum: 1
-Inum: 0
-Inum: 2
-Inum: 3
-Inum: 4
-Inum: -1
-Index: 5, value: 5
+INODE inum: 1; size: 160; type: 0
 server:: waiting...
 server:: read message [size:4148 mtype:6 name:4 inode:1]
 Server Create
-INODE inum: 1; size: 64; type: 0
-Parent Direct: 5
-Free inum: 6
-Inum: 1
-Inum: 0
-Inum: 2
-Inum: 3
-Inum: 4
-Inum: 5
-Inum: -1
-Index: 6, value: 6
+INODE inum: 1; size: 192; type: 0
 server:: waiting...
 server:: read message [size:4148 mtype:6 name:5 inode:1]
 Server Create
-INODE inum: 1; size: 64; type: 0
-Parent Direct: 5
-Free inum: 7
-Inum: 1
-Inum: 0
-Inum: 2
-Inum: 3
-Inum: 4
-Inum: 5
-Inum: 6
-Inum: -1
-Index: 7, value: 7
+INODE inum: 1; size: 224; type: 0
 server:: waiting...
 server:: read message [size:4148 mtype:6 name:6 inode:1]
 Server Create
-INODE inum: 1; size: 64; type: 0
-Parent Direct: 5
-Free inum: 8
-Inum: 1
-Inum: 0
-Inum: 2
-Inum: 3
-Inum: 4
-Inum: 5
-Inum: 6
-Inum: 7
-Inum: -1
-Index: 8, value: 8
+INODE inum: 1; size: 256; type: 0
 server:: waiting...
 server:: read message [size:4148 mtype:6 name:7 inode:1]
 Server Create
-INODE inum: 1; size: 64; type: 0
-Parent Direct: 5
-Free inum: 9
-Inum: 1
-Inum: 0
-Inum: 2
-Inum: 3
-Inum: 4
-Inum: 5
-Inum: 6
-Inum: 7
-Inum: 8
-Inum: -1
-Index: 9, value: 9
+INODE inum: 1; size: 288; type: 0
 server:: waiting...
 server:: read message [size:4148 mtype:6 name:8 inode:1]
 Server Create
-INODE inum: 1; size: 64; type: 0
-Parent Direct: 5
-Free inum: 10
-Inum: 1
-Inum: 0
-Inum: 2
-Inum: 3
-Inum: 4
-Inum: 5
-Inum: 6
-Inum: 7
-Inum: 8
-Inum: 9
-Inum: -1
-Index: 10, value: 10
+INODE inum: 1; size: 320; type: 0
 server:: waiting...
 server:: read message [size:4148 mtype:6 name:9 inode:1]
 Server Create
-INODE inum: 1; size: 64; type: 0
-Parent Direct: 5
-Free inum: 11
-Inum: 1
-Inum: 0
-Inum: 2
-Inum: 3
-Inum: 4
-Inum: 5
-Inum: 6
-Inum: 7
-Inum: 8
-Inum: 9
-Inum: 10
-Inum: -1
-Index: 11, value: 11
+INODE inum: 1; size: 352; type: 0
 server:: waiting...
 server:: read message [size:4148 mtype:6 name:10 inode:1]
 Server Create
-INODE inum: 1; size: 64; type: 0
-Parent Direct: 5
-Free inum: 12
-Inum: 1
-Inum: 0
-Inum: 2
-Inum: 3
-Inum: 4
-Inum: 5
-Inum: 6
-Inum: 7
-Inum: 8
-Inum: 9
-Inum: 10
-Inum: 11
-Inum: -1
-Index: 12, value: 12
+INODE inum: 1; size: 384; type: 0
 server:: waiting...
 server:: read message [size:4148 mtype:6 name:11 inode:1]
 Server Create
-INODE inum: 1; size: 64; type: 0
-Parent Direct: 5
-Free inum: 13
-Inum: 1
-Inum: 0
-Inum: 2
-Inum: 3
-Inum: 4
-Inum: 5
-Inum: 6
-Inum: 7
-Inum: 8
-Inum: 9
-Inum: 10
-Inum: 11
-Inum: 12
-Inum: -1
-Index: 13, value: 13
+INODE inum: 1; size: 416; type: 0
 server:: waiting...
 server:: read message [size:4148 mtype:6 name:12 inode:1]
 Server Create
-INODE inum: 1; size: 64; type: 0
-Parent Direct: 5
-Free inum: 14
-Inum: 1
-Inum: 0
-Inum: 2
-Inum: 3
-Inum: 4
-Inum: 5
-Inum: 6
-Inum: 7
-Inum: 8
-Inum: 9
-Inum: 10
-Inum: 11
-Inum: 12
-Inum: 13
-Inum: -1
-Index: 14, value: 14
+INODE inum: 1; size: 448; type: 0
 server:: waiting...
 server:: read message [size:4148 mtype:6 name:13 inode:1]
 Server Create
-INODE inum: 1; size: 64; type: 0
-Parent Direct: 5
-Free inum: 15
-Inum: 1
-Inum: 0
-Inum: 2
-Inum: 3
-Inum: 4
-Inum: 5
-Inum: 6
-Inum: 7
-Inum: 8
-Inum: 9
-Inum: 10
-Inum: 11
-Inum: 12
-Inum: 13
-Inum: 14
-Inum: -1
-Index: 15, value: 15
+INODE inum: 1; size: 480; type: 0
 server:: waiting...
 server:: read message [size:4148 mtype:6 name:14 inode:1]
 Server Create
-INODE inum: 1; size: 64; type: 0
-Parent Direct: 5
-Free inum: 16
-Inum: 1
-Inum: 0
-Inum: 2
-Inum: 3
-Inum: 4
-Inum: 5
-Inum: 6
-Inum: 7
-Inum: 8
-Inum: 9
-Inum: 10
-Inum: 11
-Inum: 12
-Inum: 13
-Inum: 14
-Inum: 15
-Inum: -1
-Index: 16, value: 16
+INODE inum: 1; size: 512; type: 0
 server:: waiting...
 server:: read message [size:4148 mtype:6 name:15 inode:1]
 Server Create
-INODE inum: 1; size: 64; type: 0
-Parent Direct: 5
-Free inum: 17
-Inum: 1
-Inum: 0
-Inum: 2
-Inum: 3
-Inum: 4
-Inum: 5
-Inum: 6
-Inum: 7
-Inum: 8
-Inum: 9
-Inum: 10
-Inum: 11
-Inum: 12
-Inum: 13
-Inum: 14
-Inum: 15
-Inum: 16
-Inum: -1
-Index: 17, value: 17
+INODE inum: 1; size: 544; type: 0
 server:: waiting...
 server:: read message [size:4148 mtype:6 name:16 inode:1]
 Server Create
-INODE inum: 1; size: 64; type: 0
-Parent Direct: 5
-Free inum: 18
-Inum: 1
-Inum: 0
-Inum: 2
-Inum: 3
-Inum: 4
-Inum: 5
-Inum: 6
-Inum: 7
-Inum: 8
-Inum: 9
-Inum: 10
-Inum: 11
-Inum: 12
-Inum: 13
-Inum: 14
-Inum: 15
-Inum: 16
-Inum: 17
-Inum: -1
-Index: 18, value: 18
+INODE inum: 1; size: 576; type: 0
 server:: waiting...
 server:: read message [size:4148 mtype:6 name:17 inode:1]
 Server Create
-INODE inum: 1; size: 64; type: 0
-Parent Direct: 5
-Free inum: 19
-Inum: 1
-Inum: 0
-Inum: 2
-Inum: 3
-Inum: 4
-Inum: 5
-Inum: 6
-Inum: 7
-Inum: 8
-Inum: 9
-Inum: 10
-Inum: 11
-Inum: 12
-Inum: 13
-Inum: 14
-Inum: 15
-Inum: 16
-Inum: 17
-Inum: 18
-Inum: -1
-Index: 19, value: 19
+INODE inum: 1; size: 608; type: 0
 server:: waiting...
 server:: read message [size:4148 mtype:6 name:18 inode:1]
 Server Create
-INODE inum: 1; size: 64; type: 0
-Parent Direct: 5
-Free inum: 20
-Inum: 1
-Inum: 0
-Inum: 2
-Inum: 3
-Inum: 4
-Inum: 5
-Inum: 6
-Inum: 7
-Inum: 8
-Inum: 9
-Inum: 10
-Inum: 11
-Inum: 12
-Inum: 13
-Inum: 14
-Inum: 15
-Inum: 16
-Inum: 17
-Inum: 18
-Inum: 19
-Inum: -1
-Index: 20, value: 20
+INODE inum: 1; size: 640; type: 0
 server:: waiting...
 server:: read message [size:4148 mtype:6 name:19 inode:1]
 Server Create
-INODE inum: 1; size: 64; type: 0
-Parent Direct: 5
-Free inum: 21
-Inum: 1
-Inum: 0
-Inum: 2
-Inum: 3
-Inum: 4
-Inum: 5
-Inum: 6
-Inum: 7
-Inum: 8
-Inum: 9
-Inum: 10
-Inum: 11
-Inum: 12
-Inum: 13
-Inum: 14
-Inum: 15
-Inum: 16
-Inum: 17
-Inum: 18
-Inum: 19
-Inum: 20
-Inum: -1
-Index: 21, value: 21
+INODE inum: 1; size: 672; type: 0
 server:: waiting...
 server:: read message [size:4148 mtype:6 name:20 inode:1]
 Server Create
-INODE inum: 1; size: 64; type: 0
-Parent Direct: 5
-Free inum: 22
-Inum: 1
-Inum: 0
-Inum: 2
-Inum: 3
-Inum: 4
-Inum: 5
-Inum: 6
-Inum: 7
-Inum: 8
-Inum: 9
-Inum: 10
-Inum: 11
-Inum: 12
-Inum: 13
-Inum: 14
-Inum: 15
-Inum: 16
-Inum: 17
-Inum: 18
-Inum: 19
-Inum: 20
-Inum: 21
-Inum: -1
-Index: 22, value: 22
+INODE inum: 1; size: 704; type: 0
 server:: waiting...
 server:: read message [size:4148 mtype:6 name:21 inode:1]
 Server Create
-INODE inum: 1; size: 64; type: 0
-Parent Direct: 5
-Free inum: 23
-Inum: 1
-Inum: 0
-Inum: 2
-Inum: 3
-Inum: 4
-Inum: 5
-Inum: 6
-Inum: 7
-Inum: 8
-Inum: 9
-Inum: 10
-Inum: 11
-Inum: 12
-Inum: 13
-Inum: 14
-Inum: 15
-Inum: 16
-Inum: 17
-Inum: 18
-Inum: 19
-Inum: 20
-Inum: 21
-Inum: 22
-Inum: -1
-Index: 23, value: 23
+INODE inum: 1; size: 736; type: 0
 server:: waiting...
 server:: read message [size:4148 mtype:6 name:22 inode:1]
 Server Create
-INODE inum: 1; size: 64; type: 0
-Parent Direct: 5
-Free inum: 24
-Inum: 1
-Inum: 0
-Inum: 2
-Inum: 3
-Inum: 4
-Inum: 5
-Inum: 6
-Inum: 7
-Inum: 8
-Inum: 9
-Inum: 10
-Inum: 11
-Inum: 12
-Inum: 13
-Inum: 14
-Inum: 15
-Inum: 16
-Inum: 17
-Inum: 18
-Inum: 19
-Inum: 20
-Inum: 21
-Inum: 22
-Inum: 23
-Inum: -1
-Index: 24, value: 24
+INODE inum: 1; size: 768; type: 0
 server:: waiting...
 server:: read message [size:4148 mtype:6 name:23 inode:1]
 Server Create
-INODE inum: 1; size: 64; type: 0
-Parent Direct: 5
-Free inum: 25
-Inum: 1
-Inum: 0
-Inum: 2
-Inum: 3
-Inum: 4
-Inum: 5
-Inum: 6
-Inum: 7
-Inum: 8
-Inum: 9
-Inum: 10
-Inum: 11
-Inum: 12
-Inum: 13
-Inum: 14
-Inum: 15
-Inum: 16
-Inum: 17
-Inum: 18
-Inum: 19
-Inum: 20
-Inum: 21
-Inum: 22
-Inum: 23
-Inum: 24
-Inum: -1
-Index: 25, value: 25
+INODE inum: 1; size: 800; type: 0
 server:: waiting...
 server:: read message [size:4148 mtype:6 name:24 inode:1]
 Server Create
-INODE inum: 1; size: 64; type: 0
-Parent Direct: 5
-Free inum: 26
-Inum: 1
-Inum: 0
-Inum: 2
-Inum: 3
-Inum: 4
-Inum: 5
-Inum: 6
-Inum: 7
-Inum: 8
-Inum: 9
-Inum: 10
-Inum: 11
-Inum: 12
-Inum: 13
-Inum: 14
-Inum: 15
-Inum: 16
-Inum: 17
-Inum: 18
-Inum: 19
-Inum: 20
-Inum: 21
-Inum: 22
-Inum: 23
-Inum: 24
-Inum: 25
-Inum: -1
-Index: 26, value: 26
+INODE inum: 1; size: 832; type: 0
 server:: waiting...
 server:: read message [size:4148 mtype:6 name:25 inode:1]
 Server Create
-INODE inum: 1; size: 64; type: 0
-Parent Direct: 5
-Free inum: 27
-Inum: 1
-Inum: 0
-Inum: 2
-Inum: 3
-Inum: 4
-Inum: 5
-Inum: 6
-Inum: 7
-Inum: 8
-Inum: 9
-Inum: 10
-Inum: 11
-Inum: 12
-Inum: 13
-Inum: 14
-Inum: 15
-Inum: 16
-Inum: 17
-Inum: 18
-Inum: 19
-Inum: 20
-Inum: 21
-Inum: 22
-Inum: 23
-Inum: 24
-Inum: 25
-Inum: 26
-Inum: -1
-Index: 27, value: 27
+INODE inum: 1; size: 864; type: 0
 server:: waiting...
 server:: read message [size:4148 mtype:6 name:26 inode:1]
 Server Create
-INODE inum: 1; size: 64; type: 0
-Parent Direct: 5
-Free inum: 28
-Inum: 1
-Inum: 0
-Inum: 2
-Inum: 3
-Inum: 4
-Inum: 5
-Inum: 6
-Inum: 7
-Inum: 8
-Inum: 9
-Inum: 10
-Inum: 11
-Inum: 12
-Inum: 13
-Inum: 14
-Inum: 15
-Inum: 16
-Inum: 17
-Inum: 18
-Inum: 19
-Inum: 20
-Inum: 21
-Inum: 22
-Inum: 23
-Inum: 24
-Inum: 25
-Inum: 26
-Inum: 27
-Inum: -1
-Index: 28, value: 28
+INODE inum: 1; size: 896; type: 0
 server:: waiting...
 server:: read message [size:4148 mtype:6 name:27 inode:1]
 Server Create
-INODE inum: 1; size: 64; type: 0
-Parent Direct: 5
-Free inum: 29
-Inum: 1
-Inum: 0
-Inum: 2
-Inum: 3
-Inum: 4
-Inum: 5
-Inum: 6
-Inum: 7
-Inum: 8
-Inum: 9
-Inum: 10
-Inum: 11
-Inum: 12
-Inum: 13
-Inum: 14
-Inum: 15
-Inum: 16
-Inum: 17
-Inum: 18
-Inum: 19
-Inum: 20
-Inum: 21
-Inum: 22
-Inum: 23
-Inum: 24
-Inum: 25
-Inum: 26
-Inum: 27
-Inum: 28
-Inum: -1
-Index: 29, value: 29
+INODE inum: 1; size: 928; type: 0
 server:: waiting...
 server:: read message [size:4148 mtype:6 name:28 inode:1]
 Server Create
-INODE inum: 1; size: 64; type: 0
-Parent Direct: 5
-Free inum: 30
-Inum: 1
-Inum: 0
-Inum: 2
-Inum: 3
-Inum: 4
-Inum: 5
-Inum: 6
-Inum: 7
-Inum: 8
-Inum: 9
-Inum: 10
-Inum: 11
-Inum: 12
-Inum: 13
-Inum: 14
-Inum: 15
-Inum: 16
-Inum: 17
-Inum: 18
-Inum: 19
-Inum: 20
-Inum: 21
-Inum: 22
-Inum: 23
-Inum: 24
-Inum: 25
-Inum: 26
-Inum: 27
-Inum: 28
-Inum: 29
-Inum: -1
-Index: 30, value: 30
+INODE inum: 1; size: 960; type: 0
 server:: waiting...
 server:: read message [size:4148 mtype:6 name:29 inode:1]
 Server Create
-INODE inum: 1; size: 64; type: 0
-Parent Direct: 5
-Free inum: 31
-Inum: 1
-Inum: 0
-Inum: 2
-Inum: 3
-Inum: 4
-Inum: 5
-Inum: 6
-Inum: 7
-Inum: 8
-Inum: 9
-Inum: 10
-Inum: 11
-Inum: 12
-Inum: 13
-Inum: 14
-Inum: 15
-Inum: 16
-Inum: 17
-Inum: 18
-Inum: 19
-Inum: 20
-Inum: 21
-Inum: 22
-Inum: 23
-Inum: 24
-Inum: 25
-Inum: 26
-Inum: 27
-Inum: 28
-Inum: 29
-Inum: 30
-Inum: -1
-Index: 31, value: 31
+INODE inum: 1; size: 992; type: 0
 server:: waiting...
 server:: read message [size:4148 mtype:6 name:30 inode:1]
 Server Create
-INODE inum: 1; size: 64; type: 0
-Parent Direct: 5
-Free inum: -1
-Inum: 1
-Inum: 0
-Inum: 2
-Inum: 3
-Inum: 4
-Inum: 5
-Inum: 6
-Inum: 7
-Inum: 8
-Inum: 9
-Inum: 10
-Inum: 11
-Inum: 12
-Inum: 13
-Inum: 14
-Inum: 15
-Inum: 16
-Inum: 17
-Inum: 18
-Inum: 19
-Inum: 20
-Inum: 21
-Inum: 22
-Inum: 23
-Inum: 24
-Inum: 25
-Inum: 26
-Inum: 27
-Inum: 28
-Inum: 29
-Inum: 30
-Inum: 31
-Inum: -1
-Index: 32, value: -1
+INODE inum: 1; size: 1024; type: 0
 server:: waiting...
 server:: read message [size:4148 mtype:6 name:31 inode:1]
 Server Create
-INODE inum: 1; size: 64; type: 0
-Parent Direct: 5
-Free inum: -1
-Inum: 1
-Inum: 0
-Inum: 2
-Inum: 3
-Inum: 4
-Inum: 5
-Inum: 6
-Inum: 7
-Inum: 8
-Inum: 9
-Inum: 10
-Inum: 11
-Inum: 12
-Inum: 13
-Inum: 14
-Inum: 15
-Inum: 16
-Inum: 17
-Inum: 18
-Inum: 19
-Inum: 20
-Inum: 21
-Inum: 22
-Inum: 23
-Inum: 24
-Inum: 25
-Inum: 26
-Inum: 27
-Inum: 28
-Inum: 29
-Inum: 30
-Inum: 31
-Inum: -1
-Index: 32, value: -1
+INODE inum: 1; size: 1056; type: 0
 server:: waiting...
 server:: read message [size:4148 mtype:6 name:32 inode:1]
 Server Create
-INODE inum: 1; size: 64; type: 0
-Parent Direct: 5
-Free inum: -1
-Inum: 1
-Inum: 0
-Inum: 2
-Inum: 3
-Inum: 4
-Inum: 5
-Inum: 6
-Inum: 7
-Inum: 8
-Inum: 9
-Inum: 10
-Inum: 11
-Inum: 12
-Inum: 13
-Inum: 14
-Inum: 15
-Inum: 16
-Inum: 17
-Inum: 18
-Inum: 19
-Inum: 20
-Inum: 21
-Inum: 22
-Inum: 23
-Inum: 24
-Inum: 25
-Inum: 26
-Inum: 27
-Inum: 28
-Inum: 29
-Inum: 30
-Inum: 31
-Inum: -1
-Index: 32, value: -1
+INODE inum: 1; size: 1088; type: 0
 server:: waiting...
 server:: read message [size:4148 mtype:6 name:33 inode:1]
 Server Create
-INODE inum: 1; size: 64; type: 0
-Parent Direct: 5
-Free inum: -1
-Inum: 1
-Inum: 0
-Inum: 2
-Inum: 3
-Inum: 4
-Inum: 5
-Inum: 6
-Inum: 7
-Inum: 8
-Inum: 9
-Inum: 10
-Inum: 11
-Inum: 12
-Inum: 13
-Inum: 14
-Inum: 15
-Inum: 16
-Inum: 17
-Inum: 18
-Inum: 19
-Inum: 20
-Inum: 21
-Inum: 22
-Inum: 23
-Inum: 24
-Inum: 25
-Inum: 26
-Inum: 27
-Inum: 28
-Inum: 29
-Inum: 30
-Inum: 31
-Inum: -1
-Index: 32, value: -1
+INODE inum: 1; size: 1120; type: 0
 server:: waiting...
 server:: read message [size:4148 mtype:6 name:34 inode:1]
 Server Create
-INODE inum: 1; size: 64; type: 0
-Parent Direct: 5
-Free inum: -1
-Inum: 1
-Inum: 0
-Inum: 2
-Inum: 3
-Inum: 4
-Inum: 5
-Inum: 6
-Inum: 7
-Inum: 8
-Inum: 9
-Inum: 10
-Inum: 11
-Inum: 12
-Inum: 13
-Inum: 14
-Inum: 15
-Inum: 16
-Inum: 17
-Inum: 18
-Inum: 19
-Inum: 20
-Inum: 21
-Inum: 22
-Inum: 23
-Inum: 24
-Inum: 25
-Inum: 26
-Inum: 27
-Inum: 28
-Inum: 29
-Inum: 30
-Inum: 31
-Inum: -1
-Index: 32, value: -1
+INODE inum: 1; size: 1152; type: 0
 server:: waiting...
 server:: read message [size:4148 mtype:6 name:35 inode:1]
 Server Create
-INODE inum: 1; size: 64; type: 0
-Parent Direct: 5
-Free inum: -1
-Inum: 1
-Inum: 0
-Inum: 2
-Inum: 3
-Inum: 4
-Inum: 5
-Inum: 6
-Inum: 7
-Inum: 8
-Inum: 9
-Inum: 10
-Inum: 11
-Inum: 12
-Inum: 13
-Inum: 14
-Inum: 15
-Inum: 16
-Inum: 17
-Inum: 18
-Inum: 19
-Inum: 20
-Inum: 21
-Inum: 22
-Inum: 23
-Inum: 24
-Inum: 25
-Inum: 26
-Inum: 27
-Inum: 28
-Inum: 29
-Inum: 30
-Inum: 31
-Inum: -1
-Index: 32, value: -1
+INODE inum: 1; size: 1184; type: 0
 server:: waiting...
 server:: read message [size:4148 mtype:6 name:36 inode:1]
 Server Create
-INODE inum: 1; size: 64; type: 0
-Parent Direct: 5
-Free inum: -1
-Inum: 1
-Inum: 0
-Inum: 2
-Inum: 3
-Inum: 4
-Inum: 5
-Inum: 6
-Inum: 7
-Inum: 8
-Inum: 9
-Inum: 10
-Inum: 11
-Inum: 12
-Inum: 13
-Inum: 14
-Inum: 15
-Inum: 16
-Inum: 17
-Inum: 18
-Inum: 19
-Inum: 20
-Inum: 21
-Inum: 22
-Inum: 23
-Inum: 24
-Inum: 25
-Inum: 26
-Inum: 27
-Inum: 28
-Inum: 29
-Inum: 30
-Inum: 31
-Inum: -1
-Index: 32, value: -1
+INODE inum: 1; size: 1216; type: 0
 server:: waiting...
 server:: read message [size:4148 mtype:6 name:37 inode:1]
 Server Create
-INODE inum: 1; size: 64; type: 0
-Parent Direct: 5
-Free inum: -1
-Inum: 1
-Inum: 0
-Inum: 2
-Inum: 3
-Inum: 4
-Inum: 5
-Inum: 6
-Inum: 7
-Inum: 8
-Inum: 9
-Inum: 10
-Inum: 11
-Inum: 12
-Inum: 13
-Inum: 14
-Inum: 15
-Inum: 16
-Inum: 17
-Inum: 18
-Inum: 19
-Inum: 20
-Inum: 21
-Inum: 22
-Inum: 23
-Inum: 24
-Inum: 25
-Inum: 26
-Inum: 27
-Inum: 28
-Inum: 29
-Inum: 30
-Inum: 31
-Inum: -1
-Index: 32, value: -1
+INODE inum: 1; size: 1248; type: 0
 server:: waiting...
 server:: read message [size:4148 mtype:6 name:38 inode:1]
 Server Create
-INODE inum: 1; size: 64; type: 0
-Parent Direct: 5
-Free inum: -1
-Inum: 1
-Inum: 0
-Inum: 2
-Inum: 3
-Inum: 4
-Inum: 5
-Inum: 6
-Inum: 7
-Inum: 8
-Inum: 9
-Inum: 10
-Inum: 11
-Inum: 12
-Inum: 13
-Inum: 14
-Inum: 15
-Inum: 16
-Inum: 17
-Inum: 18
-Inum: 19
-Inum: 20
-Inum: 21
-Inum: 22
-Inum: 23
-Inum: 24
-Inum: 25
-Inum: 26
-Inum: 27
-Inum: 28
-Inum: 29
-Inum: 30
-Inum: 31
-Inum: -1
-Index: 32, value: -1
+INODE inum: 1; size: 1280; type: 0
 server:: waiting...
 server:: read message [size:4148 mtype:6 name:39 inode:1]
 Server Create
-INODE inum: 1; size: 64; type: 0
-Parent Direct: 5
-Free inum: -1
-Inum: 1
-Inum: 0
-Inum: 2
-Inum: 3
-Inum: 4
-Inum: 5
-Inum: 6
-Inum: 7
-Inum: 8
-Inum: 9
-Inum: 10
-Inum: 11
-Inum: 12
-Inum: 13
-Inum: 14
-Inum: 15
-Inum: 16
-Inum: 17
-Inum: 18
-Inum: 19
-Inum: 20
-Inum: 21
-Inum: 22
-Inum: 23
-Inum: 24
-Inum: 25
-Inum: 26
-Inum: 27
-Inum: 28
-Inum: 29
-Inum: 30
-Inum: 31
-Inum: -1
-Index: 32, value: -1
+INODE inum: 1; size: 1312; type: 0
 server:: waiting...
 server:: read message [size:4148 mtype:6 name:40 inode:1]
 Server Create
-INODE inum: 1; size: 64; type: 0
-Parent Direct: 5
-Free inum: -1
-Inum: 1
-Inum: 0
-Inum: 2
-Inum: 3
-Inum: 4
-Inum: 5
-Inum: 6
-Inum: 7
-Inum: 8
-Inum: 9
-Inum: 10
-Inum: 11
-Inum: 12
-Inum: 13
-Inum: 14
-Inum: 15
-Inum: 16
-Inum: 17
-Inum: 18
-Inum: 19
-Inum: 20
-Inum: 21
-Inum: 22
-Inum: 23
-Inum: 24
-Inum: 25
-Inum: 26
-Inum: 27
-Inum: 28
-Inum: 29
-Inum: 30
-Inum: 31
-Inum: -1
-Index: 32, value: -1
+INODE inum: 1; size: 1344; type: 0
 server:: waiting...
 server:: read message [size:4148 mtype:6 name:41 inode:1]
 Server Create
-INODE inum: 1; size: 64; type: 0
-Parent Direct: 5
-Free inum: -1
-Inum: 1
-Inum: 0
-Inum: 2
-Inum: 3
-Inum: 4
-Inum: 5
-Inum: 6
-Inum: 7
-Inum: 8
-Inum: 9
-Inum: 10
-Inum: 11
-Inum: 12
-Inum: 13
-Inum: 14
-Inum: 15
-Inum: 16
-Inum: 17
-Inum: 18
-Inum: 19
-Inum: 20
-Inum: 21
-Inum: 22
-Inum: 23
-Inum: 24
-Inum: 25
-Inum: 26
-Inum: 27
-Inum: 28
-Inum: 29
-Inum: 30
-Inum: 31
-Inum: -1
-Index: 32, value: -1
+INODE inum: 1; size: 1376; type: 0
 server:: waiting...
 server:: read message [size:4148 mtype:6 name:42 inode:1]
 Server Create
-INODE inum: 1; size: 64; type: 0
-Parent Direct: 5
-Free inum: -1
-Inum: 1
-Inum: 0
-Inum: 2
-Inum: 3
-Inum: 4
-Inum: 5
-Inum: 6
-Inum: 7
-Inum: 8
-Inum: 9
-Inum: 10
-Inum: 11
-Inum: 12
-Inum: 13
-Inum: 14
-Inum: 15
-Inum: 16
-Inum: 17
-Inum: 18
-Inum: 19
-Inum: 20
-Inum: 21
-Inum: 22
-Inum: 23
-Inum: 24
-Inum: 25
-Inum: 26
-Inum: 27
-Inum: 28
-Inum: 29
-Inum: 30
-Inum: 31
-Inum: -1
-Index: 32, value: -1
+INODE inum: 1; size: 1408; type: 0
 server:: waiting...
 server:: read message [size:4148 mtype:6 name:43 inode:1]
 Server Create
-INODE inum: 1; size: 64; type: 0
-Parent Direct: 5
-Free inum: -1
-Inum: 1
-Inum: 0
-Inum: 2
-Inum: 3
-Inum: 4
-Inum: 5
-Inum: 6
-Inum: 7
-Inum: 8
-Inum: 9
-Inum: 10
-Inum: 11
-Inum: 12
-Inum: 13
-Inum: 14
-Inum: 15
-Inum: 16
-Inum: 17
-Inum: 18
-Inum: 19
-Inum: 20
-Inum: 21
-Inum: 22
-Inum: 23
-Inum: 24
-Inum: 25
-Inum: 26
-Inum: 27
-Inum: 28
-Inum: 29
-Inum: 30
-Inum: 31
-Inum: -1
-Index: 32, value: -1
+INODE inum: 1; size: 1440; type: 0
 server:: waiting...
 server:: read message [size:4148 mtype:6 name:44 inode:1]
 Server Create
-INODE inum: 1; size: 64; type: 0
-Parent Direct: 5
-Free inum: -1
-Inum: 1
-Inum: 0
-Inum: 2
-Inum: 3
-Inum: 4
-Inum: 5
-Inum: 6
-Inum: 7
-Inum: 8
-Inum: 9
-Inum: 10
-Inum: 11
-Inum: 12
-Inum: 13
-Inum: 14
-Inum: 15
-Inum: 16
-Inum: 17
-Inum: 18
-Inum: 19
-Inum: 20
-Inum: 21
-Inum: 22
-Inum: 23
-Inum: 24
-Inum: 25
-Inum: 26
-Inum: 27
-Inum: 28
-Inum: 29
-Inum: 30
-Inum: 31
-Inum: -1
-Index: 32, value: -1
+INODE inum: 1; size: 1472; type: 0
 server:: waiting...
 server:: read message [size:4148 mtype:6 name:45 inode:1]
 Server Create
-INODE inum: 1; size: 64; type: 0
-Parent Direct: 5
-Free inum: -1
-Inum: 1
-Inum: 0
-Inum: 2
-Inum: 3
-Inum: 4
-Inum: 5
-Inum: 6
-Inum: 7
-Inum: 8
-Inum: 9
-Inum: 10
-Inum: 11
-Inum: 12
-Inum: 13
-Inum: 14
-Inum: 15
-Inum: 16
-Inum: 17
-Inum: 18
-Inum: 19
-Inum: 20
-Inum: 21
-Inum: 22
-Inum: 23
-Inum: 24
-Inum: 25
-Inum: 26
-Inum: 27
-Inum: 28
-Inum: 29
-Inum: 30
-Inum: 31
-Inum: -1
-Index: 32, value: -1
+INODE inum: 1; size: 1504; type: 0
 server:: waiting...
 server:: read message [size:4148 mtype:6 name:46 inode:1]
 Server Create
-INODE inum: 1; size: 64; type: 0
-Parent Direct: 5
-Free inum: -1
-Inum: 1
-Inum: 0
-Inum: 2
-Inum: 3
-Inum: 4
-Inum: 5
-Inum: 6
-Inum: 7
-Inum: 8
-Inum: 9
-Inum: 10
-Inum: 11
-Inum: 12
-Inum: 13
-Inum: 14
-Inum: 15
-Inum: 16
-Inum: 17
-Inum: 18
-Inum: 19
-Inum: 20
-Inum: 21
-Inum: 22
-Inum: 23
-Inum: 24
-Inum: 25
-Inum: 26
-Inum: 27
-Inum: 28
-Inum: 29
-Inum: 30
-Inum: 31
-Inum: -1
-Index: 32, value: -1
+INODE inum: 1; size: 1536; type: 0
 server:: waiting...
 server:: read message [size:4148 mtype:6 name:47 inode:1]
 Server Create
-INODE inum: 1; size: 64; type: 0
-Parent Direct: 5
-Free inum: -1
-Inum: 1
-Inum: 0
-Inum: 2
-Inum: 3
-Inum: 4
-Inum: 5
-Inum: 6
-Inum: 7
-Inum: 8
-Inum: 9
-Inum: 10
-Inum: 11
-Inum: 12
-Inum: 13
-Inum: 14
-Inum: 15
-Inum: 16
-Inum: 17
-Inum: 18
-Inum: 19
-Inum: 20
-Inum: 21
-Inum: 22
-Inum: 23
-Inum: 24
-Inum: 25
-Inum: 26
-Inum: 27
-Inum: 28
-Inum: 29
-Inum: 30
-Inum: 31
-Inum: -1
-Index: 32, value: -1
+INODE inum: 1; size: 1568; type: 0
 server:: waiting...
 server:: read message [size:4148 mtype:6 name:48 inode:1]
 Server Create
-INODE inum: 1; size: 64; type: 0
-Parent Direct: 5
-Free inum: -1
-Inum: 1
-Inum: 0
-Inum: 2
-Inum: 3
-Inum: 4
-Inum: 5
-Inum: 6
-Inum: 7
-Inum: 8
-Inum: 9
-Inum: 10
-Inum: 11
-Inum: 12
-Inum: 13
-Inum: 14
-Inum: 15
-Inum: 16
-Inum: 17
-Inum: 18
-Inum: 19
-Inum: 20
-Inum: 21
-Inum: 22
-Inum: 23
-Inum: 24
-Inum: 25
-Inum: 26
-Inum: 27
-Inum: 28
-Inum: 29
-Inum: 30
-Inum: 31
-Inum: -1
-Index: 32, value: -1
+INODE inum: 1; size: 1600; type: 0
 server:: waiting...
 server:: read message [size:4148 mtype:6 name:49 inode:1]
 Server Create
-INODE inum: 1; size: 64; type: 0
-Parent Direct: 5
-Free inum: -1
-Inum: 1
-Inum: 0
-Inum: 2
-Inum: 3
-Inum: 4
-Inum: 5
-Inum: 6
-Inum: 7
-Inum: 8
-Inum: 9
-Inum: 10
-Inum: 11
-Inum: 12
-Inum: 13
-Inum: 14
-Inum: 15
-Inum: 16
-Inum: 17
-Inum: 18
-Inum: 19
-Inum: 20
-Inum: 21
-Inum: 22
-Inum: 23
-Inum: 24
-Inum: 25
-Inum: 26
-Inum: 27
-Inum: 28
-Inum: 29
-Inum: 30
-Inum: 31
-Inum: -1
-Index: 32, value: -1
+INODE inum: 1; size: 1632; type: 0
 server:: waiting...
 server:: read message [size:4148 mtype:6 name:50 inode:1]
 Server Create
-INODE inum: 1; size: 64; type: 0
-Parent Direct: 5
-Free inum: -1
-Inum: 1
-Inum: 0
-Inum: 2
-Inum: 3
-Inum: 4
-Inum: 5
-Inum: 6
-Inum: 7
-Inum: 8
-Inum: 9
-Inum: 10
-Inum: 11
-Inum: 12
-Inum: 13
-Inum: 14
-Inum: 15
-Inum: 16
-Inum: 17
-Inum: 18
-Inum: 19
-Inum: 20
-Inum: 21
-Inum: 22
-Inum: 23
-Inum: 24
-Inum: 25
-Inum: 26
-Inum: 27
-Inum: 28
-Inum: 29
-Inum: 30
-Inum: 31
-Inum: -1
-Index: 32, value: -1
+INODE inum: 1; size: 1664; type: 0
 server:: waiting...
 server:: read message [size:4148 mtype:6 name:51 inode:1]
 Server Create
-INODE inum: 1; size: 64; type: 0
-Parent Direct: 5
-Free inum: -1
-Inum: 1
-Inum: 0
-Inum: 2
-Inum: 3
-Inum: 4
-Inum: 5
-Inum: 6
-Inum: 7
-Inum: 8
-Inum: 9
-Inum: 10
-Inum: 11
-Inum: 12
-Inum: 13
-Inum: 14
-Inum: 15
-Inum: 16
-Inum: 17
-Inum: 18
-Inum: 19
-Inum: 20
-Inum: 21
-Inum: 22
-Inum: 23
-Inum: 24
-Inum: 25
-Inum: 26
-Inum: 27
-Inum: 28
-Inum: 29
-Inum: 30
-Inum: 31
-Inum: -1
-Index: 32, value: -1
+INODE inum: 1; size: 1696; type: 0
 server:: waiting...
 server:: read message [size:4148 mtype:6 name:52 inode:1]
 Server Create
-INODE inum: 1; size: 64; type: 0
-Parent Direct: 5
-Free inum: -1
-Inum: 1
-Inum: 0
-Inum: 2
-Inum: 3
-Inum: 4
-Inum: 5
-Inum: 6
-Inum: 7
-Inum: 8
-Inum: 9
-Inum: 10
-Inum: 11
-Inum: 12
-Inum: 13
-Inum: 14
-Inum: 15
-Inum: 16
-Inum: 17
-Inum: 18
-Inum: 19
-Inum: 20
-Inum: 21
-Inum: 22
-Inum: 23
-Inum: 24
-Inum: 25
-Inum: 26
-Inum: 27
-Inum: 28
-Inum: 29
-Inum: 30
-Inum: 31
-Inum: -1
-Index: 32, value: -1
+INODE inum: 1; size: 1728; type: 0
 server:: waiting...
 server:: read message [size:4148 mtype:6 name:53 inode:1]
 Server Create
-INODE inum: 1; size: 64; type: 0
-Parent Direct: 5
-Free inum: -1
-Inum: 1
-Inum: 0
-Inum: 2
-Inum: 3
-Inum: 4
-Inum: 5
-Inum: 6
-Inum: 7
-Inum: 8
-Inum: 9
-Inum: 10
-Inum: 11
-Inum: 12
-Inum: 13
-Inum: 14
-Inum: 15
-Inum: 16
-Inum: 17
-Inum: 18
-Inum: 19
-Inum: 20
-Inum: 21
-Inum: 22
-Inum: 23
-Inum: 24
-Inum: 25
-Inum: 26
-Inum: 27
-Inum: 28
-Inum: 29
-Inum: 30
-Inum: 31
-Inum: -1
-Index: 32, value: -1
+INODE inum: 1; size: 1760; type: 0
 server:: waiting...
 server:: read message [size:4148 mtype:6 name:54 inode:1]
 Server Create
-INODE inum: 1; size: 64; type: 0
-Parent Direct: 5
-Free inum: -1
-Inum: 1
-Inum: 0
-Inum: 2
-Inum: 3
-Inum: 4
-Inum: 5
-Inum: 6
-Inum: 7
-Inum: 8
-Inum: 9
-Inum: 10
-Inum: 11
-Inum: 12
-Inum: 13
-Inum: 14
-Inum: 15
-Inum: 16
-Inum: 17
-Inum: 18
-Inum: 19
-Inum: 20
-Inum: 21
-Inum: 22
-Inum: 23
-Inum: 24
-Inum: 25
-Inum: 26
-Inum: 27
-Inum: 28
-Inum: 29
-Inum: 30
-Inum: 31
-Inum: -1
-Index: 32, value: -1
+INODE inum: 1; size: 1792; type: 0
 server:: waiting...
 server:: read message [size:4148 mtype:6 name:55 inode:1]
 Server Create
-INODE inum: 1; size: 64; type: 0
-Parent Direct: 5
-Free inum: -1
-Inum: 1
-Inum: 0
-Inum: 2
-Inum: 3
-Inum: 4
-Inum: 5
-Inum: 6
-Inum: 7
-Inum: 8
-Inum: 9
-Inum: 10
-Inum: 11
-Inum: 12
-Inum: 13
-Inum: 14
-Inum: 15
-Inum: 16
-Inum: 17
-Inum: 18
-Inum: 19
-Inum: 20
-Inum: 21
-Inum: 22
-Inum: 23
-Inum: 24
-Inum: 25
-Inum: 26
-Inum: 27
-Inum: 28
-Inum: 29
-Inum: 30
-Inum: 31
-Inum: -1
-Index: 32, value: -1
+INODE inum: 1; size: 1824; type: 0
 server:: waiting...
 server:: read message [size:4148 mtype:6 name:56 inode:1]
 Server Create
-INODE inum: 1; size: 64; type: 0
-Parent Direct: 5
-Free inum: -1
-Inum: 1
-Inum: 0
-Inum: 2
-Inum: 3
-Inum: 4
-Inum: 5
-Inum: 6
-Inum: 7
-Inum: 8
-Inum: 9
-Inum: 10
-Inum: 11
-Inum: 12
-Inum: 13
-Inum: 14
-Inum: 15
-Inum: 16
-Inum: 17
-Inum: 18
-Inum: 19
-Inum: 20
-Inum: 21
-Inum: 22
-Inum: 23
-Inum: 24
-Inum: 25
-Inum: 26
-Inum: 27
-Inum: 28
-Inum: 29
-Inum: 30
-Inum: 31
-Inum: -1
-Index: 32, value: -1
+INODE inum: 1; size: 1856; type: 0
 server:: waiting...
 server:: read message [size:4148 mtype:6 name:57 inode:1]
 Server Create
-INODE inum: 1; size: 64; type: 0
-Parent Direct: 5
-Free inum: -1
-Inum: 1
-Inum: 0
-Inum: 2
-Inum: 3
-Inum: 4
-Inum: 5
-Inum: 6
-Inum: 7
-Inum: 8
-Inum: 9
-Inum: 10
-Inum: 11
-Inum: 12
-Inum: 13
-Inum: 14
-Inum: 15
-Inum: 16
-Inum: 17
-Inum: 18
-Inum: 19
-Inum: 20
-Inum: 21
-Inum: 22
-Inum: 23
-Inum: 24
-Inum: 25
-Inum: 26
-Inum: 27
-Inum: 28
-Inum: 29
-Inum: 30
-Inum: 31
-Inum: -1
-Index: 32, value: -1
+INODE inum: 1; size: 1888; type: 0
 server:: waiting...
 server:: read message [size:4148 mtype:6 name:58 inode:1]
 Server Create
-INODE inum: 1; size: 64; type: 0
-Parent Direct: 5
-Free inum: -1
-Inum: 1
-Inum: 0
-Inum: 2
-Inum: 3
-Inum: 4
-Inum: 5
-Inum: 6
-Inum: 7
-Inum: 8
-Inum: 9
-Inum: 10
-Inum: 11
-Inum: 12
-Inum: 13
-Inum: 14
-Inum: 15
-Inum: 16
-Inum: 17
-Inum: 18
-Inum: 19
-Inum: 20
-Inum: 21
-Inum: 22
-Inum: 23
-Inum: 24
-Inum: 25
-Inum: 26
-Inum: 27
-Inum: 28
-Inum: 29
-Inum: 30
-Inum: 31
-Inum: -1
-Index: 32, value: -1
+INODE inum: 1; size: 1920; type: 0
 server:: waiting...
 server:: read message [size:4148 mtype:6 name:59 inode:1]
 Server Create
-INODE inum: 1; size: 64; type: 0
-Parent Direct: 5
-Free inum: -1
-Inum: 1
-Inum: 0
-Inum: 2
-Inum: 3
-Inum: 4
-Inum: 5
-Inum: 6
-Inum: 7
-Inum: 8
-Inum: 9
-Inum: 10
-Inum: 11
-Inum: 12
-Inum: 13
-Inum: 14
-Inum: 15
-Inum: 16
-Inum: 17
-Inum: 18
-Inum: 19
-Inum: 20
-Inum: 21
-Inum: 22
-Inum: 23
-Inum: 24
-Inum: 25
-Inum: 26
-Inum: 27
-Inum: 28
-Inum: 29
-Inum: 30
-Inum: 31
-Inum: -1
-Index: 32, value: -1
+INODE inum: 1; size: 1952; type: 0
 server:: waiting...
 server:: read message [size:4148 mtype:6 name:60 inode:1]
 Server Create
-INODE inum: 1; size: 64; type: 0
-Parent Direct: 5
-Free inum: -1
-Inum: 1
-Inum: 0
-Inum: 2
-Inum: 3
-Inum: 4
-Inum: 5
-Inum: 6
-Inum: 7
-Inum: 8
-Inum: 9
-Inum: 10
-Inum: 11
-Inum: 12
-Inum: 13
-Inum: 14
-Inum: 15
-Inum: 16
-Inum: 17
-Inum: 18
-Inum: 19
-Inum: 20
-Inum: 21
-Inum: 22
-Inum: 23
-Inum: 24
-Inum: 25
-Inum: 26
-Inum: 27
-Inum: 28
-Inum: 29
-Inum: 30
-Inum: 31
-Inum: -1
-Index: 32, value: -1
+INODE inum: 1; size: 1984; type: 0
 server:: waiting...
 server:: read message [size:4148 mtype:6 name:61 inode:1]
 Server Create
-INODE inum: 1; size: 64; type: 0
-Parent Direct: 5
-Free inum: -1
-Inum: 1
-Inum: 0
-Inum: 2
-Inum: 3
-Inum: 4
-Inum: 5
-Inum: 6
-Inum: 7
-Inum: 8
-Inum: 9
-Inum: 10
-Inum: 11
-Inum: 12
-Inum: 13
-Inum: 14
-Inum: 15
-Inum: 16
-Inum: 17
-Inum: 18
-Inum: 19
-Inum: 20
-Inum: 21
-Inum: 22
-Inum: 23
-Inum: 24
-Inum: 25
-Inum: 26
-Inum: 27
-Inum: 28
-Inum: 29
-Inum: 30
-Inum: 31
-Inum: -1
-Index: 32, value: -1
-server:: waiting...
-server:: read message [size:4148 mtype:6 name:62 inode:1]
-Server Create
-INODE inum: 1; size: 64; type: 0
-Parent Direct: 5
-Free inum: -1
-Inum: 1
-Inum: 0
-Inum: 2
-Inum: 3
-Inum: 4
-Inum: 5
-Inum: 6
-Inum: 7
-Inum: 8
-Inum: 9
-Inum: 10
-Inum: 11
-Inum: 12
-Inum: 13
-Inum: 14
-Inum: 15
-Inum: 16
-Inum: 17
-Inum: 18
-Inum: 19
-Inum: 20
-Inum: 21
-Inum: 22
-Inum: 23
-Inum: 24
-Inum: 25
-Inum: 26
-Inum: 27
-Inum: 28
-Inum: 29
-Inum: 30
-Inum: 31
-Inum: -1
-Index: 32, value: -1
-server:: waiting...
-server:: read message [size:4148 mtype:6 name:63 inode:1]
-Server Create
-INODE inum: 1; size: 64; type: 0
-Parent Direct: 5
-Free inum: -1
-Inum: 1
-Inum: 0
-Inum: 2
-Inum: 3
-Inum: 4
-Inum: 5
-Inum: 6
-Inum: 7
-Inum: 8
-Inum: 9
-Inum: 10
-Inum: 11
-Inum: 12
-Inum: 13
-Inum: 14
-Inum: 15
-Inum: 16
-Inum: 17
-Inum: 18
-Inum: 19
-Inum: 20
-Inum: 21
-Inum: 22
-Inum: 23
-Inum: 24
-Inum: 25
-Inum: 26
-Inum: 27
-Inum: 28
-Inum: 29
-Inum: 30
-Inum: 31
-Inum: -1
-Index: 32, value: -1
-server:: waiting...
-server:: read message [size:4148 mtype:6 name:64 inode:1]
-Server Create
-INODE inum: 1; size: 64; type: 0
-Parent Direct: 5
-Free inum: -1
-Inum: 1
-Inum: 0
-Inum: 2
-Inum: 3
-Inum: 4
-Inum: 5
-Inum: 6
-Inum: 7
-Inum: 8
-Inum: 9
-Inum: 10
-Inum: 11
-Inum: 12
-Inum: 13
-Inum: 14
-Inum: 15
-Inum: 16
-Inum: 17
-Inum: 18
-Inum: 19
-Inum: 20
-Inum: 21
-Inum: 22
-Inum: 23
-Inum: 24
-Inum: 25
-Inum: 26
-Inum: 27
-Inum: 28
-Inum: 29
-Inum: 30
-Inum: 31
-Inum: -1
-Index: 32, value: -1
-server:: waiting...
-server:: read message [size:4148 mtype:6 name:65 inode:1]
-Server Create
-INODE inum: 1; size: 64; type: 0
-Parent Direct: 5
-Free inum: -1
-Inum: 1
-Inum: 0
-Inum: 2
-Inum: 3
-Inum: 4
-Inum: 5
-Inum: 6
-Inum: 7
-Inum: 8
-Inum: 9
-Inum: 10
-Inum: 11
-Inum: 12
-Inum: 13
-Inum: 14
-Inum: 15
-Inum: 16
-Inum: 17
-Inum: 18
-Inum: 19
-Inum: 20
-Inum: 21
-Inum: 22
-Inum: 23
-Inum: 24
-Inum: 25
-Inum: 26
-Inum: 27
-Inum: 28
-Inum: 29
-Inum: 30
-Inum: 31
-Inum: -1
-Index: 32, value: -1
-server:: waiting...
-server:: read message [size:4148 mtype:6 name:66 inode:1]
-Server Create
-INODE inum: 1; size: 64; type: 0
-Parent Direct: 5
-Free inum: -1
-Inum: 1
-Inum: 0
-Inum: 2
-Inum: 3
-Inum: 4
-Inum: 5
-Inum: 6
-Inum: 7
-Inum: 8
-Inum: 9
-Inum: 10
-Inum: 11
-Inum: 12
-Inum: 13
-Inum: 14
-Inum: 15
-Inum: 16
-Inum: 17
-Inum: 18
-Inum: 19
-Inum: 20
-Inum: 21
-Inum: 22
-Inum: 23
-Inum: 24
-Inum: 25
-Inum: 26
-Inum: 27
-Inum: 28
-Inum: 29
-Inum: 30
-Inum: 31
-Inum: -1
-Index: 32, value: -1
-server:: waiting...
-server:: read message [size:4148 mtype:6 name:67 inode:1]
-Server Create
-INODE inum: 1; size: 64; type: 0
-Parent Direct: 5
-Free inum: -1
-Inum: 1
-Inum: 0
-Inum: 2
-Inum: 3
-Inum: 4
-Inum: 5
-Inum: 6
-Inum: 7
-Inum: 8
-Inum: 9
-Inum: 10
-Inum: 11
-Inum: 12
-Inum: 13
-Inum: 14
-Inum: 15
-Inum: 16
-Inum: 17
-Inum: 18
-Inum: 19
-Inum: 20
-Inum: 21
-Inum: 22
-Inum: 23
-Inum: 24
-Inum: 25
-Inum: 26
-Inum: 27
-Inum: 28
-Inum: 29
-Inum: 30
-Inum: 31
-Inum: -1
-Index: 32, value: -1
-server:: waiting...
-server:: read message [size:4148 mtype:6 name:68 inode:1]
-Server Create
-INODE inum: 1; size: 64; type: 0
-Parent Direct: 5
-Free inum: -1
-Inum: 1
-Inum: 0
-Inum: 2
-Inum: 3
-Inum: 4
-Inum: 5
-Inum: 6
-Inum: 7
-Inum: 8
-Inum: 9
-Inum: 10
-Inum: 11
-Inum: 12
-Inum: 13
-Inum: 14
-Inum: 15
-Inum: 16
-Inum: 17
-Inum: 18
-Inum: 19
-Inum: 20
-Inum: 21
-Inum: 22
-Inum: 23
-Inum: 24
-Inum: 25
-Inum: 26
-Inum: 27
-Inum: 28
-Inum: 29
-Inum: 30
-Inum: 31
-Inum: -1
-Index: 32, value: -1
-server:: waiting...
-server:: read message [size:4148 mtype:6 name:69 inode:1]
-Server Create
-INODE inum: 1; size: 64; type: 0
-Parent Direct: 5
-Free inum: -1
-Inum: 1
-Inum: 0
-Inum: 2
-Inum: 3
-Inum: 4
-Inum: 5
-Inum: 6
-Inum: 7
-Inum: 8
-Inum: 9
-Inum: 10
-Inum: 11
-Inum: 12
-Inum: 13
-Inum: 14
-Inum: 15
-Inum: 16
-Inum: 17
-Inum: 18
-Inum: 19
-Inum: 20
-Inum: 21
-Inum: 22
-Inum: 23
-Inum: 24
-Inum: 25
-Inum: 26
-Inum: 27
-Inum: 28
-Inum: 29
-Inum: 30
-Inum: 31
-Inum: -1
-Index: 32, value: -1
-server:: waiting...
-server:: read message [size:4148 mtype:6 name:70 inode:1]
-Server Create
-INODE inum: 1; size: 64; type: 0
-Parent Direct: 5
-Free inum: -1
-Inum: 1
-Inum: 0
-Inum: 2
-Inum: 3
-Inum: 4
-Inum: 5
-Inum: 6
-Inum: 7
-Inum: 8
-Inum: 9
-Inum: 10
-Inum: 11
-Inum: 12
-Inum: 13
-Inum: 14
-Inum: 15
-Inum: 16
-Inum: 17
-Inum: 18
-Inum: 19
-Inum: 20
-Inum: 21
-Inum: 22
-Inum: 23
-Inum: 24
-Inum: 25
-Inum: 26
-Inum: 27
-Inum: 28
-Inum: 29
-Inum: 30
-Inum: 31
-Inum: -1
-Index: 32, value: -1
-server:: waiting...
-server:: read message [size:4148 mtype:6 name:71 inode:1]
-Server Create
-INODE inum: 1; size: 64; type: 0
-Parent Direct: 5
-Free inum: -1
-Inum: 1
-Inum: 0
-Inum: 2
-Inum: 3
-Inum: 4
-Inum: 5
-Inum: 6
-Inum: 7
-Inum: 8
-Inum: 9
-Inum: 10
-Inum: 11
-Inum: 12
-Inum: 13
-Inum: 14
-Inum: 15
-Inum: 16
-Inum: 17
-Inum: 18
-Inum: 19
-Inum: 20
-Inum: 21
-Inum: 22
-Inum: 23
-Inum: 24
-Inum: 25
-Inum: 26
-Inum: 27
-Inum: 28
-Inum: 29
-Inum: 30
-Inum: 31
-Inum: -1
-Index: 32, value: -1
-server:: waiting...
-server:: read message [size:4148 mtype:6 name:72 inode:1]
-Server Create
-INODE inum: 1; size: 64; type: 0
-Parent Direct: 5
-Free inum: -1
-Inum: 1
-Inum: 0
-Inum: 2
-Inum: 3
-Inum: 4
-Inum: 5
-Inum: 6
-Inum: 7
-Inum: 8
-Inum: 9
-Inum: 10
-Inum: 11
-Inum: 12
-Inum: 13
-Inum: 14
-Inum: 15
-Inum: 16
-Inum: 17
-Inum: 18
-Inum: 19
-Inum: 20
-Inum: 21
-Inum: 22
-Inum: 23
-Inum: 24
-Inum: 25
-Inum: 26
-Inum: 27
-Inum: 28
-Inum: 29
-Inum: 30
-Inum: 31
-Inum: -1
-Index: 32, value: -1
-server:: waiting...
-server:: read message [size:4148 mtype:6 name:73 inode:1]
-Server Create
-INODE inum: 1; size: 64; type: 0
-Parent Direct: 5
-Free inum: -1
-Inum: 1
-Inum: 0
-Inum: 2
-Inum: 3
-Inum: 4
-Inum: 5
-Inum: 6
-Inum: 7
-Inum: 8
-Inum: 9
-Inum: 10
-Inum: 11
-Inum: 12
-Inum: 13
-Inum: 14
-Inum: 15
-Inum: 16
-Inum: 17
-Inum: 18
-Inum: 19
-Inum: 20
-Inum: 21
-Inum: 22
-Inum: 23
-Inum: 24
-Inum: 25
-Inum: 26
-Inum: 27
-Inum: 28
-Inum: 29
-Inum: 30
-Inum: 31
-Inum: -1
-Index: 32, value: -1
-server:: waiting...
-server:: read message [size:4148 mtype:6 name:74 inode:1]
-Server Create
-INODE inum: 1; size: 64; type: 0
-Parent Direct: 5
-Free inum: -1
-Inum: 1
-Inum: 0
-Inum: 2
-Inum: 3
-Inum: 4
-Inum: 5
-Inum: 6
-Inum: 7
-Inum: 8
-Inum: 9
-Inum: 10
-Inum: 11
-Inum: 12
-Inum: 13
-Inum: 14
-Inum: 15
-Inum: 16
-Inum: 17
-Inum: 18
-Inum: 19
-Inum: 20
-Inum: 21
-Inum: 22
-Inum: 23
-Inum: 24
-Inum: 25
-Inum: 26
-Inum: 27
-Inum: 28
-Inum: 29
-Inum: 30
-Inum: 31
-Inum: -1
-Index: 32, value: -1
-server:: waiting...
-server:: read message [size:4148 mtype:6 name:75 inode:1]
-Server Create
-INODE inum: 1; size: 64; type: 0
-Parent Direct: 5
-Free inum: -1
-Inum: 1
-Inum: 0
-Inum: 2
-Inum: 3
-Inum: 4
-Inum: 5
-Inum: 6
-Inum: 7
-Inum: 8
-Inum: 9
-Inum: 10
-Inum: 11
-Inum: 12
-Inum: 13
-Inum: 14
-Inum: 15
-Inum: 16
-Inum: 17
-Inum: 18
-Inum: 19
-Inum: 20
-Inum: 21
-Inum: 22
-Inum: 23
-Inum: 24
-Inum: 25
-Inum: 26
-Inum: 27
-Inum: 28
-Inum: 29
-Inum: 30
-Inum: 31
-Inum: -1
-Index: 32, value: -1
-server:: waiting...
-server:: read message [size:4148 mtype:6 name:76 inode:1]
-Server Create
-INODE inum: 1; size: 64; type: 0
-Parent Direct: 5
-Free inum: -1
-Inum: 1
-Inum: 0
-Inum: 2
-Inum: 3
-Inum: 4
-Inum: 5
-Inum: 6
-Inum: 7
-Inum: 8
-Inum: 9
-Inum: 10
-Inum: 11
-Inum: 12
-Inum: 13
-Inum: 14
-Inum: 15
-Inum: 16
-Inum: 17
-Inum: 18
-Inum: 19
-Inum: 20
-Inum: 21
-Inum: 22
-Inum: 23
-Inum: 24
-Inum: 25
-Inum: 26
-Inum: 27
-Inum: 28
-Inum: 29
-Inum: 30
-Inum: 31
-Inum: -1
-Index: 32, value: -1
-server:: waiting...
-server:: read message [size:4148 mtype:6 name:77 inode:1]
-Server Create
-INODE inum: 1; size: 64; type: 0
-Parent Direct: 5
-Free inum: -1
-Inum: 1
-Inum: 0
-Inum: 2
-Inum: 3
-Inum: 4
-Inum: 5
-Inum: 6
-Inum: 7
-Inum: 8
-Inum: 9
-Inum: 10
-Inum: 11
-Inum: 12
-Inum: 13
-Inum: 14
-Inum: 15
-Inum: 16
-Inum: 17
-Inum: 18
-Inum: 19
-Inum: 20
-Inum: 21
-Inum: 22
-Inum: 23
-Inum: 24
-Inum: 25
-Inum: 26
-Inum: 27
-Inum: 28
-Inum: 29
-Inum: 30
-Inum: 31
-Inum: -1
-Index: 32, value: -1
-server:: waiting...
-server:: read message [size:4148 mtype:6 name:78 inode:1]
-Server Create
-INODE inum: 1; size: 64; type: 0
-Parent Direct: 5
-Free inum: -1
-Inum: 1
-Inum: 0
-Inum: 2
-Inum: 3
-Inum: 4
-Inum: 5
-Inum: 6
-Inum: 7
-Inum: 8
-Inum: 9
-Inum: 10
-Inum: 11
-Inum: 12
-Inum: 13
-Inum: 14
-Inum: 15
-Inum: 16
-Inum: 17
-Inum: 18
-Inum: 19
-Inum: 20
-Inum: 21
-Inum: 2Message: type->1; inum->0; nbytes->0; offset->0
-Message: type->6; inum->0; nbytes->0; offset->0
-Message: type->2; inum->0; nbytes->0; offset->0
-Message: type->6; inum->1; nbytes->0; offset->0
-Message: type->6; inum->1; nbytes->0; offset->0
-Message: type->6; inum->1; nbytes->0; offset->0
-Message: type->6; inum->1; nbytes->0; offset->0
-Message: type->6; inum->1; nbytes->0; offset->0
-Message: type->6; inum->1; nbytes->0; offset->0
-Message: type->6; inum->1; nbytes->0; offset->0
-Message: type->6; inum->1; nbytes->0; offset->0
-Message: type->6; inum->1; nbytes->0; offset->0
-Message: type->6; inum->1; nbytes->0; offset->0
-Message: type->6; inum->1; nbytes->0; offset->0
-Message: type->6; inum->1; nbytes->0; offset->0
-Message: type->6; inum->1; nbytes->0; offset->0
-Message: type->6; inum->1; nbytes->0; offset->0
-Message: type->6; inum->1; nbytes->0; offset->0
-Message: type->6; inum->1; nbytes->0; offset->0
-Message: type->6; inum->1; nbytes->0; offset->0
-Message: type->6; inum->1; nbytes->0; offset->0
-Message: type->6; inum->1; nbytes->0; offset->0
-Message: type->6; inum->1; nbytes->0; offset->0
-Message: type->6; inum->1; nbytes->0; offset->0
-Message: type->6; inum->1; nbytes->0; offset->0
-Message: type->6; inum->1; nbytes->0; offset->0
-Message: type->6; inum->1; nbytes->0; offset->0
-Message: type->6; inum->1; nbytes->0; offset->0
-Message: type->6; inum->1; nbytes->0; offset->0
-Message: type->6; inum->1; nbytes->0; offset->0
-Message: type->6; inum->1; nbytes->0; offset->0
-Message: type->6; inum->1; nbytes->0; offset->0
-Message: type->6; inum->1; nbytes->0; offset->0
-Message: type->6; inum->1; nbytes->0; offset->0
-Message: type->6; inum->1; nbytes->0; offset->0
-Message: type->6; inum->1; nbytes->0; offset->0
-Message: type->6; inum->1; nbytes->0; offset->0
-Message: type->6; inum->1; nbytes->0; offset->0
-Message: type->6; inum->1; nbytes->0; offset->0
-Message: type->6; inum->1; nbytes->0; offset->0
-Message: type->6; inum->1; nbytes->0; offset->0
-Message: type->6; inum->1; nbytes->0; offset->0
-Message: type->6; inum->1; nbytes->0; offset->0
-Message: type->6; inum->1; nbytes->0; offset->0
-Message: type->6; inum->1; nbytes->0; offset->0
-Message: type->6; inum->1; nbytes->0; offset->0
-Message: type->6; inum->1; nbytes->0; offset->0
-Message: type->6; inum->1; nbytes->0; offset->0
-Message: type->6; inum->1; nbytes->0; offset->0
-Message: type->6; inum->1; nbytes->0; offset->0
-Message: type->6; inum->1; nbytes->0; offset->0
-Message: type->6; inum->1; nbytes->0; offset->0
-Message: type->6; inum->1; nbytes->0; offset->0
-Message: type->6; inum->1; nbytes->0; offset->0
-Message: type->6; inum->1; nbytes->0; offset->0
-Message: type->6; inum->1; nbytes->0; offset->0
-Message: type->6; inum->1; nbytes->0; offset->0
-Message: type->6; inum->1; nbytes->0; offset->0
-Message: type->6; inum->1; nbytes->0; offset->0
-Message: type->6; inum->1; nbytes->0; offset->0
-Message: type->6; inum->1; nbytes->0; offset->0
-Message: type->6; inum->1; nbytes->0; offset->0
-Message: type->6; inum->1; nbytes->0; offset->0
-Message: type->6; inum->1; nbytes->0; offset->0
-Message: type->6; inum->1; nbytes->0; offset->0
-Message: type->6; inum->1; nbytes->0; offset->0
-Message: type->6; inum->1; nbytes->0; offset->0
-Message: type->6; inum->1; nbytes->0; offset->0
-Message: type->6; inum->1; nbytes->0; offset->0
-Message: type->6; inum->1; nbytes->0; offset->0
-Message: type->6; inum->1; nbytes->0; offset->0
-Message: type->6; inum->1; nbytes->0; offset->0
-Message: type->6; inum->1; nbytes->0; offset->0
-Message: type->6; inum->1; nbytes->0; offset->0
-Message: type->6; inum->1; nbytes->0; offset->0
-Message: type->6; inum->1; nbytes->0; offset->0
-Message: type->6; inum->1; nbytes->0; offset->0
-Message: type->6; inum->1; nbytes->0; offset->0
-Message: type->6; inum->1; nbytes->0; offset->0
-Message: type->6; inum->1; nbytes->0; offset->0
-Message: type->6; inum->1; nbytes->0; offset->0
-Message: type->6; inum->1; nbytes->0; offset->0
-Message: type->6; inum->1; nbytes->0; offset->0
-Message: type->6; inum->1; nbytes->0; offset->0
-Message: type->6; inum->1; nbytes->0; offset->0
-Message: type->62
-Inum: 23
-Inum: 24
-Inum: 25
-Inum: 26
-Inum: 27
-Inum: 28
-Inum: 29
-Inum: 30
-Inum: 31
-Inum: -1
-Index: 32, value: -1
-server:: waiting...
-server:: read message [size:4148 mtype:6 name:79 inode:1]
-Server Create
-INODE inum: 1; size: 64; type: 0
-Parent Direct: 5
-Free inum: -1
-Inum: 1
-Inum: 0
-Inum: 2
-Inum: 3
-Inum: 4
-Inum: 5
-Inum: 6
-Inum: 7
-Inum: 8
-Inum: 9
-Inum: 10
-Inum: 11
-Inum: 12
-Inum: 13
-Inum: 14
-Inum: 15
-Inum: 16
-Inum: 17
-Inum: 18
-Inum: 19
-Inum: 20
-Inum: 21
-Inum: 22
-Inum: 23
-Inum: 24
-Inum: 25
-Inum: 26
-Inum: 27
-Inum: 28
-Inum: 29
-Inum: 30
-Inum: 31
-Inum: -1
-Index: 32, value: -1
-server:: waiting...
-server:: read message [size:4148 mtype:6 name:80 inode:1]
-Server Create
-INODE inum: 1; size: 64; type: 0
-Parent Direct: 5
-Free inum: -1
-Inum: 1
-Inum: 0
-Inum: 2
-Inum: 3
-Inum: 4
-Inum: 5
-Inum: 6
-Inum: 7
-Inum: 8
-Inum: 9
-Inum: 10
-Inum: 11
-Inum: 12
-Inum: 13
-Inum: 14
-Inum: 15
-Inum: 16
-Inum: 17
-Inum: 18
-Inum: 19
-Inum: 20
-Inum: 21
-Inum: 22
-Inum: 23
-Inum: 24
-Inum: 25
-Inum: 26
-Inum: 27
-Inum: 28
-Inum: 29
-Inum: 30
-Inum: 31
-Inum: -1
-Index: 32, value: -1
-server:: waiting...
-server:: read message [size:4148 mtype:6 name:81 inode:1]
-Server Create
-INODE inum: 1; size: 64; type: 0
-Parent Direct: 5
-Free inum: -1
-Inum: 1
-Inum: 0
-Inum: 2
-Inum: 3
-Inum: 4
-Inum: 5
-Inum: 6
-Inum: 7
-Inum: 8
-Inum: 9
-Inum: 10
-Inum: 11
-Inum: 12
-Inum: 13
-Inum: 14
-Inum: 15
-Inum: 16
-Inum: 17
-Inum: 18
-Inum: 19
-Inum: 20
-Inum: 21
-Inum: 22
-Inum: 23
-Inum: 24
-Inum: 25
-Inum: 26
-Inum: 27
-Inum: 28
-Inum: 29
-Inum: 30
-Inum: 31
-Inum: -1
-Index: 32, value: -1
-server:: waiting...
-server:: read message [size:4148 mtype:6 name:82 inode:1]
-Server Create
-INODE inum: 1; size: 64; type: 0
-Parent Direct: 5
-Free inum: -1
-Inum: 1
-Inum: 0
-Inum: 2
-Inum: 3
-Inum: 4
-Inum: 5
-Inum: 6
-Inum: 7
-Inum: 8
-Inum: 9
-Inum: 10
-Inum: 11
-Inum: 12
-Inum: 13
-Inum: 14
-Inum: 15
-Inum: 16
-Inum: 17
-Inum: 18
-Inum: 19
-Inum: 20
-Inum: 21
-Inum: 22
-Inum: 23
-Inum: 24
-Inum: 25
-Inum: 26
-Inum: 27
-Inum: 28
-Inum: 29
-Inum: 30
-Inum: 31
-Inum: -1
-Index: 32, value: -1
-server:: waiting...
-server:: read message [size:4148 mtype:6 name:83 inode:1]
-Server Create
-INODE inum: 1; size: 64; type: 0
-Parent Direct: 5
-Free inum: -1
-Inum: 1
-Inum: 0
-Inum: 2
-Inum: 3
-Inum: 4
-Inum: 5
-Inum: 6
-Inum: 7
-Inum: 8
-Inum: 9
-Inum: 10
-Inum: 11
-Inum: 12
-Inum: 13
-Inum: 14
-Inum: 15
-Inum: 16
-Inum: 17
-Inum: 18
-Inum: 19
-Inum: 20
-Inum: 21
-Inum: 22
-Inum: 23
-Inum: 24
-Inum: 25
-Inum: 26
-Inum: 27
-Inum: 28
-Inum: 29
-Inum: 30
-Inum: 31
-Inum: -1
-Index: 32, value: -1
-server:: waiting...
-server:: read message [size:4148 mtype:6 name:84 inode:1]
-Server Create
-INODE inum: 1; size: 64; type: 0
-Parent Direct: 5
-Free inum: -1
-Inum: 1
-Inum: 0
-Inum: 2
-Inum: 3
-Inum: 4
-Inum: 5
-Inum: 6
-Inum: 7
-Inum: 8
-Inum: 9
-Inum: 10
-Inum: 11
-Inum: 12
-Inum: 13
-Inum: 14
-Inum: 15
-Inum: 16
-Inum: 17
-Inum: 18
-Inum: 19
-Inum: 20
-Inum: 21
-Inum: 22
-Inum: 23
-Inum: 24
-Inum: 25
-Inum: 26
-Inum: 27
-Inum: 28
-Inum: 29
-Inum: 30
-Inum: 31
-Inum: -1
-Index: 32, value: -1
-server:: waiting...
-server:: read message [size:4148 mtype:6 name:85 inode:1]
-Server Create
-INODE inum: 1; size: 64; type: 0
-Parent Direct: 5
-Free inum: -1
-Inum: 1
-Inum: 0
-Inum: 2
-Inum: 3
-Inum: 4
-Inum: 5
-Inum: 6
-Inum: 7
-Inum: 8
-Inum: 9
-Inum: 10
-Inum: 11
-Inum: 12
-Inum: 13
-Inum: 14
-Inum: 15
-Inum: 16
-Inum: 17
-Inum: 18
-Inum: 19
-Inum: 20
-Inum: 21
-Inum: 22
-Inum: 23
-Inum: 24
-Inum: 25
-Inum: 26
-Inum: 27
-Inum: 28
-Inum: 29
-Inum: 30
-Inum: 31
-Inum: -1
-Index: 32, value: -1
-server:: waiting...
-server:: read message [size:4148 mtype:6 name:86 inode:1]
-Server Create
-INODE inum: 1; size: 64; type: 0
-Parent Direct: 5
-Free inum: -1
-Inum: 1
-Inum: 0
-Inum: 2
-Inum: 3
-Inum: 4
-Inum: 5
-Inum: 6
-Inum: 7
-Inum: 8
-Inum: 9
-Inum: 10
-Inum: 11
-Inum: 12
-Inum: 13
-Inum: 14
-Inum: 15
-Inum: 16
-Inum: 17
-Inum: 18
-Inum: 19
-Inum: 20
-Inum: 21
-Inum: 22
-Inum: 23
-Inum: 24
-Inum: 25
-Inum: 26
-Inum: 27
-Inum: 28
-Inum: 29
-Inum: 30
-Inum: 31
-Inum: -1
-Index: 32, value: -1
-server:: waiting...
-server:: read message [size:4148 mtype:6 name:87 inode:1]
-Server Create
-INODE inum: 1; size: 64; type: 0
-Parent Direct: 5
-Free inum: -1
-Inum: 1
-Inum: 0
-Inum: 2
-Inum: 3
-Inum: 4
-Inum: 5
-Inum: 6
-Inum: 7
-Inum: 8
-Inum: 9
-Inum: 10
-Inum: 11
-Inum: 12
-Inum: 13
-Inum: 14
-Inum: 15
-Inum: 16
-Inum: 17
-Inum: 18
-Inum: 19
-Inum: 20
-Inum: 21
-Inum: 22
-Inum: 23
-Inum: 24
-Inum: 25
-Inum: 26
-Inum: 27
-Inum: 28
-Inum: 29
-Inum: 30
-Inum: 31
-Inum: -1
-Index: 32, value: -1
-server:: waiting...
-server:: read message [size:4148 mtype:6 name:88 inode:1]
-Server Create
-INODE inum: 1; size: 64; type: 0
-Parent Direct: 5
-Free inum: -1
-Inum: 1
-Inum: 0
-Inum: 2
-Inum: 3
-Inum: 4
-Inum: 5
-Inum: 6
-Inum: 7
-Inum: 8
-Inum: 9
-Inum: 10
-Inum: 11
-Inum: 12
-Inum: 13
-Inum: 14
-Inum: 15
-Inum: 16
-Inum: 17
-Inum: 18
-Inum: 19
-Inum: 20
-Inum: 21
-Inum: 22
-Inum: 23
-Inum: 24
-Inum: 25
-Inum: 26
-Inum: 27
-Inum: 28
-Inum: 29
-Inum: 30
-Inum: 31
-Inum: -1
-Index: 32, value: -1
-server:: waiting...
-server:: read message [size:4148 mtype:6 name:89 inode:1]
-Server Create
-INODE inum: 1; size: 64; type: 0
-Parent Direct: 5
-Free inum: -1
-Inum: 1
-Inum: 0
-Inum: 2
-Inum: 3
-Inum: 4
-Inum: 5
-Inum: 6
-Inum: 7
-Inum: 8
-Inum: 9
-Inum: 10
-Inum: 11
-Inum: 12
-Inum: 13
-Inum: 14
-Inum: 15
-Inum: 16
-Inum: 17
-Inum: 18
-Inum: 19
-Inum: 20
-Inum: 21
-Inum: 22
-Inum: 23
-Inum: 24
-Inum: 25
-Inum: 26
-Inum: 27
-Inum: 28
-Inum: 29
-Inum: 30
-Inum: 31
-Inum: -1
-Index: 32, value: -1
-server:: waiting...
-server:: read message [size:4148 mtype:6 name:90 inode:1]
-Server Create
-INODE inum: 1; size: 64; type: 0
-Parent Direct: 5
-Free inum: -1
-Inum: 1
-Inum: 0
-Inum: 2
-Inum: 3
-Inum: 4
-Inum: 5
-Inum: 6
-Inum: 7
-Inum: 8
-Inum: 9
-Inum: 10
-Inum: 11
-Inum: 12
-Inum: 13
-Inum: 14
-Inum: 15
-Inum: 16
-Inum: 17
-Inum: 18
-Inum: 19
-Inum: 20
-Inum: 21
-Inum: 22
-Inum: 23
-Inum: 24
-Inum: 25
-Inum: 26
-Inum: 27
-Inum: 28
-Inum: 29
-Inum: 30
-Inum: 31
-Inum: -1
-Index: 32, value: -1
-server:: waiting...
-server:: read message [size:4148 mtype:6 name:91 inode:1]
-Server Create
-INODE inum: 1; size: 64; type: 0
-Parent Direct: 5
-Free inum: -1
-Inum: 1
-Inum: 0
-Inum: 2
-Inum: 3
-Inum: 4
-Inum: 5
-Inum: 6
-Inum: 7
-Inum: 8
-Inum: 9
-Inum: 10
-Inum: 11
-Inum: 12
-Inum: 13
-Inum: 14
-Inum: 15
-Inum: 16
-Inum: 17
-Inum: 18
-Inum: 19
-Inum: 20
-Inum: 21
-Inum: 22
-Inum: 23
-Inum: 24
-Inum: 25
-Inum: 26
-Inum: 27
-Inum: 28
-Inum: 29
-Inum: 30
-Inum: 31
-Inum: -1
-Index: 32, value: -1
-server:: waiting...
-server:: read message [size:4148 mtype:6 name:92 inode:1]
-Server Create
-INODE inum: 1; size: 64; type: 0
-Parent Direct: 5
-Free inum: -1
-Inum: 1
-Inum: 0
-Inum: 2
-Inum: 3
-Inum: 4
-Inum: 5
-Inum: 6
-Inum: 7
-Inum: 8
-Inum: 9
-Inum: 10
-Inum: 11
-Inum: 12
-Inum: 13
-Inum: 14
-Inum: 15
-Inum: 16
-Inum: 17
-Inum: 18
-Inum: 19
-Inum: 20
-Inum: 21
-Inum: 22
-Inum: 23
-Inum: 24
-Inum: 25
-Inum: 26
-Inum: 27
-Inum: 28
-Inum: 29
-Inum: 30
-Inum: 31
-Inum: -1
-Index: 32, value: -1
-server:: waiting...
-server:: read message [size:4148 mtype:6 name:93 inode:1]
-Server Create
-INODE inum: 1; size: 64; type: 0
-Parent Direct: 5
-Free inum: -1
-Inum: 1
-Inum: 0
-Inum: 2
-Inum: 3
-Inum: 4
-Inum: 5
-Inum: 6
-Inum: 7
-Inum: 8
-Inum: 9
-Inum: 10
-Inum: 11
-Inum: 12
-Inum: 13
-Inum: 14
-Inum: 15
-Inum: 16
-Inum: 17
-Inum: 18
-Inum: 19
-Inum: 20
-Inum: 21
-Inum: 22
-Inum: 23
-Inum: 24
-Inum: 25
-Inum: 26
-Inum: 27
-Inum: 28
-Inum: 29
-Inum: 30
-Inum: 31
-Inum: -1
-Index: 32, value: -1
-server:: waiting...
-server:: read message [size:4148 mtype:6 name:94 inode:1]
-Server Create
-INODE inum: 1; size: 64; type: 0
-Parent Direct: 5
-Free inum: -1
-Inum: 1
-Inum: 0
-Inum: 2
-Inum: 3
-Inum: 4
-Inum: 5
-Inum: 6
-Inum: 7
-Inum: 8
-Inum: 9
-Inum: 10
-Inum: 11
-Inum: 12
-Inum: 13
-Inum: 14
-Inum: 15
-Inum: 16
-Inum: 17
-Inum: 18
-Inum: 19
-Inum: 20
-Inum: 21
-Inum: 22
-Inum: 23
-Inum: 24
-Inum: 25
-Inum: 26
-Inum: 27
-Inum: 28
-Inum: 29
-Inum: 30
-Inum: 31
-Inum: -1
-Index: 32, value: -1
-server:: waiting...
-server:: read message [size:4148 mtype:6 name:95 inode:1]
-Server Create
-INODE inum: 1; size: 64; type: 0
-Parent Direct: 5
-Free inum: -1
-Inum: 1
-Inum: 0
-Inum: 2
-Inum: 3
-Inum: 4
-Inum: 5
-Inum: 6
-Inum: 7
-Inum: 8
-Inum: 9
-Inum: 10
-Inum: 11
-Inum: 12
-Inum: 13
-Inum: 14
-Inum: 15
-Inum: 16
-Inum: 17
-Inum: 18
-Inum: 19
-Inum: 20
-Inum: 21
-Inum: 22
-Inum: 23
-Inum: 24
-Inum: 25
-Inum: 26
-Inum: 27
-Inum: 28
-Inum: 29
-Inum: 30
-Inum: 31
-Inum: -1
-Index: 32, value: -1
-server:: waiting...
-server:: read message [size:4148 mtype:6 name:96 inode:1]
-Server Create
-INODE inum: 1; size: 64; type: 0
-Parent Direct: 5
-Free inum: -1
-Inum: 1
-Inum: 0
-Inum: 2
-Inum: 3
-Inum: 4
-Inum: 5
-Inum: 6
-Inum: 7
-Inum: 8
-Inum: 9
-Inum: 10
-Inum: 11
-Inum: 12
-Inum: 13
-Inum: 14
-Inum: 15
-Inum: 16
-Inum: 17
-Inum: 18
-Inum: 19
-Inum: 20
-Inum: 21
-Inum: 22
-Inum: 23
-Inum: 24
-Inum: 25
-Inum: 26
-Inum: 27
-Inum: 28
-Inum: 29
-Inum: 30
-Inum: 31
-Inum: -1
-Index: 32, value: -1
-server:: waiting...
-server:: read message [size:4148 mtype:6 name:97 inode:1]
-Server Create
-INODE inum: 1; size: 64; type: 0
-Parent Direct: 5
-Free inum: -1
-Inum: 1
-Inum: 0
-Inum: 2
-Inum: 3
-Inum: 4
-Inum: 5
-Inum: 6
-Inum: 7
-Inum: 8
-Inum: 9
-Inum: 10
-Inum: 11
-Inum: 12
-Inum: 13
-Inum: 14
-Inum: 15
-Inum: 16
-Inum: 17
-Inum: 18
-Inum: 19
-Inum: 20
-Inum: 21
-Inum: 22
-Inum: 23
-Inum: 24
-Inum: 25
-Inum: 26
-Inum: 27
-Inum: 28
-Inum: 29
-Inum: 30
-Inum: 31
-Inum: -1
-Index: 32, value: -1
-server:: waiting...
-server:: read message [size:4148 mtype:6 name:98 inode:1]
-Server Create
-INODE inum: 1; size: 64; type: 0
-Parent Direct: 5
-Free inum: -1
-Inum: 1
-Inum: 0
-Inum: 2
-Inum: 3
-Inum: 4
-Inum: 5
-Inum: 6
-Inum: 7
-Inum: 8
-Inum: 9
-Inum: 10
-Inum: 11
-Inum: 12
-Inum: 13
-Inum: 14
-Inum: 15
-Inum: 16
-Inum: 17
-Inum: 18
-Inum: 19
-Inum: 20
-Inum: 21
-Inum: 22
-Inum: 23
-Inum: 24
-Inum: 25
-Inum: 26
-Inum: 27
-Inum: 28
-Inum: 29
-Inum: 30
-Inum: 31
-Inum: -1
-Index: 32, value: -1
-server:: waiting...
-server:: read message [size:4148 mtype:6 name:99 inode:1]
-Server Create
-INODE inum: 1; size: 64; type: 0
-Parent Direct: 5
-Free inum: -1
-Inum: 1
-Inum: 0
-Inum: 2
-Inum: 3
-Inum: 4
-Inum: 5
-Inum: 6
-Inum: 7
-Inum: 8
-Inum: 9
-Inum: 10
-Inum: 11
-Inum: 12
-Inum: 13
-Inum: 14
-Inum: 15
-Inum: 16
-Inum: 17
-Inum: 18
-Inum: 19
-Inum: 20
-Inum: 21
-Inum: 22
-Inum: 23
-Inum: 24
-Inum: 25
-Inum: 26
-Inum: 27
-Inum: 28
-Inum: 29
-Inum: 30
-Inum: 31
-Inum: -1
-Index: 32, value: -1
-server:: waiting...
-server:: read message [size:4148 mtype:6 name:100 inode:1]
-Server Create
-INODE inum: 1; size: 64; type: 0
-Parent Direct: 5
-Free inum: -1
-Inum: 1
-Inum: 0
-Inum: 2
-Inum: 3
-Inum: 4
-Inum: 5
-Inum: 6
-Inum: 7
-Inum: 8
-Inum: 9
-Inum: 10
-Inum: 11
-Inum: 12
-Inum: 13
-Inum: 14
-Inum: 15
-Inum: 16
-Inum: 17
-Inum: 18
-Inum: 19
-Inum: 20
-Inum: 21
-Inum: 22
-Inum: 23
-Inum: 24
-Inum: 25
-Inum: 26
-Inum: 27
-Inum: 28
-Inum: 29
-Inum: 30
-Inum: 31
-Inum: -1
-Index: 32, value: -1
-server:: waiting...
-server:: read message [size:4148 mtype:6 name:101 inode:1]
-Server Create
-INODE inum: 1; size: 64; type: 0
-Parent Direct: 5
-Free inum: -1
-Inum: 1
-Inum: 0
-Inum: 2
-Inum: 3
-Inum: 4
-Inum: 5
-Inum: 6
-Inum: 7
-Inum: 8
-Inum: 9
-Inum: 10
-Inum: 11
-Inum: 12
-Inum: 13
-Inum: 14
-Inum: 15
-Inum: 16
-Inum: 17
-Inum: 18
-Inum: 19
-Inum: 20
-Inum: 21
-Inum: 22
-Inum: 23
-Inum: 24
-Inum: 25
-Inum: 26
-Inum: 27
-Inum: 28
-Inum: 29
-Inum: 30
-Inum: 31
-Inum: -1
-Index: 32, value: -1
-server:: waiting...
-server:: read message [size:4148 mtype:6 name:102 inode:1]
-Server Create
-INODE inum: 1; size: 64; type: 0
-Parent Direct: 5
-Free inum: -1
-Inum: 1
-Inum: 0
-Inum: 2
-Inum: 3
-Inum: 4
-Inum: 5
-Inum: 6
-Inum: 7
-Inum: 8
-Inum: 9
-Inum: 10
-Inum: 11
-Inum: 12
-Inum: 13
-Inum: 14
-Inum: 15
-Inum: 16
-Inum: 17
-Inum: 18
-Inum: 19
-Inum: 20
-Inum: 21
-Inum: 22
-Inum: 23
-Inum: 24
-Inum: 25
-Inum: 26
-Inum: 27
-Inum: 28
-Inum: 29
-Inum: 30
-Inum: 31
-Inum: -1
-Index: 32, value: -1
-server:: waiting...
-server:: read message [size:4148 mtype:6 name:103 inode:1]
-Server Create
-INODE inum: 1; size: 64; type: 0
-Parent Direct: 5
-Free inum: -1
-Inum: 1
-Inum: 0
-Inum: 2
-Inum: 3
-Inum: 4
-Inum: 5
-Inum: 6
-Inum: 7
-Inum: 8
-Inum: 9
-Inum: 10
-Inum: 11
-Inum: 12
-Inum: 13
-Inum: 14
-Inum: 15
-Inum: 16
-Inum: 17
-Inum: 18
-Inum: 19
-Inum: 20
-Inum: 21
-Inum: 22
-Inum: 23
-Inum: 24
-Inum: 25
-Inum: 26
-Inum: 27
-Inum: 28
-Inum: 29
-Inum: 30
-Inum: 31
-Inum: -1
-Index: 32, value: -1
-server:: waiting...
-server:: read message [size:4148 mtype:6 name:104 inode:1]
-Server Create
-INODE inum: 1; size: 64; type: 0
-Parent Direct: 5
-Free inum: -1
-Inum: 1
-Inum: 0
-Inum: 2
-Inum: 3
-Inum: 4
-Inum: 5
-Inum: 6
-Inum: 7
-Inum: 8
-Inum: 9
-Inum: 10
-Inum: 11
-Inum: 12
-Inum: 13
-Inum: 14
-Inum: 15
-Inum: 16
-Inum: 17
-Inum: 18
-Inum: 19
-Inum: 20
-Inum: 21
-Inum: 22
-Inum: 23
-Inum: 24
-Inum: 25
-Inum: 26
-Inum: 27
-Inum: 28
-Inum: 29
-Inum: 30
-Inum: 31
-Inum: -1
-Index: 32, value: -1
-server:: waiting...
-server:: read message [size:4148 mtype:6 name:105 inode:1]
-Server Create
-INODE inum: 1; size: 64; type: 0
-Parent Direct: 5
-Free inum: -1
-Inum: 1
-Inum: 0
-Inum: 2
-Inum: 3
-Inum: 4
-Inum: 5
-Inum: 6
-Inum: 7
-Inum: 8
-Inum: 9
-Inum: 10
-Inum: 11
-Inum: 12
-Inum: 13
-Inum: 14
-Inum: 15
-Inum: 16
-Inum: 17
-Inum: 18
-Inum: 19
-Inum: 20
-Inum: 21
-Inum: 22
-Inum: 23
-Inum: 24
-Inum: 25
-Inum: 26
-Inum: 27
-Inum: 28
-Inum: 29
-Inum: 30
-Inum: 31
-Inum: -1
-Index: 32, value: -1
-server:: waiting...
-server:: read message [size:4148 mtype:6 name:106 inode:1]
-Server Create
-INODE inum: 1; size: 64; type: 0
-Parent Direct: 5
-Free inum: -1
-Inum: 1
-Inum: 0
-Inum: 2
-Inum: 3
-Inum: 4
-Inum: 5
-Inum: 6
-Inum: 7
-Inum: 8
-Inum: 9
-Inum: 10
-Inum: 11
-Inum: 12
-Inum: 13
-Inum: 14
-Inum: 15
-Inum: 16
-Inum: 17
-Inum: 18
-Inum: 19
-Inum: 20
-Inum: 21
-Inum: 22
-Inum: 23
-Inum: 24
-Inum: 25
-Inum: 26
-Inum: 27
-Inum: 28
-Inum: 29
-Inum: 30
-Inum: 31
-Inum: -1
-Index: 32, value: -1
-server:: waiting...
-server:: read message [size:4148 mtype:6 name:107 inode:1]
-Server Create
-INODE inum: 1; size: 64; type: 0
-Parent Direct: 5
-Free inum: -1
-Inum: 1
-Inum: 0
-Inum: 2
-Inum: 3
-Inum: 4
-Inum: 5
-Inum: 6
-Inum: 7
-Inum: 8
-Inum: 9
-Inum: 10
-Inum: 11
-Inum: 12
-Inum: 13
-Inum: 14
-Inum: 15
-Inum: 16
-Inum: 17
-Inum: 18
-Inum: 19
-Inum: 20
-Inum: 21
-Inum: 22
-Inum: 23
-Inum: 24
-Inum: 25
-Inum: 26
-Inum: 27
-Inum: 28
-Inum: 29
-Inum: 30
-Inum: 31
-Inum: -1
-Index: 32, value: -1
-server:: waiting...
-server:: read message [size:4148 mtype:6 name:108 inode:1]
-Server Create
-INODE inum: 1; size: 64; type: 0
-Parent Direct: 5
-Free inum: -1
-Inum: 1
-Inum: 0
-Inum: 2
-Inum: 3
-Inum: 4
-Inum: 5
-Inum: 6
-Inum: 7
-Inum: 8
-Inum: 9
-Inum: 10
-Inum: 11
-Inum: 12
-Inum: 13
-Inum: 14
-Inum: 15
-Inum: 16
-Inum: 17
-Inum: 18
-Inum: 19
-Inum: 20
-Inum: 21
-Inum: 22
-Inum: 23
-Inum: 24
-Inum: 25
-Inum: 26
-Inum: 27
-Inum: 28
-Inum: 29
-Inum: 30
-Inum: 31
-Inum: -1
-Index: 32, value: -1
-server:: waiting...
-server:: read message [size:4148 mtype:6 name:109 inode:1]
-Server Create
-INODE inum: 1; size: 64; type: 0
-Parent Direct: 5
-Free inum: -1
-Inum: 1
-Inum: 0
-Inum: 2
-Inum: 3
-Inum: 4
-Inum: 5
-Inum: 6
-Inum: 7
-Inum: 8
-Inum: 9
-Inum: 10
-Inum: 11
-Inum: 12
-Inum: 13
-Inum: 14
-Inum: 15
-Inum: 16
-Inum: 17
-Inum: 18
-Inum: 19
-Inum: 20
-Inum: 21
-Inum: 22
-Inum: 23
-Inum: 24
-Inum: 25
-Inum: 26
-Inum: 27
-Inum: 28
-Inum: 29
-Inum: 30
-Inum: 31
-Inum: -1
-Index: 32, value: -1
-server:: waiting...
-server:: read message [size:4148 mtype:6 name:110 inode:1]
-Server Create
-INODE inum: 1; size: 64; type: 0
-Parent Direct: 5
-Free inum: -1
-Inum: 1
-Inum: 0
-Inum: 2
-Inum: 3
-Inum: 4
-Inum: 5
-Inum: 6
-Inum: 7
-Inum: 8
-Inum: 9
-Inum: 10
-Inum: 11
-Inum: 12
-Inum: 13
-Inum: 14
-Inum: 15
-Inum: 16
-Inum: 17
-Inum: 18
-Inum: 19
-Inum: 20
-Inum: 21
-Inum: 22
-Inum: 23
-Inum: 24
-Inum: 25
-Inum: 26
-Inum: 27
-Inum: 28
-Inum: 29
-Inum: 30
-Inum: 31
-Inum: -1
-Index: 32, value: -1
-server:: waiting...
-server:: read message [size:4148 mtype:6 name:111 inode:1]
-Server Create
-INODE inum: 1; size: 64; type: 0
-Parent Direct: 5
-Free inum: -1
-Inum: 1
-Inum: 0
-Inum: 2
-Inum: 3
-Inum: 4
-Inum: 5
-Inum: 6
-Inum: 7
-Inum: 8
-Inum: 9
-Inum: 10
-Inum: 11
-Inum: 12
-Inum: 13
-Inum: 14
-Inum: 15
-Inum: 16
-Inum: 17
-Inum: 18
-Inum: 19
-Inum: 20
-Inum: 21
-Inum: 22
-Inum: 23
-Inum: 24
-Inum: 25
-Inum: 26
-Inum: 27
-Inum: 28
-Inum: 29
-Inum: 30
-Inum: 31
-Inum: -1
-Index: 32, value: -1
-server:: waiting...
-server:: read message [size:4148 mtype:6 name:112 inode:1]
-Server Create
-INODE inum: 1; size: 64; type: 0
-Parent Direct: 5
-Free inum: -1
-Inum: 1
-Inum: 0
-Inum: 2
-Inum: 3
-Inum: 4
-Inum: 5
-Inum: 6
-Inum: 7
-Inum: 8
-Inum: 9
-Inum: 10
-Inum: 11
-Inum: 12
-Inum: 13
-Inum: 14
-Inum: 15
-Inum: 16
-Inum: 17
-Inum: 18
-Inum: 19
-Inum: 20
-Inum: 21
-Inum: 22
-Inum: 23
-Inum: 24
-Inum: 25
-Inum: 26
-Inum: 27
-Inum: 28
-Inum: 29
-Inum: 30
-Inum: 31
-Inum: -1
-Index: 32, value: -1
-server:: waiting...
-server:: read message [size:4148 mtype:6 name:113 inode:1]
-Server Create
-INODE inum: 1; size: 64; type: 0
-Parent Direct: 5
-Free inum: -1
-Inum: 1
-Inum: 0
-Inum: 2
-Inum: 3
-Inum: 4
-Inum: 5
-Inum: 6
-Inum: 7
-Inum: 8
-Inum: 9
-Inum: 10
-Inum: 11
-Inum: 12
-Inum: 13
-Inum: 14
-Inum: 15
-Inum: 16
-Inum: 17
-Inum: 18
-Inum: 19
-Inum: 20
-Inum: 21
-Inum: 22
-Inum: 23
-Inum: 24
-Inum: 25
-Inum: 26
-Inum: 27
-Inum: 28
-Inum: 29
-Inum: 30
-Inum: 31
-Inum: -1
-Index: 32, value: -1
-server:: waiting...
-server:: read message [size:4148 mtype:6 name:114 inode:1]
-Server Create
-INODE inum: 1; size: 64; type: 0
-Parent Direct: 5
-Free inum: -1
-Inum: 1
-Inum: 0
-Inum: 2
-Inum: 3
-Inum: 4
-Inum: 5
-Inum: 6
-Inum: 7
-Inum: 8
-Inum: 9
-Inum: 10
-Inum: 11
-Inum: 12
-Inum: 13
-Inum: 14
-Inum: 15
-Inum: 16
-Inum: 17
-Inum: 18
-Inum: 19
-Inum: 20
-Inum: 21
-Inum: 22
-Inum: 23
-Inum: 24
-Inum: 25
-Inum: 26
-Inum: 27
-Inum: 28
-Inum: 29
-Inum: 30
-Inum: 31
-Inum: -1
-Index: 32, value: -1
-server:: waiting...
-server:: read message [size:4148 mtype:6 name:115 inode:1]
-Server Create
-INODE inum: 1; size: 64; type: 0
-Parent Direct: 5
-Free inum: -1
-Inum: 1
-Inum: 0
-Inum: 2
-Inum: 3
-Inum: 4
-Inum: 5
-Inum: 6
-Inum: 7
-Inum: 8
-Inum: 9
-Inum: 10
-Inum: 11
-Inum: 12
-Inum: 13
-Inum: 14
-Inum: 15
-Inum: 16
-Inum: 17
-Inum: 18
-Inum: 19
-Inum: 20
-Inum: 21
-Inum: 22
-Inum: 23
-Inum: 24
-Inum: 25
-Inum: 26
-Inum: 27
-Inum: 28
-Inum: 29
-Inum: 30
-Inum: 31
-Inum: -1
-Index: 32, value: -1
-server:: waiting...
-server:: read message [size:4148 mtype:6 name:116 inode:1]
-Server Create
-INODE inum: 1; size: 64; type: 0
-Parent Direct: 5
-Free inum: -1
-Inum: 1
-Inum: 0
-Inum: 2
-Inum: 3
-Inum: 4
-Inum: 5
-Inum: 6
-Inum: 7
-Inum: 8
-Inum: 9
-Inum: 10
-Inum: 11
-Inum: 12
-Inum: 13
-Inum: 14
-Inum: 15
-Inum: 16
-Inum: 17
-Inum: 18
-Inum: 19
-Inum: 20
-Inum: 21
-Inum: 22
-Inum: 23
-Inum: 24
-Inum: 25
-Inum: 26
-Inum: 27
-Inum: 28
-Inum: 29
-Inum: 30
-Inum: 31
-Inum: -1
-Index: 32, value: -1
-server:: waiting...
-server:: read message [size:4148 mtype:6 name:117 inode:1]
-Server Create
-INODE inum: 1; size: 64; type: 0
-Parent Direct: 5
-Free inum: -1
-Inum: 1
-Inum: 0
-Inum: 2
-Inum: 3
-Inum: 4
-Inum: 5
-Inum: 6
-Inum: 7
-Inum: 8
-Inum: 9
-Inum: 10
-Inum: 11
-Inum: 12
-Inum: 13
-Inum: 14
-Inum: 15
-Inum: 16
-Inum: 17
-Inum: 18
-Inum: 19
-Inum: 20
-Inum: 21
-Inum: 22
-Inum: 23
-Inum: 24
-Inum: 25
-Inum: 26
-Inum: 27
-Inum: 28
-Inum: 29
-Inum: 30
-Inum: 31
-Inum: -1
-Index: 32, value: -1
-server:: waiting...
-server:: read message [size:4148 mtype:6 name:118 inode:1]
-Server Create
-INODE inum: 1; size: 64; type: 0
-Parent Direct: 5
-Free inum: -1
-Inum: 1
-Inum: 0
-Inum: 2
-Inum: 3
-Inum: 4
-Inum: 5
-Inum: 6
-Inum: 7
-Inum: 8
-Inum: 9
-Inum: 10
-Inum: 11
-Inum: 12
-Inum: 13
-Inum: 14
-Inum: 15
-Inum: 16
-Inum: 17
-Inum: 18
-Inum: 19
-Inum: 20
-Inum: 21
-Inum: 22
-Inum: 23
-Inum: 24
-Inum: 25
-Inum: 26
-Inum: 27
-Inum: 28
-Inum: 29
-Inum: 30
-Inum: 31
-Inum: -1
-Index: 32, value: -1
-server:: waiting...
-server:: read message [size:4148 mtype:6 name:119 inode:1]
-Server Create
-INODE inum: 1; size: 64; type: 0
-Parent Direct: 5
-Free inum: -1
-Inum: 1
-Inum: 0
-Inum: 2
-Inum: 3
-Inum: 4
-Inum: 5
-Inum: 6
-Inum: 7
-Inum: 8
-Inum: 9
-Inum: 10
-Inum: 11
-Inum: 12
-Inum: 13
-Inum: 14
-Inum: 15
-Inum: 16
-Inum: 17
-Inum: 18
-Inum: 19
-Inum: 20
-Inum: 21
-Inum: 22
-Inum: 23
-Inum: 24
-Inum: 25
-Inum: 26
-Inum: 27
-Inum: 28
-Inum: 29
-Inum: 30
-Inum: 31
-Inum: -1
-Index: 32, value: -1
-server:: waiting...
-server:: read message [size:4148 mtype:6 name:120 inode:1]
-Server Create
-INODE inum: 1; size: 64; type: 0
-Parent Direct: 5
-Free inum: -1
-Inum: 1
-Inum: 0
-Inum: 2
-Inum: 3
-Inum: 4
-Inum: 5
-Inum: 6
-Inum: 7
-Inum: 8
-Inum: 9
-Inum: 10
-Inum: 11
-Inum: 12
-Inum: 13
-Inum: 14
-Inum: 15
-Inum: 16
-Inum: 17
-Inum: 18
-Inum: 19
-Inum: 20
-Inum: 21
-Inum: 22
-Inum: 23
-Inum: 24
-Inum: 25
-Inum: 26
-Inum: 27
-Inum: 28
-Inum: 29
-Inum: 30
-Inum: 31
-Inum: -1
-Index: 32, value: -1
-server:: waiting...
-server:: read message [size:4148 mtype:6 name:121 inode:1]
-Server Create
-INODE inum: 1; size: 64; type: 0
-Parent Direct: 5
-Free inum: -1
-Inum: 1
-Inum: 0
-Inum: 2
-Inum: 3
-Inum: 4
-Inum: 5
-Inum: 6
-Inum: 7
-Inum: 8
-Inum: 9
-Inum: 10
-Inum: 11
-Inum: 12
-Inum: 13
-Inum: 14
-Inum: 15
-Inum: 16
-Inum: 17
-Inum: 18
-Inum: 19
-Inum: 20
-Inum: 21
-Inum: 22
-Inum: 23
-Inum: 24
-Inum: 25
-Inum: 26
-Inum: 27
-Inum: 28
-Inum: 29
-Inum: 30
-Inum: 31
-Inum: -1
-Index: 32, value: -1
-server:: waiting...
-server:: read message [size:4148 mtype:6 name:122 inode:1]
-Server Create
-INODE inum: 1; size: 64; type: 0
-Parent Direct: 5
-Free inum: -1
-Inum: 1
-Inum: 0
-Inum: 2
-Inum: 3
-Inum: 4
-Inum: 5
-Inum: 6
-Inum: 7
-Inum: 8
-Inum: 9
-Inum: 10
-Inum: 11
-Inum: 12
-Inum: 13
-Inum: 14
-Inum: 15
-Inum: 16
-Inum: 17
-Inum: 18
-Inum: 19
-Inum: 20
-Inum: 21
-Inum: 22
-Inum: 23
-Inum: 24
-Inum: 25
-Inum: 26
-Inum: 27
-Inum: 28
-Inum: 29
-Inum: 30
-Inum: 31
-Inum: -1
-Index: 32, value: -1
-server:: waiting...
-server:: read message [size:4148 mtype:6 name:123 inode:1]
-Server Create
-INODE inum: 1; size: 64; type: 0
-Parent Direct: 5
-Free inum: -1
-Inum: 1
-Inum: 0
-Inum: 2
-Inum: 3
-Inum: 4
-Inum: 5
-Inum: 6
-Inum: 7
-Inum: 8
-Inum: 9
-Inum: 10
-Inum: 11
-Inum: 12
-Inum: 13
-Inum: 14
-Inum: 15
-Inum: 16
-Inum: 17
-Inum: 18
-Inum: 19
-Inum: 20
-Inum: 21
-Inum: 22
-Inum: 23
-Inum: 24
-Inum: 25
-Inum: 26
-Inum: 27
-Inum: 28
-Inum: 29
-Inum: 30
-Inum: 31
-Inum: -1
-Index: 32, value: -1
-server:: waiting...
-server:: read message [size:4148 mtype:6 name:124 inode:1]
-Server Create
-INODE inum: 1; size: 64; type: 0
-Parent Direct: 5
-Free inum: -1
-Inum: 1
-Inum: 0
-Inum: 2
-Inum: 3
-Inum: 4
-Inum: 5
-Inum: 6
-Inum: 7
-Inum: 8
-Inum: 9
-Inum: 10
-Inum: 11
-Inum: 12
-Inum: 13
-Inum: 14
-Inum: 15
-Inum: 16
-Inum: 17
-Inum: 18
-Inum: 19
-Inum: 20
-Inum: 21
-Inum: 22
-Inum: 23
-Inum: 24
-Inum: 25
-Inum: 26
-Inum: 27
-Inum: 28
-Inum: 29
-Inum: 30
-Inum: 31
-Inum: -1
-Index: 32, value: -1
-server:: waiting...
-server:: read message [size:4148 mtype:6 name:125 inode:1]
-Server Create
-INODE inum: 1; size: 64; type: 0
-Parent Direct: 5
-Free inum: -1
-Inum: 1
-Inum: 0
-Inum: 2
-Inum: 3
-Inum: 4
-Inum: 5
-Inum: 6
-Inum: 7
-Inum: 8
-Inum: 9
-Inum: 10
-Inum: 11
-Inum: 12
-Inum: 13
-Inum: 14
-Inum: 15
-Inum: 16
-Inum: 17
-Inum: 18
-Inum: 19
-Inum: 20
-Inum: 21
-Inum: 22
-Inum: 23
-Inum: 24
-Inum: 25
-Inum: 26
-Inum: 27
-Inum: 28
-Inum: 29
-Inum: 30
-Inum: 31
-Inum: -1
-Index: 32, value: -1
-server:: waiting...
-server:: read message [size:4148 mtype:2 name:0 inode:1]
-INODE inum: 1; size: 64; type: 0
-server:: waiting...
-server:: read message [size:4148 mtype:2 name:1 inode:1]
-INODE inum: 1; size: 64; type: 0
-server:: waiting...
-server:: read message [size:4148 mtype:2 name:2 inode:1]
-INODE inum: 1; size: 64; type: 0
-server:: waiting...
-server:: read message [size:4148 mtype:2 name:3 inode:1]
-INODE inum: 1; size: 64; type: 0
-server:: waiting...
-server:: read message [size:4148 mtype:2 name:4 inode:1]
-INODE inum: 1; size: 64; type: 0
-server:: waiting...
-server:: read message [size:4148 mtype:2 name:5 inode:1]
-INODE inum: 1; size: 64; type: 0
-server:: waiting...
-server:: read message [size:4148 mtype:2 name:6 inode:1]
-INODE inum: 1; size: 64; type: 0
-server:: waiting...
-server:: read message [size:4148 mtype:2 name:7 inode:1]
-INODE inum: 1; size: 64; type: 0
-server:: waiting...
-server:: read message [size:4148 mtype:2 name:8 inode:1]
-INODE inum: 1; size: 64; type: 0
-server:: waiting...
-server:: read message [size:4148 mtype:2 name:9 inode:1]
-INODE inum: 1; size: 64; type: 0
-server:: waiting...
-server:: read message [size:4148 mtype:2 name:10 inode:1]
-INODE inum: 1; size: 64; type: 0
-server:: waiting...
-server:: read message [size:4148 mtype:2 name:11 inode:1]
-INODE inum: 1; size: 64; type: 0
-server:: waiting...
-server:: read message [size:4148 mtype:2 name:12 inode:1]
-INODE inum: 1; size: 64; type: 0
-server:: waiting...
-server:: read message [size:4148 mtype:2 name:13 inode:1]
-INODE inum: 1; size: 64; type: 0
-server:: waiting...
-server:: read message [size:4148 mtype:2 name:14 inode:1]
-INODE inum: 1; size: 64; type: 0
-server:: waiting...
-server:: read message [size:4148 mtype:2 name:15 inode:1]
-INODE inum: 1; size: 64; type: 0
-server:: waiting...
-server:: read message [size:4148 mtype:2 name:16 inode:1]
-INODE inum: 1; size: 64; type: 0
-server:: waiting...
-server:: read message [size:4148 mtype:2 name:17 inode:1]
-INODE inum: 1; size: 64; type: 0
-server:: waiting...
-server:: read message [size:4148 mtype:2 name:18 inode:1]
-INODE inum: 1; size: 64; type: 0
-server:: waiting...
-server:: read message [size:4148 mtype:2 name:19 inode:1]
-INODE inum: 1; size: 64; type: 0
-server:: waiting...
-server:: read message [size:4148 mtype:2 name:20 inode:1]
-INODE inum: 1; size: 64; type: 0
-server:: waiting...
-server:: read message [size:4148 mtype:2 name:21 inode:1]
-INODE inum: 1; size: 64; type: 0
-server:: waiting...
-server:: read message [size:4148 mtype:2 name:22 inode:1]
-INODE inum: 1; size: 64; type: 0
-server:: waiting...
-server:: read message [size:4148 mtype:2 name:23 inode:1]
-INODE in; inum->1; nbytes->0; offset->0
-Message: type->6; inum->1; nbytes->0; offset->0
-Message: type->6; inum->1; nbytes->0; offset->0
-Message: type->6; inum->1; nbytes->0; offset->0
-Message: type->6; inum->1; nbytes->0; offset->0
-Message: type->6; inum->1; nbytes->0; offset->0
-Message: type->6; inum->1; nbytes->0; offset->0
-Message: type->6; inum->1; nbytes->0; offset->0
-Message: type->6; inum->1; nbytes->0; offset->0
-Message: type->6; inum->1; nbytes->0; offset->0
-Message: type->6; inum->1; nbytes->0; offset->0
-Message: type->6; inum->1; nbytes->0; offset->0
-Message: type->6; inum->1; nbytes->0; offset->0
-Message: type->6; inum->1; nbytes->0; offset->0
-Message: type->6; inum->1; nbytes->0; offset->0
-Message: type->6; inum->1; nbytes->0; offset->0
-Message: type->6; inum->1; nbytes->0; offset->0
-Message: type->6; inum->1; nbytes->0; offset->0
-Message: type->6; inum->1; nbytes->0; offset->0
-Message: type->6; inum->1; nbytes->0; offset->0
-Message: type->6; inum->1; nbytes->0; offset->0
-Message: type->6; inum->1; nbytes->0; offset->0
-Message: type->6; inum->1; nbytes->0; offset->0
-Message: type->6; inum->1; nbytes->0; offset->0
-Message: type->6; inum->1; nbytes->0; offset->0
-Message: type->6; inum->1; nbytes->0; offset->0
-Message: type->6; inum->1; nbytes->0; offset->0
-Message: type->6; inum->1; nbytes->0; offset->0
-Message: type->6; inum->1; nbytes->0; offset->0
-Message: type->6; inum->1; nbytes->0; offset->0
-Message: type->6; inum->1; nbytes->0; offset->0
-Message: type->6; inum->1; nbytes->0; offset->0
-Message: type->6; inum->1; nbytes->0; offset->0
-Message: type->6; inum->1; nbytes->0; offset->0
-Message: type->6; inum->1; nbytes->0; offset->0
-Message: type->6; inum->1; nbytes->0; offset->0
-Message: type->6; inum->1; nbytes->0; offset->0
-Message: type->6; inum->1; nbytes->0; offset->0
-Message: type->6; inum->1; nbytes->0; offset->0
-Message: type->6; inum->1; nbytes->0; offset->0
-Message: type->6; inum->1; nbytes->0; offset->0
-Message: type->6; inum->1; nbytes->0; offset->0
-Message: type->6; inum->1; nbytes->0; offset->0
-Message: type->6; inum->1; nbytes->0; offset->0
-Message: type->2; inum->1; nbytes->0; offset->0
-Message: type->2; inum->1; nbytes->0; offset->0
-Message: type->2; inum->1; nbytes->0; offset->0
-Message: type->2; inum->1; nbytes->0; offset->0
-Message: type->2; inum->1; nbytes->0; offset->0
-Message: type->2; inum->1; nbytes->0; offset->0
-Message: type->2; inum->1; nbytes->0; offset->0
-Message: type->2; inum->1; nbytes->0; offset->0
-Message: type->2; inum->1; nbytes->0; offset->0
-Message: type->2; inum->1; nbytes->0; offset->0
-Message: type->2; inum->1; nbytes->0; offset->0
-Message: type->2; inum->1; nbytes->0; offset->0
-Message: type->2; inum->1; nbytes->0; offset->0
-Message: type->2; inum->1; nbytes->0; offset->0
-Message: type->2; inum->1; nbytes->0; offset->0
-Message: type->2; inum->1; nbytes->0; offset->0
-Message: type->2; inum->1; nbytes->0; offset->0
-Message: type->2; inum->1; nbytes->0; offset->0
-Message: type->2; inum->1; nbytes->0; offset->0
-Message: type->2; inum->1; nbytes->0; offset->0
-Message: type->2; inum->1; nbytes->0; offset->0
-Message: type->2; inum->1; nbytes->0; offset->0
-Message: type->2; inum->1; nbytes->0; offset->0
-Message: type->2; inum->1; nbytes->0; offset->0
-Message: type->2; inum->1; nbytes->0; offset->0
-Message: type->2; inum->1; nbytes->0; offset->0
-Message: type->2; inum->1; nbytes->0; offset->0
-Message: type->2; inum->1; nbytes->0; offset->0
-Message: type->2; inum->1; nbytes->0; offset->0
-Message: type->2; inum->1; nbytes->0; offset->0
-Message: type->2; inum->1; nbytes->0; offset->0
-Failure: MFS_Lookup returned failure inum=1 name='30'
-
+INODE inum: 1; size: 2016; type: 0
+server:: waiting...
+serverMessage: type->1; inum->0; nbytes->0; offset->0; name->
+Message: type->6; inum->0; nbytes->0; offset->0; name->testdir
+Message: type->2; inum->0; nbytes->0; offset->0; name->testdir
+Message: type->6; inum->1; nbytes->0; offset->0; name->0
+Message: type->6; inum->1; nbytes->0; offset->0; name->1
+Message: type->6; inum->1; nbytes->0; offset->0; name->2
+Message: type->6; inum->1; nbytes->0; offset->0; name->3
+Message: type->6; inum->1; nbytes->0; offset->0; name->4
+Message: type->6; inum->1; nbytes->0; offset->0; name->5
+Message: type->6; inum->1; nbytes->0; offset->0; name->6
+Message: type->6; inum->1; nbytes->0; offset->0; name->7
+Message: type->6; inum->1; nbytes->0; offset->0; name->8
+Message: type->6; inum->1; nbytes->0; offset->0; name->9
+Message: type->6; inum->1; nbytes->0; offset->0; name->10
+Message: type->6; inum->1; nbytes->0; offset->0; name->11
+Message: type->6; inum->1; nbytes->0; offset->0; name->12
+Message: type->6; inum->1; nbytes->0; offset->0; name->13
+Message: type->6; inum->1; nbytes->0; offset->0; name->14
+Message: type->6; inum->1; nbytes->0; offset->0; name->15
+Message: type->6; inum->1; nbytes->0; offset->0; name->16
+Message: type->6; inum->1; nbytes->0; offset->0; name->17
+Message: type->6; inum->1; nbytes->0; offset->0; name->18
+Message: type->6; inum->1; nbytes->0; offset->0; name->19
+Message: type->6; inum->1; nbytes->0; offset->0; name->20
+Message: type->6; inum->1; nbytes->0; offset->0; name->21
+Message: type->6; inum->1; nbytes->0; offset->0; name->22
+Message: type->6; inum->1; nbytes->0; offset->0; name->23
+Message: type->6; inum->1; nbytes->0; offset->0; name->24
+Message: type->6; inum->1; nbytes->0; offset->0; name->25
+Message: type->6; inum->1; nbytes->0; offset->0; name->26
+Message: type->6; inum->1; nbytes->0; offset->0; name->27
+Message: type->6; inum->1; nbytes->0; offset->0; name->28
+Message: type->6; inum->1; nbytes->0; offset->0; name->29
+Message: type->6; inum->1; nbytes->0; offset->0; name->30
+Message: type->6; inum->1; nbytes->0; offset->0; name->31
+Message: type->6; inum->1; nbytes->0; offset->0; name->32
+Message: type->6; inum->1; nbytes->0; offset->0; name->33
+Message: type->6; inum->1; nbytes->0; offset->0; name->34
+Message: type->6; inum->1; nbytes->0; offset->0; name->35
+Message: type->6; inum->1; nbytes->0; offset->0; name->36
+Message: type->6; inum->1; nbytes->0; offset->0; name->37
+Message: type->6; inum->1; nbytes->0; offset->0; name->38
+Message: type->6; inum->1; nbytes->0; offset->0; name->39
+Message: type->6; inum->1; nbytes->0; offset->0; name->40
+Message: type->6; inum->1; nbytes->0; offset->0; name->41
+Message: type->6; inum->1; nbytes->0; offset->0; name->42
+Message: type->6; inum->1; nbytes->0; offset->0; name->43
+Message: type->6; inum->1; nbytes->0; offset->0; name->44
+Message: type->6; inum->1; nbytes->0; offset->0; name->45
+Message: type->6; inum->1; nbytes->0; offset->0; name->46
+Message: type->6; inum->1; nbytes->0; offset->0; name->47
+Message: type->6; inum->1; nbytes->0; offset->0; name->48
+Message: type->6; inum->1; nbytes->0; offset->0; name->49
+Message: type->6; inum->1; nbytes->0; offset->0; name->50
+Message: type->6; inum->1; nbytes->0; offset->0; name->51
+Message: type->6; inum->1; nbytes->0; offset->0; name->52
+Message: type->6; inum->1; nbytes->0; offset->0; name->53
+Message: type->6; inum->1; nbytes->0; offset->0; name->54
+Message: type->6; inum->1; nbytes->0; offset->0; name->55
+Message: type->6; inum->1; nbytes->0; offset->0; name->56
+Message: type->6; inum->1; nbytes->0; offset->0; name->57
+Message: type->6; inum->1; nbytes->0; offset->0; name->58
+Message: type->6; inum->1; nbytes->0; offset->0; name->59
+Message: type->6; inum->1; nbytes->0; offset->0; name->60
+Message: type->6; inum->1; nbytes->0; offset->0; name->61
+Message: type->6; inum->1; nbytes->0; offset->0; name->62
+Message: type->6; inum->1; nbytes->0; offset->0; name->63
+Message: type->6; inum->1; nbytes->0; offset->0; name->64
+Message: type->6; inum->1; nbytes->0; offset->0; name->65
+Message: type->6; inum->1; nbytes->0; offset->0; name->66
+Message: type->6; inum->1; nbytes->0; 
 
 test bigdir FAILED
  (create a directory with 126 files)
- MFS_Lookup returned failure inum=1 name='30'
+ Timelimit (180.0s) exceeded
 
 ('starting', 'deep')
 
@@ -6463,15 +1755,15 @@ Test deep
 create many deeply nested directories
 
 **********************************************************************
-total blocks        36
-  inodes            32 [size of each: 128]
+total blocks        39
+  inodes            128 [size of each: 128]
   inodes address          3 
   data blocks       32
 layout details
   inode bitmap address/len 1 [1]
   data bitmap address/len  2 [1]
-Starting server on port 7434
-/tmp/tmpn1HnRQ/p/server 7434 /home/yingze/CS537/p4/test.img
+Starting server on port 7650
+/tmp/tmpqbfQat/p/server 7650 /home/yingze/CS537/p4/test.img
 server:: waiting...
 server:: read message [size:4148 mtype:1 name: inode:0]
 Server Init
@@ -6479,101 +1771,71 @@ server:: waiting...
 server:: read message [size:4148 mtype:6 name:testdir inode:0]
 Server Create
 INODE inum: 0; size: 64; type: 0
-Parent Direct: 4
-Free inum: 1
-Inum: 0
-Inum: 0
-Inum: -1
-Index: 2, value: 1
 server:: waiting...
 server:: read message [size:4148 mtype:2 name:testdir inode:0]
-INODE inum: 0; size: 64; type: 0
+INODE inum: 0; size: 96; type: 0
 server:: waiting...
 server:: read message [size:4148 mtype:6 name:0 inode:1]
 Server Create
 INODE inum: 1; size: 64; type: 0
-Parent Direct: 5
-Free inum: 2
-Inum: 1
-Inum: 0
-Inum: -1
-Index: 2, value: 2
 server:: waiting...
 server:: read message [size:4148 mtype:2 name:0 inode:1]
-INODE inum: 1; size: 64; type: 0
+INODE inum: 1; size: 96; type: 0
 server:: waiting...
 server:: read message [size:4148 mtype:6 name:1 inode:2]
 Server Create
 INODE inum: 2; size: 64; type: 0
-Parent Direct: 6
-Free inum: 3
-Inum: 2
-Inum: 1
-Inum: -1
-Index: 2, value: 3
 server:: waiting...
 server:: read message [size:4148 mtype:2 name:1 inode:2]
-INODE inum: 2; size: 64; type: 0
+INODE inum: 2; size: 96; type: 0
 server:: waiting...
 server:: read message [size:4148 mtype:6 name:2 inode:3]
 Server Create
 INODE inum: 3; size: 64; type: 0
-Parent Direct: 7
-Free inum: 4
-Inum: 3
-Inum: 2
-Inum: -1
-Index: 2, value: 4
 server:: waiting...
 server:: read message [size:4148 mtype:2 name:2 inode:3]
-INODE inum: 3; size: 64; type: 0
+INODE inum: 3; size: 96; type: 0
 server:: waiting...
 server:: read message [size:4148 mtype:6 name:3 inode:4]
 Server Create
 INODE inum: 4; size: 64; type: 0
-Parent Direct: 8
-Free inum: 5
-Inum: 4
-Inum: 3
-Inum: -1
-Index: 2, value: 5
 server:: waiting...
 server:: read message [size:4148 mtype:2 name:3 inode:4]
-INODE inum: 4; size: 64; type: 0
+INODE inum: 4; size: 96; type: 0
 server:: waiting...
 server:: read message [size:4148 mtype:2 name:testdir inode:0]
-INODE inum: 0; size: 64; type: 0
+INODE inum: 0; size: 96; type: 0
 server:: waiting...
 server:: read message [size:4148 mtype:2 name:0 inode:1]
-INODE inum: 1; size: 64; type: 0
+INODE inum: 1; size: 96; type: 0
 server:: waiting...
 server:: read message [size:4148 mtype:2 name:1 inode:2]
-INODE inum: 2; size: 64; type: 0
+INODE inum: 2; size: 96; type: 0
 server:: waiting...
 server:: read message [size:4148 mtype:2 name:2 inode:3]
-INODE inum: 3; size: 64; type: 0
+INODE inum: 3; size: 96; type: 0
 server:: waiting...
 server:: read message [size:4148 mtype:2 name:3 inode:4]
-INODE inum: 4; size: 64; type: 0
+INODE inum: 4; size: 96; type: 0
 server:: waiting...
 server:: read message [size:4148 mtype:8 name:3 inode:4]
-Message: type->1; inum->0; nbytes->0; offset->0
-Message: type->6; inum->0; nbytes->0; offset->0
-Message: type->2; inum->0; nbytes->0; offset->0
-Message: type->6; inum->1; nbytes->0; offset->0
-Message: type->2; inum->1; nbytes->0; offset->0
-Message: type->6; inum->2; nbytes->0; offset->0
-Message: type->2; inum->2; nbytes->0; offset->0
-Message: type->6; inum->3; nbytes->0; offset->0
-Message: type->2; inum->3; nbytes->0; offset->0
-Message: type->6; inum->4; nbytes->0; offset->0
-Message: type->2; inum->4; nbytes->0; offset->0
-Message: type->2; inum->0; nbytes->0; offset->0
-Message: type->2; inum->1; nbytes->0; offset->0
-Message: type->2; inum->2; nbytes->0; offset->0
-Message: type->2; inum->3; nbytes->0; offset->0
-Message: type->2; inum->4; nbytes->0; offset->0
-Message: type->8; inum->4; nbytes->0; offset->0
+Message: type->1; inum->0; nbytes->0; offset->0; name->
+Message: type->6; inum->0; nbytes->0; offset->0; name->testdir
+Message: type->2; inum->0; nbytes->0; offset->0; name->testdir
+Message: type->6; inum->1; nbytes->0; offset->0; name->0
+Message: type->2; inum->1; nbytes->0; offset->0; name->0
+Message: type->6; inum->2; nbytes->0; offset->0; name->1
+Message: type->2; inum->2; nbytes->0; offset->0; name->1
+Message: type->6; inum->3; nbytes->0; offset->0; name->2
+Message: type->2; inum->3; nbytes->0; offset->0; name->2
+Message: type->6; inum->4; nbytes->0; offset->0; name->3
+Message: type->2; inum->4; nbytes->0; offset->0; name->3
+Message: type->2; inum->0; nbytes->0; offset->0; name->testdir
+Message: type->2; inum->1; nbytes->0; offset->0; name->0
+Message: type->2; inum->2; nbytes->0; offset->0; name->1
+Message: type->2; inum->3; nbytes->0; offset->0; name->2
+Message: type->2; inum->4; nbytes->0; offset->0; name->3
+Message: type->8; inum->4; nbytes->0; offset->0; name->3
 
 
 test deep PASSED
@@ -6617,30 +1879,28 @@ test baddir PASSED
 test baddir2 PASSED
  (try to lookup a file with a file parent inode)
 
-test unlink FAILED
+test unlink PASSED
  (unlink a file)
- MFS_Unlink returned failure pinum=0 name='test'
 
-test unlink2 FAILED
+test unlink2 PASSED
  (unlink a directory)
- MFS_Unlink returned failure pinum=0 name='test'
 
-test empty FAILED
+test empty PASSED
  (unlink a non-empty directory)
- MFS_Unlink should fail on non-empty dir
 
 test name PASSED
  (name too long)
 
-test persist PASSED
+test persist FAILED
  (restart server after creating a file)
+ Timelimit (30.0s) exceeded
 
 test bigdir FAILED
  (create a directory with 126 files)
- MFS_Lookup returned failure inum=1 name='30'
+ Timelimit (180.0s) exceeded
 
 test deep PASSED
  (create many deeply nested directories)
 
-Passed 15 of 19 tests.
-Overall 15 of 19
+Passed 17 of 19 tests.
+Overall 17 of 19

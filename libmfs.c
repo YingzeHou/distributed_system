@@ -14,7 +14,7 @@ message_t respMsg;
 struct sockaddr_in sendAddr;
 
 message_t exchangeMessage(message_t sendMsg, message_t respMsg) {
-    printf("Message: type->%d; inum->%d; nbytes->%d; offset->%d\n", sendMsg.mtype, sendMsg.inum, sendMsg.nbytes, sendMsg.offset);
+    printf("Message: type->%d; inum->%d; nbytes->%d; offset->%d; name->%s\n", sendMsg.mtype, sendMsg.inum, sendMsg.nbytes, sendMsg.offset, (char *)sendMsg.name);
     struct sockaddr_in readAddr;
     fd_set readfds;
     struct timeval timeout;
@@ -120,12 +120,9 @@ int MFS_Stat(int inum, MFS_Stat_t *m) {
  * Failure modes: invalid inum, invalid nbytes, invalid offset, not a regular file (because you can't write to directories).
 */
 int MFS_Write(int inum, char *buffer, int offset, int nbytes) {
-    printf("PASSED BYTES: %d\n", nbytes);
-    if(SD < 0) {
+    if(SD < 0 || offset/BUFFER_SIZE >= 30 || (nbytes<0 || nbytes>BUFFER_SIZE)) {
         return -1;
     }
-    // free(sendMsg);
-    // free(respMsg);
 
     sendMsg.inum = inum;
     memcpy((char *)sendMsg.buffer, buffer, BUFFER_SIZE);
@@ -216,7 +213,7 @@ int MFS_Shutdown() {
 
     sendMsg.mtype = 8;
     // if(exchangeMessage(sendMsg, respMsg) == 0) {
-        return exchangeMessage(sendMsg, respMsg).rc;
+    return exchangeMessage(sendMsg, respMsg).rc;
     // }
     return -1;
 }
